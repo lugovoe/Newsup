@@ -30,14 +30,14 @@
             if ( has_header_image() ) {
               $background_image = get_header_image();
             } ?>
-            <div class="mg-nav-widget-area-back" style='background: url("<?php echo esc_url( $background_image ); ?>" ) repeat scroll center 0 #143745;'>
+            <div class="mg-nav-widget-area-back" style='background-image: url("<?php echo esc_url( $background_image ); ?>" );'>
             <?php $remove_header_image_overlay = get_theme_mod('remove_header_image_overlay',false); ?>
             <div class="overlay">
               <div class="inner" <?php if($remove_header_image_overlay == false) { 
             $newsup_header_overlay_color = get_theme_mod('newsup_header_overlay_color','rgba(32,47,91,0.4)');?> style="background-color:<?php echo esc_attr($newsup_header_overlay_color);?>;" <?php } ?>> 
                 <div class="container-fluid">
                     <div class="mg-nav-widget-area">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-md-3 col-sm-4 text-center-xs">
                                 <div class="navbar-header">
                                 <?php the_custom_logo(); 
@@ -46,7 +46,6 @@
                                 <h1 class="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                                 <p class="site-description"><?php bloginfo('description'); ?></p>
                                 </div>
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wp"> <span class="sr-only"><?php esc_html_e('Toggle Navigation','newsup');?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                               <?php endif; ?>
                                 </div>
                             </div>
@@ -59,22 +58,40 @@
               </div>
           </div>
     <div class="mg-menu-full">
-            <nav class="navbar navbar-default navbar-static-top navbar-wp">
+            <nav class="navbar navbar-expand-lg navbar-static-top navbar-wp">
                 <div class="container-fluid">
-         <!-- navbar-toggle -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wp"> <span class="sr-only"><?php esc_html_e('Toggle Navigation','newsup'); ?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <!-- /navbar-toggle --> 
+                	<!-- navbar-toggle -->
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbar-wp" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- /navbar-toggle -->
+         
           
                   <div class="collapse navbar-collapse" id="navbar-wp">
+                  	<div class="d-md-block">
                   <?php wp_nav_menu( array(
         								'theme_location' => 'primary',
         								'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-        								'menu_class' => 'nav navbar-nav',
+        								'menu_class' => 'nav navbar-nav mr-auto',
         								'fallback_cb' => 'newsup_fallback_page_menu',
         								'walker' => new newsup_nav_walker()
         							) ); 
         						?>
-              </div>
+        				</div>		
+              		</div>
+              		<!-- Right nav -->
+                  <div class="d-flex pr-2 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                    <div class="dropdown show mg-search-box">
+                      <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <i class="fa fa-search"></i>
+                      </a>
+                      <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <?php get_search_form(); ?>
+                      </div>
+                    </div>
+                    
+                </div>
+                <!-- /Right nav -->
           </div>
       </nav> <!-- /Navigation -->
     </div>

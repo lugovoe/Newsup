@@ -5,7 +5,7 @@ Requires at least: WordPress 4.7
 Tested up to: WordPress 5.4
 Requires PHP: 5.6
 Stable tag: 0.3
-Version: 2.9.9
+Version: 2.9.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -199,4 +199,8 @@ License: CC0 Public Domain
 * Added wp_body_open function.
 
 = Version 2.9.9
-* Add Tag remove setting for single page.
+* Add Tag remove setting for single page.
+
+= Version 2.9.9
+* Added search bar in menu.
+* Fix Post Image Issue.

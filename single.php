@@ -97,7 +97,7 @@
             </div><?php $newsup_enable_related_post = esc_attr(get_theme_mod('newsup_enable_related_post','true'));
                                 if($newsup_enable_related_post == true){
                             ?>
-              <div class="mg-featured-slider">
+              <div class="mg-featured-slider p-3 mb-4">
                         <!--Start mg-realated-slider -->
                         <div class="mg-sec-title">
                             <!-- mg-sec-title -->
@@ -133,7 +133,7 @@
                                         <?php 
                                               if(has_post_thumbnail()){ ?>
                                         <div class="mg-blog-img">
-                                            <?php echo '<a class="mg-blog-thumb" href="'.esc_url(get_the_permalink()).'">';
+                                            <?php echo '<a href="'.esc_url(get_the_permalink()).'">';
                                               the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
                                               echo '</a>';
                                              ?>
@@ -149,9 +149,9 @@
                                             if($newsup_enable_single_post_category == true){ ?>
                                             <div class="mg-blog-category"> <?php newsup_post_categories(); ?>
                                           </div> <?php } ?>
-                                            <h1 class="title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => 'Permalink to: ','after'  => '') ); ?>">
+                                            <h4 class="title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => 'Permalink to: ','after'  => '') ); ?>">
                                               <?php the_title(); ?></a>
-                                             </h1>
+                                             </h4>
                                             <div class="mg-blog-meta"> 
                                             <?php $newsup_enable_single_post_date = esc_attr(get_theme_mod('newsup_enable_single_post_date','true'));
                                                 if($newsup_enable_single_post_date == true){

@@ -13,7 +13,7 @@ get_header(); ?>
 <!--==================== Newsup breadcrumb section ====================-->
             <div id="content" class="container-fluid home">
                 <!--row-->
-                <div class="">
+                <div class="row">
                     <!--col-md-8-->
                     <?php 
                     $newsup_content_layout = esc_attr(get_theme_mod('newsup_content_layout','align-content-right'));

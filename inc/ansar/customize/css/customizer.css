@@ -418,6 +418,9 @@ li.customize-control-section-title {
     box-shadow: 0 1px 1px rgba(0,0,0,.04);
 }
 
-input#_customize-input-newsup_date_time_show_type-radio-newsup_default, input#_customize-input-newsup_date_time_show_type-radio-wordpress_date_setting {
+input#_customize-input-newsup_date_time_show_type-radio-newsup_default, 
+input#_customize-input-newsup_date_time_show_type-radio-wordpress_date_setting, 
+input#_customize-input-post_image_type-radio-newsup_post_img_hei, 
+input#_customize-input-post_image_type-radio-newsup_post_img_acc  {
     display: inline-block;
 }

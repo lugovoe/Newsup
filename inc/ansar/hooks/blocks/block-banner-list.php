@@ -12,19 +12,17 @@ if ($newsup_all_posts_main->have_posts()) :
 
         ?>
          <div class="item">
-            <div class="mg-blog-post lg">
-                <div class="mg-blog-img">
-                 <a class="ta-slide-items" href="<?php the_permalink(); ?>">
-                    <?php if (!empty($newsup_url)): ?>
-                        <img src="<?php echo esc_url($newsup_url); ?>">
-                    <?php endif; ?>
-                    </a>
-                </div>
+                <div class="mg-blog-post lg back-img" 
+                <?php if (!empty($newsup_url)): ?>
+                    style="background-image: url('<?php echo esc_url($newsup_url); ?>');">
+                <?php endif; ?>
+
+                <a class="link-div" href="<?php the_permalink(); ?>"> </a>
 
                 <article class="bottom">
                         <span class="post-form"><i class="fa fa-camera"></i></span>
                         <div class="mg-blog-category"> <?php newsup_post_categories(); ?> </div>
-                        <h1 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                        <h4 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                         <?php newsup_post_meta(); ?>
                 </article>
             </div>

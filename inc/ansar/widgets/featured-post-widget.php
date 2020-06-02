@@ -89,25 +89,19 @@
             	<!-- mg-posts-sec-inner -->
             	<div class="<?php echo ($style == 0) ? 'col-lg-6 col-md-6 col-sm-6 col-xs-12' : 'col-12 ' ;?>">
                     <!--  post lg -->   
-                    <div class="mg-blog-post lg">
 					<?php
 					$i=1;
 					while ($get_featured_posts->have_posts()):$get_featured_posts->the_post(); ?>
 					<?php if ( $i == 1 ) { ?>
-							<?php if ( has_post_thumbnail() ) { 
+							<?php 
 							$url = newsup_get_freatured_image_url($post->ID, 'newsup-featured'); ?>
-						<div class="mg-blog-img">
-							<a class="ta-slide-items" href="<?php the_permalink(); ?>">
-		                    	<?php if (!empty($url)): ?>
-		                        	<img src="<?php echo esc_url($url); ?>">
-		                    	<?php endif; ?>
+						<div class="mg-blog-post lg back-img" style="background-image: url('<?php echo esc_url($url); ?>');">
+							<a class="link-div" href="<?php the_permalink(); ?>">
 		                	</a>
-						</div>
-						<?php } ?>
 						<article class="bottom">
                         	<span class="post-form"><i class="fa fa-camera"></i></span>
                         	<div class="mg-blog-category"> <?php newsup_post_categories(); ?> </div>
-                        	<h1 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                        	<h4 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                         	 <?php newsup_post_meta(); ?>
                      	</article>
 					</div> <!-- /post lg -->             

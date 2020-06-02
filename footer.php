@@ -23,26 +23,19 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
             <?php } 
             $newsup_you_missed_loop = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => 4, 'order' => 'DESC',  'ignore_sticky_posts' => true));
             if ( $newsup_you_missed_loop->have_posts() ) :
-            while ( $newsup_you_missed_loop->have_posts() ) : $newsup_you_missed_loop->the_post(); ?>
+            while ( $newsup_you_missed_loop->have_posts() ) : $newsup_you_missed_loop->the_post(); 
+            $url = newsup_get_freatured_image_url($post->ID, 'newsup-featured'); 
+              ?>
                 <!--col-md-3-->
                 <div class="col-md-3 col-sm-6 pulse animated">
-                <div class="mg-blog-post-3">
-                    <?php if(has_post_thumbnail()) { ?>
-                    <div class="mg-blog-img">
-                        <?php 
-                        echo '<a href="'.esc_url(get_the_permalink()).'">';
-                            the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
-                            echo '</a>'; ?>
-                    </div>
-                    <?php }  else { ?>
-                    <div class="mg-blog-img image-blog-bg">
-                    </div>
-                   <?php } ?>
+               <div class="mg-blog-post-3 minh back-img" 
+                            <?php if(has_post_thumbnail()) { ?>
+                            style="background-image: url('<?php echo esc_url($url); ?>');" <?php } ?>>
                     <div class="mg-blog-inner">
                       <div class="mg-blog-category">
                       <?php newsup_post_categories(); ?>
                       </div>
-                      <h1 class="title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => 'Permalink to: ','after'  => '') ); ?>"> <?php the_title(); ?></a> </h1>
+                      <h4 class="title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => 'Permalink to: ','after'  => '') ); ?>"> <?php the_title(); ?></a> </h4>
                       <?php newsup_post_meta(); ?>
                     </div>
                 </div>
@@ -55,7 +48,6 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
             </div>
         </div>
 <?php } ?>
-    </div>
 <!--==================== FOOTER AREA ====================-->
     <?php $newsup_footer_widget_background = get_theme_mod('newsup_footer_widget_background');
     $newsup_footer_overlay_color = get_theme_mod('newsup_footer_overlay_color'); 

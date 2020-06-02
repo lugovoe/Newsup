@@ -80,7 +80,7 @@ if (!class_exists('Newsup_Posts_Carousel')) :
                                         <div class="mg-blog-category"> 
                                             <?php newsup_post_categories(); ?>
                                         </div>
-                                        <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                                        <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                         <?php newsup_post_meta(); ?>
                                     </div>
                                 </div>

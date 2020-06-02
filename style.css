@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9
+Version: 2.9.9.1
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -20,6 +20,7 @@ Text Domain: newsup
 }
 .navbar-header .site-description {
     letter-spacing: 1.2px;
+    margin-bottom: 0;
 }
 .mg-headwidget.light .mg-head-detail{
 	border-width: 0 0 2px 0;
@@ -85,7 +86,6 @@ Text Domain: newsup
 }
 .mg-nav-widget-area {
 	padding-bottom: 0px;
-    margin: 20px 0;
 }
 .mg-menu-full {
 	position: relative;
@@ -101,7 +101,7 @@ Text Domain: newsup
     border-radius: 0;
 }
 .mg-headwidget .navbar-wp .navbar-nav > li> a {
-    padding: 15px 22px;
+    padding: 10px 22px;
     font-size: 14px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
@@ -124,10 +124,14 @@ Text Domain: newsup
 	1.2.Theme Menu   
 -----------------------------------------*/
 .mg-nav-widget-area-back {
-	background: url(images/head-back.jpg);
+	background-image: url(images/head-back.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .mg-nav-widget-area-back .inner {
     width: 100%;
+    padding: 20px 0;
 }
 .mg-headwidget  .navbar-brand {
     padding:  0;
@@ -247,38 +251,6 @@ Text Domain: newsup
 	padding: 15px 0;
 	transition: all 0.25s ease-out 0s;
 }
-.is-sticky .mg-main-nav {
-	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
-	z-index: 999;
-}
-.is-sticky .navbar-brand {
-	padding: 8px 0 0 15px;
-	transition: all 0.25s ease-out 0s;
-	font-size: 22px;
-	line-height: 18px;
-}
-.is-sticky .navbar-brand img {
-	height: 40px;
-	transition: all 0.25s ease-out 0s;
-}
-.is-sticky .navbar-nav > li > a {
-	padding: 16px 16px;
-	transition: all 0.25s ease-out 0s;
-}
-.is-sticky .navbar-toggle {
-	margin: 8px auto;
-}
-.mg-search-box {
-	position: absolute;
-	right: 15px;
-	top: 0;
-}
-.mg-search-box .btn {
-	border-width: 1px;
-	border-style: solid;
-	padding: 0 15px;
-    height: 40px;
-}
 /*---------------------------------------
 	1.3.Theme Menu Center 
 -----------------------------------------*/
@@ -286,6 +258,21 @@ Text Domain: newsup
 	font-size: 12px;
 	font-weight: normal;
 	line-height: 0;
+}
+.navbar-wp .dropdown-menu.searchinner {
+	left: inherit !important;
+	right: 0!important;
+	padding: 10px;
+}
+.navbar-wp .dropdown-menu.searchinner .btn {
+    border: medium none;
+    border-radius: 0 4px 4px 0;
+    height: 40px;
+    line-height: 25px;
+    padding: 5px 15px;
+}
+.mg-search-box .dropdown-toggle::after {
+	display: none;
 }
 /* --------------------------------------
 =========================================
@@ -314,7 +301,8 @@ body {
 	padding-left: 50px;
 }
 #content.home {
-    padding: 0px 35px 30px 35px;
+    padding-top: 0;
+    padding-bottom: 30px;
 }
 a:hover {
   text-decoration: none;
@@ -420,7 +408,22 @@ mark, .mark {
 embed, iframe, object {
     max-width: 100%;
 }
-
+.back-img {
+    background-color: #333;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+}
+.link-div {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 /*--------------- ti-slider-Control ---------------*/
 .owl-carousel .owl-controls {
 	margin-top: -30px;
@@ -596,7 +599,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 blockquote {
-	position: relative;
 	width: 100%;
 	border-width: 0 0 0 5px;
 	border-style: solid;
@@ -769,7 +771,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	overflow: hidden;
 	margin-left: 0;
 	margin-right: 1px;
-	background: #000;
+	background-color: #000;
 }
 .mg-blog-post.lg.video {
 	height: 270px;
@@ -824,7 +826,7 @@ button.mfp-close:hover, button.mfp-close:focus {
     right: 0;
     bottom: 0;
 }
-.mg-blog-post .bottom h1 {
+.mg-blog-post .bottom h4 {
 	float: left;
 	font-size: 32px;
 	font-weight: 700;
@@ -928,7 +930,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	max-width: 100%;
 	border-radius: 100%;
 }
-.mg-blog-post-box h1.title {
+.mg-blog-post-box h4.title {
 	font-size: 22px;
     line-height: 1.2;
     position: relative;
@@ -1142,6 +1144,24 @@ button.mfp-close:hover, button.mfp-close:focus {
 	border: 0;
 }
 
+.mg-post-thumb.md {
+    height: 300px;
+}
+
+.back-img {
+    background-color: #333;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.mg-posts-modul-6 .mg-post-thumb {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
 /* Meida respondive for slider title and blog post title */
 
 @media screen and (min-width: 240px) and (max-width: 767px){
@@ -1276,7 +1296,8 @@ button.mfp-close:hover, button.mfp-close:focus {
   position: absolute;
   padding: 10px 20px;
   bottom: 0;
-  background: linear-gradient(to bottom,rgba(0,0,0,0) 100%, rgba(0,0,0,0.4) 100%, rgba(0,0,0,.7) 100%);
+  width: 100%;
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);
 }
 .mg-blog-inner h1 {
   margin: 0;
@@ -1285,17 +1306,8 @@ button.mfp-close:hover, button.mfp-close:focus {
   font-size: 24px;
   line-height: 28px;
 }
-.mg-blog-post .tittle, .mg-blog-inner h1.title, .mg-blog-post-box h1.title, .small-list-post h5.title, .mg-blog-post .bottom h1, .title_small_post, .mg-posts-modul-6 .mg-sec-top-post .title, .mg-no-list-area .mg-blog-post h3 {
+.mg-blog-post .tittle, .mg-blog-inner h4.title, .mg-blog-post-box h4.title, .small-list-post h5.title, .mg-blog-post .bottom h1, .title_small_post, .mg-posts-modul-6 .mg-sec-top-post .title, .mg-no-list-area .mg-blog-post h3 {
 	overflow-y: hidden;
-}
-.small-list-post h5.title, .title_small_post {
-	max-height: 50px;
-}
-.mg-blog-inner h1, .mg-blog-inner h1.title, .mg-posts-modul-6 .mg-sec-top-post .title{
-	max-height: 65px;
-}
-.mg-blog-post .bottom h1 {
-	max-height: 75px;
 }
 .mg-blog-post-3 {
   position: relative;
@@ -1313,6 +1325,15 @@ button.mfp-close:hover, button.mfp-close:focus {
 .mg-posts-modul-1 .mg-blog-post-3 .mg-blog-inner h1 {
 	font-size: 18px;
 	line-height: 20px;
+}
+.mg-blog-post-3.minh  {
+	height: 197px;
+}
+.mg-blog-post-3.smminh  {
+	height: 160px;
+}
+.mg-blog-post-3.minhsec  {
+	height: 178px;
 }
 .mg-blog-post.lg.minh {
 	height: 350px;
@@ -1385,7 +1406,6 @@ button.mfp-close:hover, button.mfp-close:focus {
     border-radius: 5px;
     float: none;
     margin-bottom: 50px;
-    padding: 20px 18px 10px 20px;
     overflow: hidden; 
 }
 .mg-posts-sec-inner img:hover, .widget_post_thumbnail img:hover, .featured_posts_slider img:hover{
@@ -1456,11 +1476,17 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-posts-sec-post{
   margin-bottom: 20px;
-  padding: 15px 15px 0px 15px;
   box-shadow: 0 2px 4px rgba(0,0,0,.08);
 }
 .mg-posts-sec-post:last-child{
   margin-bottom: 0px;
+}
+.mg-posts-modul-6 .mg-post-thumb.img {
+	position: relative;
+}
+.mg-posts-modul-6 .mg-post-thumb{
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .mg-posts-modul-6 .list_content {
   padding: 20px 0;
@@ -1509,6 +1535,15 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 
 .image-blog-bg{background: #000;}
+
+.mg-blog-post-3.minh {
+    height: 197px;
+}
+.mg-blog-post-3 {
+    position: relative;
+    padding: 0;
+}
+
 /* # PostBox
 ================================================== */
 .mg-post-box {
@@ -1782,7 +1817,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-sidebar .mg-widget .calendar_wrap table thead th {
 	text-align: center;
-	padding: 6px 0;
+	padding: 0;
 }
 .mg-sidebar .mg-widget .calendar_wrap table tbody td {
 	line-height: 2.5em;
@@ -1790,6 +1825,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	text-align: center;
 	border-width: 1px;
 	border-style: solid;
+	padding: 0 8px;
 }
 .mg-sidebar .mg-widget .calendar_wrap table tfoot {
 	font-size: 11px;
@@ -2506,6 +2542,27 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	9.mg-Responsive part
 =========================================
 -----------------------------------------*/
+@media (min-width: 1200px) {
+  .mg-blog-post .bottom h4 {
+	max-height: 75px;
+	overflow: hidden;
+}
+.small-list-post h5.title, .title_small_post {
+	max-height: 50px;
+}
+.mg-posts-modul-6 .mg-sec-top-post .title{
+	max-height: 65px;
+}
+
+.mg-blog-inner h4, .mg-blog-inner h1.title, .mg-no-list-area .mg-blog-post h3{
+	max-height: 51px;
+}
+}
+@media screen and (max-width: 480px) {
+	.mg-blog-post .bottom h4 {
+		font-size: 24px;
+	}
+}
 @media (min-width: 768px) and (max-width: 991px) {
 .navbar-header {
 	float: none;
@@ -2569,6 +2626,9 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 @media screen and (min-width: 240px) and (max-width: 767px) {
 .top-right-area .nav-tabs > li > a i {
 	display: inherit;
+}
+.mg-blog-post-box .mg-header {
+    padding: 30px 10px;
 }
 /*--------------- ti-slider ---------------*/
 .navbar-wp .navbar-nav > li > a {

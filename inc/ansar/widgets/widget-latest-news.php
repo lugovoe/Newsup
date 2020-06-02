@@ -69,25 +69,13 @@ if (!class_exists('Newsup_Latest_Post')) :
                     <?php
                     if ($all_posts->have_posts()) :
                         while ($all_posts->have_posts()) : $all_posts->the_post();
-                            global $post;
-                            $url = newsup_get_freatured_image_url($post->ID, 'newsup-medium'); ?>
-                    <article class="mg-posts-sec-post">
-                        <div class="standard_post">
-                            <div class="mg-thum-list col-md-6">
-                                <div class="mg-post-thumb">
-                                    <?php if (!empty($url)): ?>
-                                        <img src="<?php echo esc_url($url); ?>">
-                                    <?php endif; ?>
-                                    <span class="post-form"><i class="fa fa-camera"></i></span>
-                                </div>
-                            </div>
-                            <div class="list_content">
-                                <div class="mg-sec-top-post">
+                            global $post; ?>
+                        <article class="d-md-flex mg-posts-sec-post">
+                            <?php newsup_post_image_display_type($post); ?>
+                            <div class="mg-sec-top-post py-3 col">
                                     <div class="mg-blog-category"> <?php newsup_post_categories(); ?> </div>
-                                    <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                                    <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                     <?php newsup_post_meta(); ?>
-                                </div>
-                                <div class="mg-posts-sec-post-content">
                                 <?php if ($show_excerpt != 'false'): ?>
                                     <div class="mg-content">
                                         <?php if (absint($excerpt_length) > 0) : ?>
@@ -97,10 +85,8 @@ if (!class_exists('Newsup_Latest_Post')) :
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
-                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
                     <?php endwhile; ?>
                 <?php endif;
                 wp_reset_postdata(); ?>

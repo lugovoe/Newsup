@@ -23,41 +23,21 @@ get_header(); ?>
                                 <div class="mg-posts-sec-inner">
                                     <?php if ( have_posts() ) : /* Start the Loop */
                                     while ( have_posts() ) : the_post(); ?>
-                                    <article class="mg-posts-sec-post">
-                                        <div class="standard_post">
-                                            <?php if(has_post_thumbnail()) { ?>
-                                            <div class="mg-thum-list col-md-6">
-
-                                                <div class="mg-post-thumb">
-                                                    <?php
-                                                    echo '<a class="mg-blog-thumb" href="'.esc_url(get_the_permalink()).'">';
-                                                    the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
-                                                    echo '</a>';
-                                                     
-                                                    ?>
-                                                    <span class="post-form"><i class="fa fa-camera"></i></span>
-                                                </div>
-
-                                            </div>
-                                            <?php }  ?>
-                                            <div class="list_content col">
-                                                <div class="mg-sec-top-post">
+                                    <article class="d-md-flex mg-posts-sec-post">
+                                    <?php newsup_post_image_display_type($post); ?>
+                                            <div class="mg-sec-top-post py-3 col">
                                                     <div class="mg-blog-category"> 
                                                         <?php newsup_post_categories(); ?>
                                                     </div>
 
-                                                    <h1 class="entry-title title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
+                                                    <h4 class="entry-title title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
                                                     <?php newsup_post_meta(); ?>
-                                                </div>
 
-                                                <div class="mg-posts-sec-post-content">
+                                                
                                                     <div class="mg-content">
                                                         <p><?php echo wp_trim_words( get_the_excerpt(), 20 ); ?></p>
-                                                    </div>
-                                                   
                                                 </div>
                                             </div>
-                                        </div>
                                     </article>
                                     <?php endwhile; else :?>
                                     

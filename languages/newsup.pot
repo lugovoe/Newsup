@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Newsup\n"
-"POT-Creation-Date: 2020-05-26 10:49+0530\n"
-"PO-Revision-Date: 2020-05-26 10:48+0530\n"
+"POT-Creation-Date: 2020-06-01 22:44+0530\n"
+"PO-Revision-Date: 2020-06-01 22:44+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -74,21 +74,21 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:152
+#: footer.php:144
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:155
+#: footer.php:147
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:161
+#: footer.php:153
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:161
+#: footer.php:153
 msgid "https://themeansar.com/"
 msgstr ""
 
@@ -118,10 +118,6 @@ msgstr ""
 
 #: header.php:22
 msgid "Skip to content"
-msgstr ""
-
-#: header.php:49 header.php:65
-msgid "Toggle Navigation"
 msgstr ""
 
 #: inc/ansar/admin/class-getting-start-plugin-helper.php:93
@@ -562,9 +558,9 @@ msgstr ""
 
 #: inc/ansar/customize/theme-options.php:614
 #: inc/ansar/customize/theme-options.php:745
-#: inc/ansar/widgets/widget-design-slider.php:120
+#: inc/ansar/widgets/widget-design-slider.php:115
 #: inc/ansar/widgets/widget-posts-list.php:131
-#: inc/ansar/widgets/widget-posts-slider.php:122
+#: inc/ansar/widgets/widget-posts-slider.php:116
 #: inc/ansar/widgets/widget-posts-tabbed.php:136
 #: inc/ansar/widgets/widget-posts-tabbed.php:139
 #: inc/ansar/widgets/widget-posts-tabbed.php:146
@@ -606,6 +602,22 @@ msgstr ""
 
 #: inc/ansar/customize/theme-options.php:985
 msgid "Pinterest URL"
+msgstr ""
+
+#: inc/ansar/customize/theme-options.php:1006
+msgid "Post Image Settings"
+msgstr ""
+
+#: inc/ansar/customize/theme-options.php:1022
+msgid "Post Image display type:"
+msgstr ""
+
+#: inc/ansar/customize/theme-options.php:1024
+msgid "Fix Height Post Image"
+msgstr ""
+
+#: inc/ansar/customize/theme-options.php:1025
+msgid "Auto Height Post Image"
 msgstr ""
 
 #: inc/ansar/hooks/hook-meta.php:9 inc/ansar/hooks/hook-meta.php:49
@@ -685,27 +697,27 @@ msgstr ""
 msgid "AR: 3 Column Posts Slider"
 msgstr ""
 
-#: inc/ansar/widgets/widget-design-slider.php:114
-#: inc/ansar/widgets/widget-latest-news.php:125
+#: inc/ansar/widgets/widget-design-slider.php:109
+#: inc/ansar/widgets/widget-latest-news.php:111
 #: inc/ansar/widgets/widget-posts-list.php:122
-#: inc/ansar/widgets/widget-posts-slider.php:115
+#: inc/ansar/widgets/widget-posts-slider.php:109
 #: inc/ansar/widgets/widget-posts-tabbed.php:127
 msgid "Yes"
 msgstr ""
 
-#: inc/ansar/widgets/widget-design-slider.php:115
-#: inc/ansar/widgets/widget-latest-news.php:126
+#: inc/ansar/widgets/widget-design-slider.php:110
+#: inc/ansar/widgets/widget-latest-news.php:112
 #: inc/ansar/widgets/widget-posts-list.php:123
-#: inc/ansar/widgets/widget-posts-slider.php:116
+#: inc/ansar/widgets/widget-posts-slider.php:110
 #: inc/ansar/widgets/widget-posts-tabbed.php:128
 msgid "No"
 msgstr ""
 
-#: inc/ansar/widgets/widget-design-slider.php:122
-#: inc/ansar/widgets/widget-latest-news.php:135
+#: inc/ansar/widgets/widget-design-slider.php:117
+#: inc/ansar/widgets/widget-latest-news.php:121
 #: inc/ansar/widgets/widget-posts-carousel.php:124
 #: inc/ansar/widgets/widget-posts-list.php:132
-#: inc/ansar/widgets/widget-posts-slider.php:124
+#: inc/ansar/widgets/widget-posts-slider.php:118
 #: inc/ansar/widgets/widget-posts-tabbed.php:147
 msgid "Select category"
 msgstr ""
@@ -718,7 +730,7 @@ msgstr ""
 msgid "AR: Latest News Post"
 msgstr ""
 
-#: inc/ansar/widgets/widget-latest-news.php:137
+#: inc/ansar/widgets/widget-latest-news.php:123
 msgid "Show excerpt"
 msgstr ""
 
@@ -828,11 +840,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:64
+#: search.php:44
 msgid "Nothing Found"
 msgstr ""
 
-#: search.php:66
+#: search.php:46
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."

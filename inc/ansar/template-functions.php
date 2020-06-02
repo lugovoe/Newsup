@@ -298,4 +298,35 @@ if ( get_edit_post_link() ) :
 endif; } 
 
 } endif;
-?>
+
+function newsup_post_image_display_type($post)
+{
+$post_image_type = get_theme_mod('post_image_type','newsup_post_img_hei');
+$url = newsup_get_freatured_image_url($post->ID, 'newsup-medium');
+if ( $post_image_type == 'newsup_post_img_hei' ) {
+if($url) { ?>
+<div class="col-12 col-sm-6 col-md-6">
+    <div class="mg-post-thumb back-img md" style="background-image: url('<?php echo esc_url($url); ?>');">
+        <span class="post-form"><i class="fa fa-camera"></i></span>
+    </div> 
+</div>
+<?php } ?>
+<?php if($url) { ?>
+<div class="col-12 col-sm-6 col-md-6 mg-sec-top-post py-3">
+<?php } else  { ?>
+<div class="col-12 col-sm-12 col-md-12 mg-sec-top-post py-3">
+<?php } 
+}
+elseif ( $post_image_type == 'newsup_post_img_acc' )  {
+if(has_post_thumbnail()) { ?>
+        
+<div class="col-12 col-sm-6 col-md-6">
+        <div class="mg-post-thumb img">
+<?php echo '<a href="'.esc_url(get_the_permalink()).'">';
+     the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
+    echo '</a>'; ?>
+        <span class="post-form"><i class="fa fa-camera"></i></span>
+        </div>
+</div> <?php } 
+} 
+} ?>

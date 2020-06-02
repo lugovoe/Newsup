@@ -68,21 +68,16 @@ if (!class_exists('Newsup_Design_Slider')) :
                             $url = newsup_get_freatured_image_url($post->ID, 'newsup-slider-full');
                             ?>
                         <div class="item">
-                            <div class="mg-blog-post-lg">
-                                <div class="mg-blog-img">
-                                    <a class="ta-slide-items" href="<?php the_permalink(); ?>"></a>
-                                    <?php if (!empty($url)): ?>
-                                        <img src="<?php echo esc_url($url); ?>">
-                                    <?php endif; ?>
-                                </div>
+                            <div class="mg-blog-post-3 back-img minhsec" style="background-image: url('<?php echo esc_url($url); ?>');">
+                                <a class="link-div" href="<?php the_permalink(); ?>"></a>
                                 <div class="mg-blog-inner">
                                     <div class="mg-blog-category">
                                         <?php newsup_post_categories(); ?>
                                     </div>
                                     
-                                    <h1 class="title">
+                                    <h4 class="title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    </h1>
+                                    </h4>
                                     <?php newsup_post_meta(); ?>
                                 </div>
                             </div>

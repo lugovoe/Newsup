@@ -84,15 +84,15 @@ if (!function_exists('newsup_banner_tabbed_posts')):
             <div class="col-md-4 top-right-area">
                     <div id="exTab2" >
                     <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-recent"
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-recent"
                                aria-controls="<?php esc_attr_e('Recent', 'newsup'); ?>">
                                <i class="fa fa-clock-o"></i><?php echo esc_html($latest_title); ?>
                             </a>
                         </li>
 
                         <li>
-                            <a data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-popular"
+                            <a class="nav-link" data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-popular"
                                aria-controls="<?php esc_attr_e('Popular', 'newsup'); ?>">
                                 <i class="fa fa-fire"></i> <?php echo esc_html($popular_title); ?>
                             </a>
@@ -100,7 +100,7 @@ if (!function_exists('newsup_banner_tabbed_posts')):
 
 
                         <li>
-                            <a data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-categorised"
+                            <a class="nav-link" data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-categorised"
                                aria-controls="<?php esc_attr_e('Categorised', 'newsup'); ?>">
                                 <i class="fa fa-bolt"></i> <?php echo esc_html($categorised_title); ?>
                             </a>
@@ -298,12 +298,10 @@ if (!function_exists('newsup_front_page_banner_section')) :
         <?php  } ?>
             <div class="overlay">
                 <div class="container-fluid">
-                    <div class="">
+                    <div class="row">
                         <div class="col-md-8">
-                            <div class="row">
-                                <div id="homemain"class="homemain owl-carousel mr-bot60 pd-r-10"> 
+                            <div id="homemain"class="homemain owl-carousel mr-bot60 pd-r-10"> 
                                 <?php newsup_get_block('list', 'banner'); ?>
-                                </div>
                             </div>
                         </div> 
                         <?php do_action('newsup_action_banner_tabbed_posts');?>
