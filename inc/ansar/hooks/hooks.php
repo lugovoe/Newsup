@@ -91,7 +91,7 @@ if (!function_exists('newsup_banner_tabbed_posts')):
                             </a>
                         </li>
 
-                        <li>
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-popular"
                                aria-controls="<?php esc_attr_e('Popular', 'newsup'); ?>">
                                 <i class="fa fa-fire"></i> <?php echo esc_html($popular_title); ?>
@@ -99,7 +99,7 @@ if (!function_exists('newsup_banner_tabbed_posts')):
                         </li>
 
 
-                        <li>
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#<?php echo esc_attr($tab_id); ?>-categorised"
                                aria-controls="<?php esc_attr_e('Categorised', 'newsup'); ?>">
                                 <i class="fa fa-bolt"></i> <?php echo esc_html($categorised_title); ?>

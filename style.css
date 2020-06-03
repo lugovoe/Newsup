@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.1
+Version: 2.9.9.2
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -1276,13 +1276,13 @@ button.mfp-close:hover, button.mfp-close:focus {
     padding: 8px;
 }
 .top-right-area .nav-tabs > li > a i {
-    margin-right: 6px;
+    margin-right: 4px;
 }
 .top-right-area .nav-tabs > li {
     text-align: center;
-    width: 33.3%;
+    flex-grow: 1;
 }
-.top-right-area .nav-tabs > li.active > a, .top-right-area .nav-tabs > li.active > a:hover, .top-right-area .nav-tabs > li.active > a:focus {
+.top-right-area .nav-tabs .nav-link.active, .top-right-area .nav-tabs .nav-link.active:hover, .top-right-area .nav-tabs .nav-link.active:focus {
     cursor: default;
     border-width: 1px 1px 2px 1px;
     border-style: solid;
@@ -1422,6 +1422,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-posts-sec-inner .img-small-post{
   height: 88px;
+  width: 88px;
   float:left;
   margin-right: 20px;
 }
@@ -1444,6 +1445,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-posts-sec-inner .small-list-post img {
   height: 100%;
+  object-fit: cover;
 }
 .small-list-post h5{
   margin: 0px;
@@ -2612,15 +2614,11 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
     padding: 30px 0px;
 }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-.navbar-toggle {
-	display: block;
-}
-.navbar-collapse.collapse {
-	display: none!important;
-}
-.navbar-collapse.collapse.in {
-	display: block !important;
+@media (max-width: 991.98px) {
+.m-header {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 }
 @media screen and (min-width: 240px) and (max-width: 767px) {

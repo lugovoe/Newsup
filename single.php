@@ -16,17 +16,17 @@
                     $newsup_single_page_layout = get_theme_mod('newsup_single_page_layout','single-align-content-right');
                     if($newsup_single_page_layout == "single-align-content-left")
                     { ?>
-                    <aside class="col-md-3 col-sm-3">
+                    <aside class="col-md-3">
                         <?php get_sidebar();?>
                     </aside>
                     <?php } ?>
                     <?php if($newsup_single_page_layout == "single-align-content-right"){
                     ?>
-                    <div class="col-md-9 col-sm-8">
+                    <div class="col-md-9">
                     <?php } elseif($newsup_single_page_layout == "single-align-content-left") { ?>
-                    <div class="col-md-9 col-sm-8">
+                    <div class="col-md-9">
                     <?php } elseif($newsup_single_page_layout == "single-full-width-content") { ?>
-                     <div class="col-md-12 col-sm-12">
+                     <div class="col-md-12">
                      <?php } ?>
 		      <?php if(have_posts())
 		        {
@@ -182,7 +182,7 @@
        <?php if($newsup_single_page_layout == "single-align-content-right") { ?>
       <!--sidebar-->
           <!--col-md-3-->
-            <aside class="col-md-3 col-sm-4">
+            <aside class="col-md-3">
                   <?php get_sidebar();?>
             </aside>
           <!--/col-md-3-->

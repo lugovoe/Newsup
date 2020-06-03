@@ -58,13 +58,27 @@
               </div>
           </div>
     <div class="mg-menu-full">
-            <nav class="navbar navbar-expand-lg navbar-static-top navbar-wp">
-                <div class="container-fluid">
-                	<!-- navbar-toggle -->
-                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbar-wp" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fa fa-bars"></i>
+      <nav class="navbar navbar-expand-lg navbar-wp">
+        <div class="container-fluid flex-row-reverse">
+          <!-- Right nav -->
+                    <div class="m-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                        <!-- navbar-toggle -->
+                        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fa fa-bars"></i>
                         </button>
                         <!-- /navbar-toggle -->
+                        <div class="dropdown show mg-search-box pr-2">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fa fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <?php get_search_form(); ?>
+                      </div>
+                        </div>
+                        
+                    </div>
+                    <!-- /Right nav -->
          
           
                   <div class="collapse navbar-collapse" id="navbar-wp">
@@ -79,19 +93,6 @@
         						?>
         				</div>		
               		</div>
-              		<!-- Right nav -->
-                  <div class="d-flex pr-2 ml-auto my-2 my-lg-0 position-relative align-items-center">
-                    <div class="dropdown show mg-search-box">
-                      <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <i class="fa fa-search"></i>
-                      </a>
-                      <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
-                        <?php get_search_form(); ?>
-                      </div>
-                    </div>
-                    
-                </div>
-                <!-- /Right nav -->
           </div>
       </nav> <!-- /Navigation -->
     </div>

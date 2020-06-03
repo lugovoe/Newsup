@@ -110,7 +110,7 @@ a.newsup-categories.category-color-4{background: #82b74b;}
 	color: rgba(255,255,255,0.71);
 }
 .mg-search-box a:hover, .mg-search-box a:focus {
-	color: #1151d3;
+	color: rgba(255,255,255,0.71);
 }
 .btn:hover, .btn:focus, .btn.focus{
 	color: #fff;}
@@ -238,7 +238,7 @@ blockquote::before {
     color: #212121;
     background: #fff;
 }
-.top-right-area .nav-tabs > li.active > a, .top-right-area .nav-tabs > li.active > a:hover, .top-right-area .nav-tabs > li.active > a:focus {
+.top-right-area .nav-tabs .nav-link.active, .top-right-area .nav-tabs .nav-link.active:hover, .top-right-area .nav-tabs .nav-link.active:focus {
     color: #212121;
     background-color: #fff;
     border-color: #eee;

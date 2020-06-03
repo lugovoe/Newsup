@@ -22,7 +22,7 @@ get_header();
 			<div class="col-md-12 mg-card-box padding-20">
 			<?php if (have_posts()) {  while (have_posts()) : the_post(); ?>
 			<?php the_content(); endwhile; } } else {?>
-			<div class="col-md-8 col-sm-8 mg-card-box padding-20">
+			<div class="col-md-8 mg-card-box padding-20">
 			<?php if( have_posts()) :  the_post(); ?>		
 			<?php the_content(); ?>
 			<?php endif; 
