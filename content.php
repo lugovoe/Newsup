@@ -27,7 +27,7 @@
                                             </div>
                                     </article>
                                      <?php } ?>
-                                    <div class="col-md-12 text-center">
+                                    <div class="col-md-12 text-center d-md-flex justify-content-center">
                                         <?php //Previous / next page navigation
                                         the_posts_pagination( array(
                                         'prev_text'          => '<i class="fa fa-angle-left"></i>',

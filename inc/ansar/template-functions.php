@@ -310,11 +310,6 @@ if($url) { ?>
         <span class="post-form"><i class="fa fa-camera"></i></span>
     </div> 
 </div>
-<?php } ?>
-<?php if($url) { ?>
-<div class="col-12 col-md-6 mg-sec-top-post py-3">
-<?php } else  { ?>
-<div class="col-12 col-md-12 mg-sec-top-post py-3">
 <?php } 
 }
 elseif ( $post_image_type == 'newsup_post_img_acc' )  {

@@ -5,7 +5,7 @@ Requires at least: WordPress 4.7
 Tested up to: WordPress 5.4
 Requires PHP: 5.6
 Stable tag: 0.3
-Version: 2.9.9.2
+Version: 2.9.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -206,4 +206,7 @@ License: CC0 Public Domain
 * Fix Post Image Issue.
 
 = Version 2.9.9.2
-* Fixed responsive and styling issue.
+* Fixed responsive and styling issue.
+
+= Version 2.9.9.3
+* Fixed styling and Post featured image issue.

@@ -238,7 +238,7 @@ add_editor_style( array( 'css/editor-style.css') );
 add_filter('wp_nav_menu_items', 'newsup_add_home_link', 1, 2);
 function newsup_add_home_link($items, $args){
     if( $args->theme_location == 'primary' ){
-        $item = '<li class="active"><a class="homebtn" title="Home" href="'. esc_url( home_url() ) .'">' . "<span class='fa fa-home'></span>" . '</a></li>';
+		$item = '<li class="active home"><a class="homebtn" href="'. esc_url( home_url() ) .'">' . "<span class='fa fa-home'></span>" . '</a></li>';
         $items = $item . $items;
     }
     return $items;

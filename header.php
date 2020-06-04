@@ -62,6 +62,8 @@
         <div class="container-fluid flex-row-reverse">
           <!-- Right nav -->
                     <div class="m-header d-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                        <?php $home_url = home_url(); ?>
+                        <a class="mobilehomebtn" href="<?php echo esc_url($home_url); ?>"><span class="fa fa-home"></span></a>
                         <!-- navbar-toggle -->
                         <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <i class="fa fa-bars"></i>
