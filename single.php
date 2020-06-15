@@ -39,14 +39,14 @@
                       <?php newsup_post_categories(); ?>
                 </div>
                 <?php } ?>
-                <h1 class="title single"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => esc_html_e('Permalink to: ','newsup'),'after'  => '') ); ?>">
+                <h1 class="title single"> <a title="<?php the_title_attribute( array('before' => esc_html_e('Permalink to: ','newsup'),'after'  => '') ); ?>">
                   <?php the_title(); ?></a>
                 </h1>
 
                 <div class="media mg-info-author-block"> 
                   <?php $newsup_single_post_admin_details = esc_attr(get_theme_mod('newsup_single_post_admin_details','true'));
                   if($newsup_single_post_admin_details == true){ ?>
-                  <a class="mg-author-pic" href="#"> <?php echo get_avatar( get_the_author_meta( 'ID') , 150); ?> </a>
+                  <a class="mg-author-pic" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"> <?php echo get_avatar( get_the_author_meta( 'ID') , 150); ?> </a>
                 <?php } ?>
                   <div class="media-body">
                     <?php $newsup_single_post_admin_details = esc_attr(get_theme_mod('newsup_single_post_admin_details','true'));
@@ -73,9 +73,7 @@
               $single_show_featured_image = esc_attr(get_theme_mod('single_show_featured_image','true'));
               if($single_show_featured_image == true) {
               if(has_post_thumbnail()){
-              echo '<a class="mg-blog-thumb" href="'.esc_url(get_the_permalink()).'">';
               the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
-              echo '</a>';
                } }?>
               <article class="small single">
                 <?php the_content(); ?>

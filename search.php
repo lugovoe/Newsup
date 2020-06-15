@@ -41,9 +41,9 @@ get_header(); ?>
                                     </article>
                                     <?php endwhile; else :?>
                                     
-        <h2><?php esc_attr_e( "Nothing Found", 'newsup' ); ?></h2>
+        <h2><?php esc_html_e( "Nothing Found", 'newsup' ); ?></h2>
         <div class="">
-        <p><?php esc_attr_e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'newsup' ); ?>
+        <p><?php esc_html_e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'newsup' ); ?>
         </p>
         <?php get_search_form(); ?>
         </div><!-- .blog_con_mn -->
