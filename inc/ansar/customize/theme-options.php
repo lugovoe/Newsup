@@ -773,7 +773,7 @@ $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_ena
 
     //Bqckground Overlay 
    $wp_customize->add_setting(
-        'newsup_footer_overlay_color', array( 'sanitize_callback' => 'sanitize_text_field',
+        'newsup_footer_overlay_color', array( 'sanitize_callback' => 'newsup_alpha_color_custom_sanitization_callback',
         
     ) );
     

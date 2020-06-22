@@ -5,7 +5,7 @@ Requires at least: WordPress 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6
 Stable tag: 0.3
-Version: 2.9.9.5
+Version: 2.9.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -215,4 +215,7 @@ License: CC0 Public Domain
 * Added Responsive embeds issue.
 
 = Version 2.9.9.5
-* Remove permalink on single page title and featured image.
+* Remove permalink on single page title and featured image.
+
+= Version 2.9.9.6
+* Fixed Alpha Color sanitization issue.

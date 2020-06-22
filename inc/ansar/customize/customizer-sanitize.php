@@ -181,3 +181,32 @@ function newsup_sanitize_radio( $val, $setting ) {
         return array_key_exists( $val, $choices ) ? $val : $setting->default;
     }
 endif;
+
+
+if ( ! function_exists( 'newsup_alpha_color_custom_sanitization_callback' ) ) :
+
+	/**
+ * Sanitize colors.
+ *
+ * @since 2.9.9.6
+ * @param string $value The color.
+ * @return string
+ */
+function newsup_alpha_color_custom_sanitization_callback( $value ) {
+	// This pattern will check and match 3/6/8-character hex, rgb, rgba, hsl, & hsla colors.
+	$pattern = '/^(\#[\da-f]{3}|\#[\da-f]{6}|\#[\da-f]{8}|rgba\(((\d{1,2}|1\d\d|2([0-4]\d|5[0-5]))\s*,\s*){2}((\d{1,2}|1\d\d|2([0-4]\d|5[0-5]))\s*)(,\s*(0\.\d+|1))\)|hsla\(\s*((\d{1,2}|[1-2]\d{2}|3([0-5]\d|60)))\s*,\s*((\d{1,2}|100)\s*%)\s*,\s*((\d{1,2}|100)\s*%)(,\s*(0\.\d+|1))\)|rgb\(((\d{1,2}|1\d\d|2([0-4]\d|5[0-5]))\s*,\s*){2}((\d{1,2}|1\d\d|2([0-4]\d|5[0-5]))\s*)|hsl\(\s*((\d{1,2}|[1-2]\d{2}|3([0-5]\d|60)))\s*,\s*((\d{1,2}|100)\s*%)\s*,\s*((\d{1,2}|100)\s*%)\))$/';
+	\preg_match( $pattern, $value, $matches );
+	// Return the 1st match found.
+	if ( isset( $matches[0] ) ) {
+		if ( is_string( $matches[0] ) ) {
+			return $matches[0];
+		}
+		if ( is_array( $matches[0] ) && isset( $matches[0][0] ) ) {
+			return $matches[0][0];
+		}
+	}
+	// If no match was found, return an empty string.
+	return '';
+}
+endif;
+
