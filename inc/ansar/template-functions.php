@@ -324,4 +324,86 @@ if(has_post_thumbnail()) { ?>
         </div>
 </div> <?php } 
 } 
-} ?>
+} 
+
+
+function newsup_social_share_post($post) {
+
+        $single_show_share_icon = esc_attr(get_theme_mod('single_show_share_icon','true'));
+                if($single_show_share_icon == true) {
+        $post_link  = esc_url( get_the_permalink() );
+        $post_title = get_the_title();
+
+        $facebook_url = add_query_arg(
+        array(
+        'u' => $post_link,
+        ),
+        'https://www.facebook.com/sharer.php'
+        );
+
+                    $twitter_url = add_query_arg(
+                    array(
+                    'url'  => $post_link,
+                    'text' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
+                     ),
+                     'http://twitter.com/share'
+                     );
+
+                     $email_title = str_replace( '&', '%26', $post_title );
+
+                     $email_url = add_query_arg(
+                    array(
+                    'subject' => wp_strip_all_tags( $email_title ),
+                    'body'    => $post_link,
+                     ),
+                    'mailto:'
+                     ); 
+
+                     $linkedin_url = add_query_arg(
+                     array('url'  => $post_link,
+                    'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
+                     ),
+                    'https://www.linkedin.com/sharing/share-offsite/?url'
+                    );
+
+                     $pinterest_url = add_query_arg(
+                     array('url'  => $post_link,
+                      'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
+                     ),
+                    'http://pinterest.com/pin/create/link/?url='
+                    );
+
+
+                     ?>
+                     <script>
+    function pinIt()
+    {
+      var e = document.createElement('script');
+      e.setAttribute('type','text/javascript');
+      e.setAttribute('charset','UTF-8');
+      e.setAttribute('src','https://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);
+      document.body.appendChild(e);
+    }
+    </script>
+                     <div class="post-share">
+                          <div class="post-share-icons cf">
+                           
+                              <a href="<?php echo esc_url("$facebook_url"); ?>" class="link facebook" target="_blank" >
+                                <i class="fa fa-facebook"></i></a>
+                            
+            
+                              <a href="<?php echo esc_url("$twitter_url"); ?>" class="link twitter" target="_blank">
+                                <i class="fa fa-twitter"></i></a>
+            
+                              <a href="<?php echo esc_url("$email_url"); ?>" class="link email" target="_blank" >
+                                <i class="fa fa-envelope-o"></i></a>
+
+
+                              <a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
+                                <i class="fa fa-linkedin"></i></a>
+
+                              <a href="javascript:pinIt();" class="link pinterest"><i class="fa fa-pinterest"></i></a>    
+                          </div>
+                    </div>
+
+<?php } } ?>

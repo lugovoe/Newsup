@@ -564,6 +564,21 @@ $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_sin
         )
     ));
 
+    $wp_customize->add_setting('single_show_share_icon',
+    array(
+        'default' => $newsup_default['single_show_share_icon'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'newsup_sanitize_checkbox',
+    )
+    );
+    $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'single_show_share_icon', 
+        array(
+            'label' => __('Hide/Show Sharing Icons', 'newsup'),
+            'type' => 'toggle',
+            'section' => 'site_single_posts_settings',
+        )
+    ));
+
 
     
 

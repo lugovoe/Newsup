@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Newsup\n"
-"POT-Creation-Date: 2020-06-01 22:44+0530\n"
-"PO-Revision-Date: 2020-06-01 22:44+0530\n"
+"POT-Creation-Date: 2020-06-29 09:45+0530\n"
+"PO-Revision-Date: 2020-06-29 09:44+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,19 +100,19 @@ msgstr ""
 msgid "Footer menu"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:195
 msgid "Sidebar Widget Area"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:205
 msgid "Front-page Content Section"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:215
 msgid "Front-page Sidebar Section"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:225
 msgid "Footer Widget Area"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Go Pro"
 msgstr ""
 
-#: inc/ansar/customize/customizer-control.php:158
+#: inc/ansar/customize/customizer-control.php:108
 msgid "All"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgid "You may have missed"
 msgstr ""
 
 #: inc/ansar/customize/frontpage-options.php:24
-#: inc/ansar/customize/theme-options.php:781
+#: inc/ansar/customize/theme-options.php:796
 msgid "Overlay Color"
 msgstr ""
 
@@ -332,12 +332,12 @@ msgstr ""
 #: inc/ansar/customize/theme-options.php:212
 #: inc/ansar/customize/theme-options.php:243
 #: inc/ansar/customize/theme-options.php:275
-#: inc/ansar/customize/theme-options.php:842
-#: inc/ansar/customize/theme-options.php:874
-#: inc/ansar/customize/theme-options.php:905
-#: inc/ansar/customize/theme-options.php:937
-#: inc/ansar/customize/theme-options.php:968
-#: inc/ansar/customize/theme-options.php:999
+#: inc/ansar/customize/theme-options.php:857
+#: inc/ansar/customize/theme-options.php:889
+#: inc/ansar/customize/theme-options.php:920
+#: inc/ansar/customize/theme-options.php:952
+#: inc/ansar/customize/theme-options.php:983
+#: inc/ansar/customize/theme-options.php:1014
 msgid "Open link in a new tab"
 msgstr ""
 
@@ -445,32 +445,32 @@ msgid "From WordPress Setting"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:82
-#: inc/ansar/customize/theme-options.php:810
+#: inc/ansar/customize/theme-options.php:825
 msgid "Hide / Show Social Icon"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:100
-#: inc/ansar/customize/theme-options.php:828
+#: inc/ansar/customize/theme-options.php:843
 msgid "Facebook URL"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:134
-#: inc/ansar/customize/theme-options.php:859
+#: inc/ansar/customize/theme-options.php:874
 msgid "Twitter URL"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:165
-#: inc/ansar/customize/theme-options.php:891
+#: inc/ansar/customize/theme-options.php:906
 msgid "Linkedin URL"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:198
-#: inc/ansar/customize/theme-options.php:923
+#: inc/ansar/customize/theme-options.php:938
 msgid "Instagram URL"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:229
-#: inc/ansar/customize/theme-options.php:954
+#: inc/ansar/customize/theme-options.php:969
 msgid "Youtube URL"
 msgstr ""
 
@@ -522,17 +522,17 @@ msgid "Single Post"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:501
-#: inc/ansar/customize/theme-options.php:629
+#: inc/ansar/customize/theme-options.php:644
 msgid "Hide/Show Categories"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:516
-#: inc/ansar/customize/theme-options.php:700
+#: inc/ansar/customize/theme-options.php:715
 msgid "Hide/Show Author Details"
 msgstr ""
 
 #: inc/ansar/customize/theme-options.php:531
-#: inc/ansar/customize/theme-options.php:643
+#: inc/ansar/customize/theme-options.php:658
 msgid "Hide/Show Date"
 msgstr ""
 
@@ -544,20 +544,24 @@ msgstr ""
 msgid "Hide/Show Featured Image"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:581 single.php:104
+#: inc/ansar/customize/theme-options.php:576
+msgid "Hide/Show Sharing Icons"
+msgstr ""
+
+#: inc/ansar/customize/theme-options.php:596 single.php:104
 msgid "Related Post"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:600
+#: inc/ansar/customize/theme-options.php:615
 msgid "Enable Related Posts"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:608
+#: inc/ansar/customize/theme-options.php:623
 msgid "Related Posts"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:614
-#: inc/ansar/customize/theme-options.php:745
+#: inc/ansar/customize/theme-options.php:629
+#: inc/ansar/customize/theme-options.php:760
 #: inc/ansar/widgets/widget-design-slider.php:115
 #: inc/ansar/widgets/widget-posts-list.php:131
 #: inc/ansar/widgets/widget-posts-slider.php:116
@@ -567,56 +571,56 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:657
-#: inc/ansar/customize/theme-options.php:671
+#: inc/ansar/customize/theme-options.php:672
+#: inc/ansar/customize/theme-options.php:686
 msgid "Hide/Show Comments"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:685
+#: inc/ansar/customize/theme-options.php:700
 msgid "Hide/Show Author Name"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:709
+#: inc/ansar/customize/theme-options.php:724
 msgid "You Missed Section"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:724
+#: inc/ansar/customize/theme-options.php:739
 msgid "Hide / Show You Missed Section"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:735
+#: inc/ansar/customize/theme-options.php:750
 msgid "You Missed"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:755
+#: inc/ansar/customize/theme-options.php:770
 msgid "Footer Options"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:768
+#: inc/ansar/customize/theme-options.php:783
 msgid "Background Image"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:796
+#: inc/ansar/customize/theme-options.php:811
 msgid "Select Column Layout"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:985
+#: inc/ansar/customize/theme-options.php:1000
 msgid "Pinterest URL"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:1006
+#: inc/ansar/customize/theme-options.php:1021
 msgid "Post Image Settings"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:1022
+#: inc/ansar/customize/theme-options.php:1037
 msgid "Post Image display type:"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:1024
+#: inc/ansar/customize/theme-options.php:1039
 msgid "Fix Height Post Image"
 msgstr ""
 
-#: inc/ansar/customize/theme-options.php:1025
+#: inc/ansar/customize/theme-options.php:1040
 msgid "Auto Height Post Image"
 msgstr ""
 

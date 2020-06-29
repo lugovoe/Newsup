@@ -77,6 +77,8 @@ function newsup_get_default_theme_options() {
 
     //Single
     $defaults['single_show_featured_image'] = true;
+    $defaults['single_show_share_icon'] = true;
+
 
     // filter.
     $defaults = apply_filters('newsup_filter_default_theme_options', $defaults);

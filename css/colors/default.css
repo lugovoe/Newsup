@@ -579,7 +579,7 @@ footer .mg-social li span.icon-soci a {
 	background: #1da1f2;
 }
 .linkedin{
-	background: #cd201f;
+	background: #0e76a8;
 }
 .instagram{
 	background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%),linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
@@ -598,6 +598,10 @@ footer .mg-social li span.icon-soci a {
 }
 .skype {
 	background: #0078ca;
+}
+
+.email{
+	background: #222;
 }
 footer .mg-footer-copyright {
 	background: #090818;

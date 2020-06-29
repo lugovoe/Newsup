@@ -112,68 +112,6 @@ if ( ! function_exists( 'newsup_sanitize_number_range' ) ) :
 
 endif;
 
-if ( ! function_exists( 'newsup_sanitize_dropdown_pages' ) ) :
-
-    /**
-     * Sanitize dropdown pages.
-     *
-     * @since 1.0.0
-     *
-     * @param int                  $page_id Page ID.
-     * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
-     * @return int|string Page ID if the page is published; otherwise, the setting default.
-     */
-    function newsup_sanitize_dropdown_pages( $page_id, $setting ) {
-
-        // Ensure $input is an absolute integer.
-        $page_id = absint( $page_id );
-
-        // If $page_id is an ID of a published page, return it; otherwise, return the default.
-        return ( 'publish' === get_post_status( $page_id ) ? $page_id : $setting->default );
-
-    }
-
-endif;
-
-if ( ! function_exists( 'newsup_sanitize_image' ) ) :
-
-    /**
-     * Sanitize image.
-     *
-     * @since 1.0.0
-     *
-     * @see wp_check_filetype() https://developer.wordpress.org/reference/functions/wp_check_filetype/
-     *
-     * @param string               $image Image filename.
-     * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
-     * @return string The image filename if the extension is allowed; otherwise, the setting default.
-     */
-    function newsup_sanitize_image( $image, $setting ) {
-
-        /**
-         * Array of valid image file types.
-         *
-         * The array includes image mime types that are included in wp_get_mime_types().
-         */
-        $mimes = array(
-            'jpg|jpeg|jpe' => 'image/jpeg',
-            'gif'          => 'image/gif',
-            'png'          => 'image/png',
-            'bmp'          => 'image/bmp',
-            'tif|tiff'     => 'image/tiff',
-            'ico'          => 'image/x-icon',
-        );
-
-        // Return an array with file extension and mime_type.
-        $file = wp_check_filetype( $image, $mimes );
-
-        // If $image has a valid mime_type, return it; otherwise, return the default.
-        return ( $file['ext'] ? $image : $setting->default );
-
-    }
-
-endif;
-
 if ( ! function_exists( 'newsup_sanitize_radio' ) ) :
 function newsup_sanitize_radio( $val, $setting ) {
         $val = sanitize_key( $val );
@@ -209,4 +147,3 @@ function newsup_alpha_color_custom_sanitization_callback( $value ) {
 	return '';
 }
 endif;
-
