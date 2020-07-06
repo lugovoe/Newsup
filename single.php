@@ -126,24 +126,14 @@
                                   while ($related_posts->have_posts()) {
                                   $related_posts->the_post();
                                   global $post;
+                                  $url = newsup_get_freatured_image_url($post->ID, 'newsup-featured'); 
                                   ?>
                                     <!-- blog -->
                                   <div class="col-md-4">
-                                    <div class="mg-blog-post-3">
-                                        <?php 
-                                              if(has_post_thumbnail()){ ?>
-                                        <div class="mg-blog-img">
-                                            <?php echo '<a href="'.esc_url(get_the_permalink()).'">';
-                                              the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
-                                              echo '</a>';
-                                             ?>
-                                        </div>
-                                        <?php } else { ?>
-                                          <div class="mg-blog-img image-blog-bg">
-                                          </div>
-                                      <?php } ?>
-
-                                        <div class="mg-blog-inner">
+                                    <div class="mg-blog-post-3 minh back-img" 
+                                    <?php if(has_post_thumbnail()) { ?>
+                                    style="background-image: url('<?php echo esc_url($url); ?>');" <?php } ?>>
+                                      <div class="mg-blog-inner">
                                           <?php $newsup_enable_single_post_category = esc_attr(get_theme_mod('newsup_enable_single_post_category','true'));
 
                                             if($newsup_enable_single_post_category == true){ ?>
