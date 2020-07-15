@@ -157,12 +157,11 @@ if (!function_exists('newsup_banner_advertisement')):
                     $newsup_banner_advertisement = wp_get_attachment_image($newsup_banner_advertisement, 'full');
                     $newsup_banner_advertisement_url = newsup_get_option('banner_advertisement_section_url');
                     $newsup_banner_advertisement_url = isset($newsup_banner_advertisement_url) ? esc_url($newsup_banner_advertisement_url) : '#';
-                    $newsup_open_on_new_tab = newsup_get_option('banner_advertisement_open_on_new_tab');
-                    $newsup_open_on_new_tab = ('' != $newsup_open_on_new_tab) ? '_blank' : '';
-
+                    $newsup_open_on_new_tab = get_theme_mod('newsup_open_on_new_tab',true);
                     ?>
                     <div class="header-ads">
-                        <a class="pull-right" href="<?php echo esc_url($newsup_banner_advertisement_url); ?>" target="<?php echo esc_attr($newsup_open_on_new_tab); ?>">
+                        <a class="pull-right" href="<?php echo esc_url($newsup_banner_advertisement_url); ?>" 
+                            <?php if($newsup_open_on_new_tab) { ?>target="_blank" <?php } ?> >
                             <?php echo $newsup_banner_advertisement; ?>
                         </a>
                     </div>

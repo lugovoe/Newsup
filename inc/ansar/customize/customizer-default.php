@@ -23,7 +23,6 @@ function newsup_get_default_theme_options() {
     $defaults['header_layout'] = 'header-layout-1';
     $defaults['banner_advertisement_section'] = '';
     $defaults['banner_advertisement_section_url'] = '';
-    $defaults['banner_advertisement_open_on_new_tab'] = 1;
     $defaults['banner_advertisement_scope'] = 'front-page-only';
 
 
