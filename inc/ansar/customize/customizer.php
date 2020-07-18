@@ -207,8 +207,6 @@ add_action('customize_preview_init', 'newsup_customize_preview_js');
 
 function newsup_customizer_css() {
     wp_enqueue_script( 'newsup-customize-controls', get_template_directory_uri() . '/assets/customizer-admin.js', array( 'customize-controls' ) );
-
-    wp_enqueue_style( 'newsup-customize-controls-style', get_template_directory_uri() . '/assets/customizer-admin.css' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'newsup_customizer_css',0 );
 

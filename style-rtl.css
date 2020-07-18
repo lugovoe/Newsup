@@ -4,7 +4,9 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.1
+Version: 2.9.9.12
+Tested up to: 5.4.2
+Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -15,11 +17,22 @@ Text Domain: newsup
 	Header
 =========================================
 -----------------------------------------*/
+.navbar-nav {
+	padding-right: 0;
+	padding-left: inherit;
+}
+.nav {
+	padding-right: 0;
+}
+.text-right {
+    text-align: left !important;
+}
 .navbar-header .site-title {
 	margin-bottom: 0;
 }
 .navbar-header .site-description {
     letter-spacing: 1.2px;
+    margin-bottom: 0;
 }
 .mg-headwidget.light .mg-head-detail{
 	border-width: 0 0 2px 0;
@@ -61,7 +74,7 @@ Text Domain: newsup
 }
 .info-right {
 	display: block;
-	float: right;
+	float: left;
 	margin: 0;
 	padding: 0;
 }
@@ -85,7 +98,6 @@ Text Domain: newsup
 }
 .mg-nav-widget-area {
 	padding-bottom: 0px;
-    margin: 20px 0;
 }
 .mg-menu-full {
 	position: relative;
@@ -101,21 +113,16 @@ Text Domain: newsup
     border-radius: 0;
 }
 .mg-headwidget .navbar-wp .navbar-nav > li> a {
-    padding: 15px 22px;
+    padding: 10px 22px;
     font-size: 14px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
 .navbar-wp .navbar-nav > li> a.homebtn {
-    position: relative;
-    width: 70px;
-    height: 50px;
 }
 .navbar-wp .navbar-nav > li> a.homebtn span {
-    position: absolute;
     font-size: 24px;
-    line-height: 0;
-    top: 25px;
+    line-height: 1;
 }
 .navbar-wp .navbar-nav > li> a i {
     margin-left: 5px;
@@ -124,11 +131,14 @@ Text Domain: newsup
 	1.2.Theme Menu   
 -----------------------------------------*/
 .mg-nav-widget-area-back {
-	background: url(images/head-back.jpg);
+	background-image: url(images/head-back.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .mg-nav-widget-area-back .inner {
-	background: rgba(32,47,91,0.4);
     width: 100%;
+    padding: 25px 0;
 }
 .mg-headwidget  .navbar-brand {
     padding:  0;
@@ -144,9 +154,10 @@ Text Domain: newsup
 	font-size: 26px;
 	height: auto;
 	line-height: 25px;
-	margin-right: 50px;
+	margin-left: 50px;
 	padding: 15px 0;
 	text-shadow: 2px 2px 1px rgba(150, 150, 183, 0.18);
+	display: inherit;
 }
 .navbar-brand span.site-description {
 	font-size: 13px;
@@ -248,38 +259,6 @@ Text Domain: newsup
 	padding: 15px 0;
 	transition: all 0.25s ease-out 0s;
 }
-.is-sticky .mg-main-nav {
-	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
-	z-index: 999;
-}
-.is-sticky .navbar-brand {
-	padding: 8px 0 0 15px;
-	transition: all 0.25s ease-out 0s;
-	font-size: 22px;
-	line-height: 18px;
-}
-.is-sticky .navbar-brand img {
-	height: 40px;
-	transition: all 0.25s ease-out 0s;
-}
-.is-sticky .navbar-nav > li > a {
-	padding: 16px 16px;
-	transition: all 0.25s ease-out 0s;
-}
-.is-sticky .navbar-toggle {
-	margin: 8px auto;
-}
-.mg-search-box {
-	position: absolute;
-	right: 15px;
-	top: 0;
-}
-.mg-search-box .btn {
-	border-width: 1px;
-	border-style: solid;
-	padding: 0 15px;
-    height: 40px;
-}
 /*---------------------------------------
 	1.3.Theme Menu Center 
 -----------------------------------------*/
@@ -287,6 +266,28 @@ Text Domain: newsup
 	font-size: 12px;
 	font-weight: normal;
 	line-height: 0;
+}
+.navbar-wp .dropdown-menu.searchinner {
+	left: 0!important;
+	right: inherit !important;
+	padding: 10px;
+}
+.navbar-wp .dropdown-menu.searchinner .btn {
+    border: medium none;
+    border-radius: 0 4px 4px 0;
+    height: 40px;
+    line-height: 25px;
+    padding: 5px 15px;
+}
+.mg-search-box .dropdown-toggle::after {
+	display: none;
+}
+.mobilehomebtn {
+    display: none;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
 }
 /* --------------------------------------
 =========================================
@@ -305,9 +306,13 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-weight: 400;
 	line-height: 30px;
-	direction: rtl; 
+	word-wrap: break-word;
+	direction: rtl;
+	text-align: right;
 }
-
+.mr-auto {
+	margin-left: auto;
+}
 .sticky {
 	display: block;
 }
@@ -316,13 +321,14 @@ body {
 	padding-left: 50px;
 }
 #content.home {
-    padding: 0px 35px 30px 35px;
+    padding-top: 0;
+    padding-bottom: 30px;
 }
 a:hover {
   text-decoration: none;
 }
 a:focus {
-	outline: 1px;
+	outline: 1px solid;
 	text-decoration: underline;
 }
 select {
@@ -369,7 +375,6 @@ input:not([type]):hover, input[type="email"]:hover, input[type="number"]:hover, 
 }
 input[type="submit"]:hover, input[type="reset"]:hover, button:hover, input[type="submit"]:focus, input[type="reset"]:focus, button:focus {
 	transition: all 0.3s ease 0s;
-	outline: none;
 }
 
 input[type="radio"],
@@ -397,7 +402,7 @@ input[type="checkbox"] + label {
     box-shadow: inherit;
 }
 img.alignnone {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 }
 img.size-large {
@@ -417,6 +422,26 @@ mark, .mark {
 #content {
 	padding-top: 60px;
 	padding-bottom: 60px;
+}
+
+embed, iframe, object {
+    max-width: 100%;
+}
+.back-img {
+    background-color: #333;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+}
+.link-div {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 /*--------------- ti-slider-Control ---------------*/
 .owl-carousel .owl-controls {
@@ -527,7 +552,7 @@ mark, .mark {
 	padding: 20px;
 }
 .pd-r-10 {
-	padding-right: 10px;
+	padding-right: 0;
 }
 .mr-bot20 {
 	margin-bottom: 20px;
@@ -593,7 +618,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 blockquote {
-	position: relative;
 	width: 100%;
 	border-width: 0 0 0 5px;
 	border-style: solid;
@@ -602,7 +626,7 @@ blockquote {
 blockquote::before {
 	content: "\f10d";
 	display: table;
-	float: right;
+	float: left;
 	font-family: "FontAwesome";
 	font-size: 28px;
 	margin-top: 6px;
@@ -766,7 +790,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	overflow: hidden;
 	margin-left: 0;
 	margin-right: 1px;
-	background: #000;
+	background-color: #000;
 }
 .mg-blog-post.lg.video {
 	height: 270px;
@@ -821,8 +845,8 @@ button.mfp-close:hover, button.mfp-close:focus {
     right: 0;
     bottom: 0;
 }
-.mg-blog-post .bottom h1 {
-	float: right;
+.mg-blog-post .bottom h4 {
+	float: left;
 	font-size: 32px;
 	font-weight: 700;
 	line-height: 120%;
@@ -844,7 +868,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	blog   
 -----------------------------------------*/
 .mg-blog-post-box {
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 	padding: 0;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 	background: #fff;
@@ -857,7 +881,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-blog-post-box .small.single {
     line-height: 27px;
-    padding: 40px;
+    padding: 20px 40px 40px 40px;
     font-size: 16px;
 }
 .mg-blog-post-box .small > p {
@@ -872,14 +896,14 @@ button.mfp-close:hover, button.mfp-close:focus {
 	position: relative;
     width: 100%;
     margin-bottom: 22px;
-    float: right;
+    float: left;
     transition: all .3s ease-out;
 	min-height: 45px;
 }
 .mg-blog-thumb img {
 	position: relative;
 	max-width: 100%;
-	float: right;
+	float: left;
 	height: auto;
 	border-radius: 0;
 }
@@ -925,7 +949,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	max-width: 100%;
 	border-radius: 100%;
 }
-.mg-blog-post-box h1.title {
+.mg-blog-post-box h4.title {
 	font-size: 22px;
     line-height: 1.2;
     position: relative;
@@ -942,7 +966,7 @@ button.mfp-close:hover, button.mfp-close:focus {
     width: auto;
 }
 .mg-blog-category a {
-    display: inline;
+    display: inline-block;
     font-size: 10px;
     padding: 4px 6px;
     line-height: 10px;
@@ -990,7 +1014,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	transition: all 0.3s ease 0s;
 }
 .mg-blog-post-box .mg-header {
-	padding: 30px 70px;
+	padding: 20px 70px;
 }
 .mg-blog-post-box .mg-header h1{
 	font-size: 38px;
@@ -1038,7 +1062,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-info-author-block .mg-author-pic img {
 	margin: 0 25px 15px 0;
-	float: right;
+	float: left;
 	border-radius: 50%;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 	width: 80px;
@@ -1058,6 +1082,10 @@ button.mfp-close:hover, button.mfp-close:focus {
 	font-size: 16px;
 	line-height: 38px;
 }
+
+.post-edit-link i{margin-left: 14px;}
+.post-edit-link{margin-left: 5px;}
+
 .comment_section .comment-reply-link {
 	    border-radius: 50%;
     margin-left: 10px;
@@ -1138,6 +1166,46 @@ button.mfp-close:hover, button.mfp-close:focus {
 	min-height: 300px;
 	border: 0;
 }
+
+.mg-post-thumb.md {
+    height: 300px;
+}
+
+.back-img {
+    background-color: #333;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+/* Meida respondive for slider title and blog post title */
+
+@media screen and (min-width: 240px) and (max-width: 767px){
+
+  .mg-blog-post .bottom h1
+{
+	font-size: 20px;
+}
+
+.mg-blog-post .bottom h1 {
+    max-height: 100px;
+}
+
+.mg-posts-modul-6 .mg-sec-top-post .title{
+	
+	font-size: 16px;
+    line-height: 25px;
+}
+
+.mg-posts-modul-6 .mg-sec-top-post .title {
+    max-height: 100px;
+}
+
+} 
+
 /*---------------------------------------
 	Homepage Sections  
 -----------------------------------------*/
@@ -1225,15 +1293,16 @@ button.mfp-close:hover, button.mfp-close:focus {
     color: #212121;
     background: #fff;
     padding: 8px;
+    line-height: 1.42857143;
 }
 .top-right-area .nav-tabs > li > a i {
-    margin-right: 6px;
+    margin-right: 4px;
 }
 .top-right-area .nav-tabs > li {
     text-align: center;
-    width: 33.3%;
+    flex-grow: 1;
 }
-.top-right-area .nav-tabs > li.active > a, .top-right-area .nav-tabs > li.active > a:hover, .top-right-area .nav-tabs > li.active > a:focus {
+.top-right-area .nav-tabs .nav-link.active, .top-right-area .nav-tabs .nav-link.active:hover, .top-right-area .nav-tabs .nav-link.active:focus {
     cursor: default;
     border-width: 1px 1px 2px 1px;
     border-style: solid;
@@ -1247,7 +1316,8 @@ button.mfp-close:hover, button.mfp-close:focus {
   position: absolute;
   padding: 10px 20px;
   bottom: 0;
-  background: linear-gradient(to bottom,rgba(0,0,0,0) 100%, rgba(0,0,0,0.4) 100%, rgba(0,0,0,.7) 100%);
+  width: 100%;
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);
 }
 .mg-blog-inner h1 {
   margin: 0;
@@ -1256,11 +1326,8 @@ button.mfp-close:hover, button.mfp-close:focus {
   font-size: 24px;
   line-height: 28px;
 }
-.mg-blog-post .tittle, .mg-blog-inner h1.title, .mg-blog-post-box h1.title, .small-list-post h5.title, .mg-blog-post .bottom h1, .title_small_post, .mg-posts-modul-6 .mg-sec-top-post .title, .mg-no-list-area .mg-blog-post h3 {
-	overflow: hidden;
-  	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
+.mg-blog-post .tittle, .mg-blog-inner h4.title, .mg-blog-post-box h4.title, .small-list-post h5.title, .mg-blog-post .bottom h1, .title_small_post, .mg-posts-modul-6 .mg-sec-top-post .title, .mg-no-list-area .mg-blog-post h3 {
+	overflow-y: hidden;
 }
 .mg-blog-post-3 {
   position: relative;
@@ -1278,6 +1345,15 @@ button.mfp-close:hover, button.mfp-close:focus {
 .mg-posts-modul-1 .mg-blog-post-3 .mg-blog-inner h1 {
 	font-size: 18px;
 	line-height: 20px;
+}
+.mg-blog-post-3.minh  {
+	height: 197px;
+}
+.mg-blog-post-3.smminh  {
+	height: 160px;
+}
+.mg-blog-post-3.minhsec  {
+	height: 178px;
 }
 .mg-blog-post.lg.minh {
 	height: 350px;
@@ -1326,7 +1402,7 @@ button.mfp-close:hover, button.mfp-close:focus {
     top: 0px;
     height: 0;
     border-style: solid;
-    border-width: 40px 0 0px 30px;
+    border-width: 0;
     content: "";
 }
 
@@ -1350,7 +1426,6 @@ button.mfp-close:hover, button.mfp-close:focus {
     border-radius: 5px;
     float: none;
     margin-bottom: 50px;
-    padding: 20px 18px 10px 20px;
     overflow: hidden; 
 }
 .mg-posts-sec-inner img:hover, .widget_post_thumbnail img:hover, .featured_posts_slider img:hover{
@@ -1367,7 +1442,8 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-posts-sec-inner .img-small-post{
   height: 88px;
-  float:right;
+  width: 88px;
+  float:left;
   margin-right: 20px;
 }
 .small-list-post ul{
@@ -1389,6 +1465,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-posts-sec-inner .small-list-post img {
   height: 100%;
+  object-fit: cover;
 }
 .small-list-post h5{
   margin: 0px;
@@ -1420,12 +1497,18 @@ button.mfp-close:hover, button.mfp-close:focus {
   padding: 0;
 }
 .mg-posts-sec-post{
+	padding: 20px 0;
   margin-bottom: 20px;
-  padding: 15px 15px 0px 15px;
   box-shadow: 0 2px 4px rgba(0,0,0,.08);
 }
 .mg-posts-sec-post:last-child{
   margin-bottom: 0px;
+}
+.mg-posts-modul-6 .mg-post-thumb.img {
+	position: relative;
+}
+.mg-posts-modul-6 .mg-post-thumb {
+    margin-left: -10px;
 }
 .mg-posts-modul-6 .list_content {
   padding: 20px 0;
@@ -1435,7 +1518,8 @@ button.mfp-close:hover, button.mfp-close:focus {
   display: inline-block;
   width: 100%;
   position: relative;
-  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .mg-posts-sec-post-content{
   padding: 0 0px 0px 20px;
@@ -1474,6 +1558,15 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 
 .image-blog-bg{background: #000;}
+
+.mg-blog-post-3.minh {
+    height: 197px;
+}
+.mg-blog-post-3 {
+    position: relative;
+    padding: 0;
+}
+
 /* # PostBox
 ================================================== */
 .mg-post-box {
@@ -1559,10 +1652,10 @@ button.mfp-close:hover, button.mfp-close:focus {
 	padding: 0;
 }
 .mg-breadcrumb-title h1 {
-	font-size: 22px;
+	font-size: 30px;
 	font-weight: 700;
 	margin: 0;
-	line-height: 27px;
+	line-height: 30px;
 	padding-bottom: 0px;
 }
 .mg-page-breadcrumb {
@@ -1659,7 +1752,7 @@ button.mfp-close:hover, button.mfp-close:focus {
     top: 0px;
     height: 0;
     border-style: solid;
-    border-width: 40px 0 0px 30px;
+    border-width: 0;
     content: "";
 }
 .mg-sidebar .mg-widget ul li {
@@ -1747,7 +1840,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-sidebar .mg-widget .calendar_wrap table thead th {
 	text-align: center;
-	padding: 6px 0;
+	padding: 0;
 }
 .mg-sidebar .mg-widget .calendar_wrap table tbody td {
 	line-height: 2.5em;
@@ -1755,6 +1848,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	text-align: center;
 	border-width: 1px;
 	border-style: solid;
+	padding: 0 8px;
 }
 .mg-sidebar .mg-widget .calendar_wrap table tfoot {
 	font-size: 11px;
@@ -1952,9 +2046,11 @@ footer .mg-widget .calendar_wrap table tfoot tr td#next {
 footer .mg-widget .textwidget select {
 	width: 100%;
 }
-footer .mg-widget .textwidget select, footer .mg-widget .textwidget img {
+footer .mg-widget .textwidget select {
 	width: 100%;
 }
+footer .mg-widget .textwidget img {max-width: 100%;}
+
 footer .mg-widget .form-control {
 	background: rgba(0,0,0,0);
 }
@@ -1985,7 +2081,6 @@ footer .mg-footer-bottom-area .divide-line {
 }
 footer .mg-footer-bottom-area .custom-logo {
 	width: 160px;
-	height: 50px;
 }
 footer .mg-footer-bottom-area .btn-default > .btn {
 	padding: 10px 30px;
@@ -2018,7 +2113,7 @@ footer .mg-footer-copyright p, footer .mg-footer-copyright a {
 }
 .mg-social li span.icon-soci {
 	display: inline-block;
-	float: right;
+	float: left;
 	height: 35px;
 	line-height: 35px;
 	margin: 0;
@@ -2279,7 +2374,7 @@ address i {
 .woocommerce-page .products a .price {
 	line-height: 20px;
 	width: 100%;
-	float: right;
+	float: left;
 	height: auto;
 	min-height: 40px;
 	text-align: center;
@@ -2306,7 +2401,7 @@ address i {
 	margin: 0;
 }
 .woocommerce-page .woocommerce-result-count {
-	float: right;
+	float: left;
 	font-size: 14px;
 	line-height: 46px;
 	margin-top: 20px;
@@ -2412,7 +2507,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	margin: 0px 0 40px;
 	border-radius: 3px;
 	border: none;
-	float: right;
+	float: left;
 	width: 100%;
 }
 .woocommerce-page .woocommerce-error a {
@@ -2425,7 +2520,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	margin: 0px 0 40px;
 	border-radius: 3px;
 	border: none;
-	float: right;
+	float: left;
 	width: 100%;
 	margin-top: 25px !important;
 }
@@ -2434,7 +2529,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	font-size: 12px;
 }
 .woocommerce-page .woocommerce-info {
-	float: right;
+	float: left;
 	text-align: left;
 	padding-top: 30px;
 }
@@ -2455,7 +2550,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	border: none;
 }
 .woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span {
-	float: right;
+	float: left;
 	line-height: 1.42857;
 	margin: 6px;
 	padding: 6px 12px;
@@ -2470,6 +2565,27 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	9.mg-Responsive part
 =========================================
 -----------------------------------------*/
+@media (min-width: 1200px) {
+  .mg-blog-post .bottom h4 {
+	max-height: 75px;
+	overflow: hidden;
+}
+.small-list-post h5.title, .title_small_post {
+	max-height: 50px;
+}
+.mg-posts-modul-6 .mg-sec-top-post .title{
+	max-height: 65px;
+}
+
+.mg-blog-inner h4, .mg-blog-inner h1.title, .mg-no-list-area .mg-blog-post h3{
+	max-height: 51px;
+}
+}
+@media screen and (max-width: 480px) {
+	.mg-blog-post .bottom h4 {
+		font-size: 24px;
+	}
+}
 @media (min-width: 768px) and (max-width: 991px) {
 .navbar-header {
 	float: none;
@@ -2480,12 +2596,14 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 .mg-head-detail .info-left {
 	float: none;
 	text-align: center;
-	margin: 10px 0 17px;
+	margin: 0;
+	float: none;
 }
 .mg-head-detail .info-right {
 	float: none;
 	text-align: center;
-	margin: 10px 0 17px;
+	margin: 0;
+	float: none;
 }
 /* logo*/
 .navbar-default .navbar-brand {
@@ -2499,7 +2617,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	z-index: 8;
 }
 .navbar-wp .mg-search-box {
-	float: right;
+	float: left;
 }
 .mg-search {
 	margin: 0 auto;
@@ -2517,18 +2635,32 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
     padding: 30px 0px;
 }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-.navbar-toggle {
+@media (max-width: 991.98px) {
+#menu-primary li.active.home {
+	display: none;
+}
+.m-header {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.mobilehomebtn	{
 	display: block;
-}
-.navbar-collapse.collapse {
-	display: none!important;
-}
-.navbar-collapse.collapse.in {
-	display: block !important;
 }
 }
 @media screen and (min-width: 240px) and (max-width: 767px) {
+.mg-blog-post-3.minh {
+	margin-bottom: 15px;
+}
+.mg-posts-modul-6 .mg-post-thumb {
+    margin-right: 0;
+}	
+.top-right-area .nav-tabs > li > a i {
+	display: inherit;
+}
+.mg-blog-post-box .mg-header {
+    padding: 30px 10px;
+}
 /*--------------- ti-slider ---------------*/
 .navbar-wp .navbar-nav > li > a {
 	padding: 10px 16px;
@@ -2596,7 +2728,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 }
 .gallery-item {
 	margin: 0;
-	float: right;
+	float: left;
 	padding: 0.5em;
 }
 .gallery-item img {
@@ -2707,10 +2839,33 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
     transition: all 0.3s ease 0s;
     text-decoration: none;
     position: relative;
-    float: right;
+    float: left;
 }
 .navigation.pagination > li:first-child > a, .navigation.pagination > li:first-child > span {
     border-radius: 30px;
+}
+
+.post-share-icons a {
+    float: left;
+    margin-left: 4px;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    color: var(--post-share-color, var(--share-icons-color));
+    font-size: 13px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.post-share {
+    float: right;
+}
+
+.post-share-icons i {
+    line-height: inherit;
+    color:#fff;
 }
 
 .owl-stage-outer{

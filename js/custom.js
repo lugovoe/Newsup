@@ -2,11 +2,11 @@
   "use strict";
 jQuery(window).on('load', function() {  
   // Enable Hover for Bootstrap Nav Dropdowns
-  jQuery('.mg-search-box').hover(function() {
-       jQuery(this).addClass('open');
-     }, function() {
-       jQuery(this).removeClass('open');
-  }); 
+  jQuery('.dropdown-toggle').keyup(function(e) {
+    if (e.keyCode == 9) {
+        $(this).dropdown('toggle');
+    }
+});
 });
 /* =================================
 ===        STICKY HEADER        ====

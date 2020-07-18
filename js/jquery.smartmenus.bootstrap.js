@@ -42,9 +42,9 @@
 							collapsibleShowFunction: null,
 							collapsibleHideFunction: null,
 							rightToLeftSubMenus: rightAligned,
-							bottomToTopSubMenus: $this.closest('.fixed-bottom').length > 0
+							bottomToTopSubMenus: $this.closest('.fixed-bottom').length > 0,
 							// custom option(s) for the Bootstrap 4 addon
-							//bootstrapHighlightClasses: 'text-dark bg-light'
+							bootstrapHighlightClasses: 'text-dark bg-light'
 						})
 						.on({
 							// set/unset proper Bootstrap classes for some menu elements
