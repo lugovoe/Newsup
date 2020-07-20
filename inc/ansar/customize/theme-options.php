@@ -579,6 +579,19 @@ $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_sin
         )
     ));
 
+    $wp_customize->add_setting('newsup_enable_single_post_admin_details',
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsup_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_admin_details', 
+    array(
+        'label' => esc_html__('Hide/Show Author Details', 'newsup'),
+        'type' => 'toggle',
+        'section' => 'site_single_posts_settings',
+    )
+));
 
     
 
@@ -661,34 +674,6 @@ $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_ena
     )
 ));
 
-$wp_customize->add_setting('newsup_enable_single_post_comments',
-    array(
-        'default' => true,
-        'sanitize_callback' => 'newsup_sanitize_checkbox',
-    )
-);
-$wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_comments', 
-    array(
-        'label' => esc_html__('Hide/Show Comments', 'newsup'),
-        'type' => 'toggle',
-        'section' => 'site_single_posts_settings',
-    )
-));
-
-$wp_customize->add_setting('newsup_enable_single_post_comments',
-    array(
-        'default' => true,
-        'sanitize_callback' => 'newsup_sanitize_checkbox',
-    )
-);
-$wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_comments', 
-    array(
-        'label' => esc_html__('Hide/Show Comments', 'newsup'),
-        'type' => 'toggle',
-        'section' => 'site_single_posts_settings',
-    )
-));
-
 $wp_customize->add_setting('newsup_enable_single_post_admin',
     array(
         'default' => true,
@@ -704,22 +689,22 @@ $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_ena
 ));
 
 
-$wp_customize->add_setting('newsup_enable_single_post_admin_details',
+$wp_customize->add_setting('newsup_enable_single_post_comments',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
     )
 );
-$wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_admin_details', 
+$wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_comments', 
     array(
-        'label' => esc_html__('Hide/Show Author Details', 'newsup'),
+        'label' => esc_html__('Hide/Show Comments', 'newsup'),
         'type' => 'toggle',
         'section' => 'site_single_posts_settings',
     )
 ));
 
 
- $wp_customize->add_section('you_missed_section',
+$wp_customize->add_section('you_missed_section',
     array(
         'title' => esc_html__('You Missed Section', 'newsup'),
         'priority' => 100,

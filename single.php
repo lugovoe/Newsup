@@ -80,23 +80,18 @@
                 <?php newsup_edit_link(); ?>
                 <?php  newsup_social_share_post($post); ?>
               </article>
-              
-
             </div>
-		      <?php } ?>
-
-           <div class="media mg-info-author-block">
-            <?php $newsup_enable_single_post_admin_details = esc_attr(get_theme_mod('newsup_enable_single_post_admin_details','true'));
+		      <?php } $newsup_enable_single_post_admin_details = esc_attr(get_theme_mod('newsup_enable_single_post_admin_details',true));
             if($newsup_enable_single_post_admin_details == true) { ?>
+           <div class="media mg-info-author-block">
             <a class="mg-author-pic" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php echo get_avatar( get_the_author_meta( 'ID') , 150); ?></a>
                 <div class="media-body">
                   <h4 class="media-heading"><?php esc_html_e('By','newsup'); ?> <a href ="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php the_author(); ?></a></h4>
                   <p><?php the_author_meta( 'description' ); ?></p>
                 </div>
-              <?php } ?>
-            </div><?php $newsup_enable_related_post = esc_attr(get_theme_mod('newsup_enable_related_post','true'));
-                                if($newsup_enable_related_post == true){
-                            ?>
+            </div>
+            <?php } $newsup_enable_related_post = esc_attr(get_theme_mod('newsup_enable_related_post','true'));
+                    if($newsup_enable_related_post == true){ ?>
               <div class="mg-featured-slider p-3 mb-4">
                         <!--Start mg-realated-slider -->
                         <div class="mg-sec-title">
@@ -146,8 +141,8 @@
                                             <?php $newsup_enable_single_post_date = esc_attr(get_theme_mod('newsup_enable_single_post_date','true'));
                                                 if($newsup_enable_single_post_date == true){
                                             ?>
-                                              <span class="mg-blog-date"><i class="fa fa-clock-o"></i><a href="<?php echo esc_url(get_month_link(get_post_time('J'),get_post_time('M'))); ?>">
-                                            <?php echo esc_html(get_the_date('J M, Y')); ?></a></span>
+                                              <span class="mg-blog-date"><i class="fa fa-clock-o"></i> 
+                                              <?php echo get_the_date('M'); ?> <?php echo get_the_date('j,'); ?> <?php echo get_the_date('Y'); ?></span>
                                             <?php } $newsup_enable_single_post_admin = esc_attr(get_theme_mod('newsup_enable_single_post_admin','true'));
                                               if($newsup_enable_single_post_admin == true) {?>
                                             <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"> <i class="fa fa-user-circle-o"></i> <?php the_author(); ?></a>
@@ -164,10 +159,11 @@
                             
                     </div>
                     <!--End mg-realated-slider -->
-                  <?php } }
-         $newsup_enable_single_post_admin_details = esc_attr(get_theme_mod('newsup_enable_single_post_admin_details','true'));
-         if($newsup_enable_single_post_admin_details == true) {
-         comments_template('',true); } ?>
+                  <?php } } $newsup_enable_single_post_comments = esc_attr(get_theme_mod('newsup_enable_single_post_comments',true));
+                  if($newsup_enable_single_post_comments == true) {
+                  if (comments_open() || get_comments_number()) :
+                  comments_template();
+                  endif; } ?>
       </div>
        <?php if($newsup_single_page_layout == "single-align-content-right") { ?>
       <!--sidebar-->
