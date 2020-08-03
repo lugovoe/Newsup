@@ -406,4 +406,12 @@ function newsup_social_share_post($post) {
                           </div>
                     </div>
 
-<?php } } ?>
+<?php } } 
+
+add_filter( 'woocommerce_show_page_title', 'newsup_hide_shop_page_title' );
+
+function newsup_hide_shop_page_title( $title ) {
+    if ( is_shop() ) $title = false;
+    return $title;
+}
+?>

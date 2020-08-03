@@ -15,7 +15,13 @@ if($newsup_remove_header_image_overlay == true){ ?>
         <div class="col-md-12 col-sm-12">
 			    <div class="mg-breadcrumb-title">
             <?php
-          if(is_archive()) {
+            if( class_exists( 'WooCommerce' ) && is_shop() ) { ?>
+            <h1>
+            <?php woocommerce_page_title(); ?>
+            </h1>
+            <?php    
+          }
+          elseif(is_archive()) {
           the_archive_title( '<h1>', '</h1>' );
           the_archive_description( '<div class="archive-description">', '</div>' );
           } else { ?>
