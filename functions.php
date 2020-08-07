@@ -15,7 +15,7 @@
 	require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
 
 	$newsup_theme_start = wp_get_theme();
-	if ( 'Newsup' == $newsup_theme_start->name) {
+	if (( 'Newsup' == $newsup_theme_start->name) || ( 'Newsberg' == $newsup_theme_start->name))  {
 	if ( is_admin() ) {
 		require ($newsup_theme_path . '/admin/getting-started.php');
 	}

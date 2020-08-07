@@ -103,7 +103,7 @@
 		this.showTimeout = 0;
 		this.hideTimeout = 0;
 		this.scrollTimeout = 0;
-		this.clickActivated = false;
+		this.clickActivated = true;
 		this.focusActivated = true;
 		this.zIndexInc = 0;
 		this.idInc = 0;
@@ -512,7 +512,7 @@
 					this.itemActivate($a, behaviorAccordion);
 					this.menuHide($sub);
 					if (behaviorToggle) {
-						this.focusActivated = false;
+						this.focusActivated = true;
 					}
 					return false;
 				}
@@ -638,8 +638,8 @@
 				}
 				this.activatedItems = [];
 				this.visibleSubMenus = [];
-				this.clickActivated = false;
-				this.focusActivated = false;
+				this.clickActivated = true;
+				this.focusActivated = true;
 				// reset z-index increment
 				this.zIndexInc = 0;
 				this.$root.triggerHandler('hideAll.smapi');
