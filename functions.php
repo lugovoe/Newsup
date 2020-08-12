@@ -15,7 +15,7 @@
 	require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
 
 	$newsup_theme_start = wp_get_theme();
-	if (( 'Newsup' == $newsup_theme_start->name) || ( 'Newsberg' == $newsup_theme_start->name))  {
+	if (( 'Newsup' == $newsup_theme_start->name) || ( 'Newsberg' == $newsup_theme_start->name) || ( 'Newsbulk' == $newsup_theme_start->name))  {
 	if ( is_admin() ) {
 		require ($newsup_theme_path . '/admin/getting-started.php');
 	}
@@ -108,11 +108,11 @@ function newsup_setup() {
 		'caption',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'newsup_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	$args = array(
+    'default-color' => '#eee',
+    'default-image' => '',
+	);
+	add_theme_support( 'custom-background', $args );
 
     // Set up the woocommerce feature.
     add_theme_support( 'woocommerce');

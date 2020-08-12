@@ -34,7 +34,11 @@ if (!function_exists('newsup_banner_trending_posts')):
                                 <?php endif; ?>
                             </h2>
                         </div>
+                        <?php if(is_rtl()){ ?> 
+                        <div class="mg-latest-news-slider marquee" data-direction='right' dir="ltr">
+                        <?php } else { ?> 
                         <div class="mg-latest-news-slider marquee">
+                        <?php } ?>
                             <?php
                             if ($all_posts->have_posts()) :
                                 while ($all_posts->have_posts()) : $all_posts->the_post();
@@ -50,7 +54,7 @@ if (!function_exists('newsup_banner_trending_posts')):
                                 ?>
                         </div>
                     </div>
-                </div>
+            </div>
             </section>
             <!-- Excluive line END -->
         <?php endif;

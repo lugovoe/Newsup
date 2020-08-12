@@ -20,7 +20,7 @@
 <div id="page" class="site">
 <a class="skip-link screen-reader-text" href="#content">
 <?php _e( 'Skip to content', 'newsup' ); ?></a>
-    <div class="wrapper">
+    <div class="wrapper" id="custom-background-css">
         <header class="mg-headwidget">
             <!--==================== TOP BAR ====================-->
 

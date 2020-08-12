@@ -53,7 +53,7 @@ Text Domain: newsup
 }
 .mg-head-detail .info-left li {
 	display: inline-block;
-	margin-right: 15px;
+	margin-left: 15px;
 	padding: 0;
 	line-height: 35px;
 }
@@ -1061,7 +1061,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 	padding-right: 5px;
 }
 .mg-info-author-block .mg-author-pic img {
-	margin: 0 25px 15px 0;
+	margin: 0 0 15px 25px;
 	float: left;
 	border-radius: 50%;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -1265,7 +1265,7 @@ button.mfp-close:hover, button.mfp-close:focus {
   margin: 0;
   list-style: none;
   position: absolute;
-  right: 200px;
+  right: 160px;
   top: 5px;
   left: 40px;
   height: 40px;
@@ -1295,7 +1295,7 @@ button.mfp-close:hover, button.mfp-close:focus {
     line-height: 1.42857143;
 }
 .top-right-area .nav-tabs > li > a i {
-    margin-right: 4px;
+    margin-left: 4px;
 }
 .top-right-area .nav-tabs > li {
     text-align: center;
@@ -1442,8 +1442,8 @@ button.mfp-close:hover, button.mfp-close:focus {
 .mg-posts-sec-inner .img-small-post{
   height: 88px;
   width: 88px;
-  float:left;
-  margin-right: 20px;
+  float:right;
+  margin-left: 20px;
 }
 .small-list-post ul{
   margin: 0;
@@ -1772,7 +1772,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-sidebar .mg-widget.widget_search .btn {
 	border: medium none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px 0 0 4px;
     height: 40px;
     line-height: 25px;
     padding: 5px 15px;

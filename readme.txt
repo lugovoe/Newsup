@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 2.9.9.17
+Stable tag: 2.9.9.18
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -251,4 +251,7 @@ License: CC0 Public Domain
 * Added Newsberg theme.
 
 = Version 2.9.9.17
-* Fixed woo styling issue.
+* Fixed woo styling issue.
+
+= Version 2.9.9.18
+* Fixed custom background issue.

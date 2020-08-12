@@ -414,4 +414,13 @@ function newsup_hide_shop_page_title( $title ) {
     if ( is_shop() ) $title = false;
     return $title;
 }
+
+function newsup_custom_header_background() { 
+$color = get_theme_mod( 'background_color', get_theme_support( 'custom-background', 'default-color' ) );
+?>
+<style type="text/css" id="custom-background-css">
+    .wrapper { background-color: <?php echo esc_attr($color); ?>; }
+</style>
+<?php }
+add_action('wp_head','newsup_custom_header_background');
 ?>
