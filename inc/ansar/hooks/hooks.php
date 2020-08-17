@@ -295,7 +295,7 @@ if (!function_exists('newsup_front_page_banner_section')) :
             $main_banner_section_background_image = newsup_get_option('main_banner_section_background_image');
             $main_banner_section_background_image_url = wp_get_attachment_image_src($main_banner_section_background_image, 'full');
         if(!empty($main_banner_section_background_image)){ ?>
-             <section class="mg-fea-area over" style="background-image:url('<?php echo $main_banner_section_background_image_url[0]; ?>');">
+            <section class="mg-fea-area over" style="background-image:url('<?php echo esc_url($main_banner_section_background_image_url[0]); ?>');">
         <?php }else{ ?>
             <section class="mg-fea-area">
         <?php  } ?>

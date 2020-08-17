@@ -129,9 +129,12 @@ function newsup_setup() {
 	add_theme_support( 'responsive-embeds' );
 	
 	//Custom logo
-	
-	//Custom logo
-	add_theme_support( 'custom-logo');
+	add_theme_support(
+    'custom-logo',
+    array(
+        'unlink-homepage-logo' => true, // Add Here!
+    	)
+	);
 	
 	// custom header Support
 			$args = array(
