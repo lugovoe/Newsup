@@ -26,7 +26,7 @@ function newsup_header_section()
             $newsup_header_youtube_target = esc_attr(get_theme_mod('newsup_header_youtube_target','true'));
             $newsup_header_pintrest_link = get_theme_mod('newsup_header_pintrest_link');
             $newsup_header_pintrest_target = esc_attr(get_theme_mod('newsup_header_pintrest_target','true'));  ?>
-            <div class="col-md-6 col-xs-12 col-sm-6">
+            <div class="col-md-6 col-xs-12">
                 <ul class="info-left">
                     <?php newsup_date_display_type(); ?>
                 </ul>

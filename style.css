@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.19
+Version: 2.9.9.20
 Tested up to: 5.4.2
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -112,7 +112,7 @@ Text Domain: newsup
 }
 .navbar-wp .navbar-nav > li> a.homebtn span {
     font-size: 24px;
-    line-height: 1;
+    line-height: 0.98;
 }
 .navbar-wp .navbar-nav > li> a i {
     margin-left: 5px;
@@ -1169,7 +1169,10 @@ button.mfp-close:hover, button.mfp-close:focus {
 /* Meida respondive for slider title and blog post title */
 
 @media screen and (min-width: 240px) and (max-width: 767px){
-
+.mg-head-detail .info-right, .mg-head-detail .info-left {
+    float: none;
+    text-align: center;
+}
   .mg-blog-post .bottom h1
 {
 	font-size: 20px;
@@ -1188,7 +1191,10 @@ button.mfp-close:hover, button.mfp-close:focus {
 .mg-posts-modul-6 .mg-sec-top-post .title {
     max-height: 100px;
 }
-
+.mg-footer-bottom-area .site-branding-text {
+    /* margin: 0 auto; */
+    text-align: center;
+}
 } 
 
 /*---------------------------------------
@@ -2693,9 +2699,6 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 }
 .col-md-4 {
 	margin-bottom: 15px;
-}
-.top-right-area {
-	padding: 0;
 }
 .mg-latest-news .mg-latest-news-slider {
 	left: 20px;
