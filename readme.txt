@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 2.9.9.20
+Stable tag: 2.9.9.21
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -260,4 +260,7 @@ License: CC0 Public Domain
 * Fixed escaping issue and added unlink logo support.
 
 = Version 2.9.9.20
-* Fixed responsive styling issue.
+* Fixed responsive styling issue.
+
+= Version 2.9.9.21
+* Added child theme support.

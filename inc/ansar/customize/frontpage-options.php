@@ -285,7 +285,7 @@ $wp_customize->add_control('show_main_news_section',
         'label' => esc_html__('Enable Slider Banner Section', 'newsup'),
         'section' => 'frontpage_main_banner_section_settings',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 10,
 
     )
 );
@@ -312,7 +312,7 @@ $wp_customize->add_control(
             'height' => 720,
             'flex_width' => true,
             'flex_height' => true,
-            'priority' => 100,
+            'priority' => 20,
             'active_callback' => 'newsup_main_banner_section_status'
         )
     )
@@ -333,7 +333,7 @@ $wp_customize->add_control(
         array(
             'label' 			=> esc_html__( 'Slider Section ', 'newsup' ),
             'section' 			=> 'frontpage_main_banner_section_settings',
-            'priority' 			=> 100,
+            'priority' 			=> 70,
             'active_callback' => 'newsup_main_banner_section_status'
         )
     )
@@ -355,7 +355,7 @@ $wp_customize->add_control(new Newsup_Dropdown_Taxonomies_Control($wp_customize,
         'section' => 'frontpage_main_banner_section_settings',
         'type' => 'dropdown-taxonomies',
         'taxonomy' => 'category',
-        'priority' => 100,
+        'priority' => 80,
         'active_callback' => 'newsup_main_banner_section_status'
     )));
 
@@ -375,7 +375,7 @@ $wp_customize->add_control(
         array(
             'label' 			=> esc_html__( 'Tabbed Section ', 'newsup' ),
             'section' 			=> 'frontpage_main_banner_section_settings',
-            'priority' 			=> 100,
+            'priority' 			=> 90,
             'active_callback' => 'newsup_main_banner_section_status'
         )
     )
@@ -412,7 +412,7 @@ $wp_customize->add_control('popular_tab_title',
         'label' => esc_html__('Popular Tab Title', 'newsup'),
         'section' => 'frontpage_main_banner_section_settings',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 110,
         'active_callback' => 'newsup_main_banner_section_status',
     )
 );
@@ -431,7 +431,7 @@ $wp_customize->add_control('trending_tab_title',
         'label' => esc_html__('Trending Tab Title', 'newsup'),
         'section' => 'frontpage_main_banner_section_settings',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 120,
         'active_callback' => 'newsup_main_banner_section_status',
     )
 );
@@ -453,6 +453,6 @@ $wp_customize->add_control(new Newsup_Dropdown_Taxonomies_Control($wp_customize,
         'section' => 'frontpage_main_banner_section_settings',
         'type' => 'dropdown-taxonomies',
         'taxonomy' => 'category',
-        'priority' => 100,
+        'priority' => 130,
         'active_callback' => 'newsup_main_banner_section_status'
     )));
