@@ -26,7 +26,7 @@
 
 	wp_enqueue_script('bootstrap-smartmenus-js', get_template_directory_uri() . '/js/jquery.smartmenus.bootstrap.js' , array('jquery'));
 
-	wp_enqueue_script('newsup-main-js', get_template_directory_uri() . '/js/jquery.marquee.js' , array('jquery'));
+	wp_enqueue_script('newsup-marquee-js', get_template_directory_uri() . '/js/jquery.marquee.js' , array('jquery'));
 	
 	wp_enqueue_script('newsup-main-js', get_template_directory_uri() . '/js/main.js' , array('jquery'));
 
