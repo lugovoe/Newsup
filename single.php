@@ -79,14 +79,12 @@
                 <?php the_content(); ?>
                 <?php newsup_edit_link(); ?>
                 <?php  newsup_social_share_post($post); ?>
-                <div class="clearfix mb-5"></div>
+                <div class="clearfix mb-3"></div>
                 <?php
             the_post_navigation(array(
                 'prev_text' => '%title <div class="fa fa-angle-double-right"></div><span></span>',
                 'next_text' => '<div class="fa fa-angle-double-left"></div><span></span> %title',
                 'in_same_term' => true,
-                'taxonomy' => __('category', 'newsever'),
-                'screen_reader_text' => __('Continue Reading', 'newsever'),
             ));
             ?>
               </article>
