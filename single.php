@@ -87,6 +87,11 @@
                 'in_same_term' => true,
             ));
             ?>
+            <?php wp_link_pages(array(
+                'before' => '<div class="single-nav-links">',
+                'after' => '</div>',
+            ));
+            ?>
               </article>
             </div>
 		      <?php } $newsup_enable_single_post_admin_details = esc_attr(get_theme_mod('newsup_enable_single_post_admin_details',true));

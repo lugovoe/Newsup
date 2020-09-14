@@ -499,6 +499,12 @@ blockquote::before {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	color: #212121;
 }
+
+.btn {
+	background: #1151d3;
+	color: #fff;
+
+}
 .btn-theme, .more_btn, .more-link {
 	background: #1151d3;
 	color: #fff;
@@ -512,6 +518,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .navigation.pagination .nav-links .page-numbers, .navigation.pagination .nav-links a {
 	background: #fff;
 	color: #999;
+}
+.single-nav-links a, .single-nav-links span {
+	background: #fff;
+	color: #999;
+}
+.single-nav-links a.current, .single-nav-links span.current, .single-nav-links a:hover, .single-nav-links span:hover{
+	background: #1151d3;
+	color: #fff;
 }
 .nav-next a, .nav-previous a {
 	color: #000;
