@@ -407,7 +407,7 @@ input[type="number"]:focus {
 .customize-control-radio-image {
     display: none;
 }
-#customize-control-newsup_content_layout, .customize-control input[type=radio] {display: none;}
+#customize-control-newsup_content_layout input[type=radio], #customize-control-newsup_single_page_layout input[type=radio] {display: none;}
 #customize-control-newsup_content_layout img, #customize-control-newsup_single_page_layout img{width:85px;}
 
 li.customize-control-section-title {
