@@ -102,6 +102,11 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                               $newsup_footer_youtube_target = esc_attr(get_theme_mod('newsup_footer_youtube_target','true'));
                               $newsup_footer_pinterest_link = get_theme_mod('newsup_footer_pinterest_link');
                               $newsup_footer_pinterest_target = esc_attr(get_theme_mod('newsup_footer_pinterest_target','true'));
+                              $newsup_footer_telegram_link = get_theme_mod('newsup_footer_tele_link');
+                              $newsup_footer_telegram_target = esc_attr(get_theme_mod('newsup_footer_tele_target','true'));
+
+
+
                               ?>
 
                             <div class="col-md-6 text-right text-xs">
@@ -122,6 +127,8 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                                     <?php } 
                                     if($newsup_footer_pinterest_link !=''){ ?>
                                     <li><span class="icon-soci pinterest"><a <?php if($newsup_footer_pinterest_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_pinterest_link); ?>"><i class="fa fa-pinterest-p"></i></a></span></li>
+                                    <?php } if($newsup_footer_telegram_link !=''){ ?>
+                                    <li><span class="icon-soci telegram"><a <?php if($newsup_footer_telegram_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_telegram_link); ?>"><i class="fa fa-telegram"></i></a></span></li>
                                     <?php } ?>
                              </ul>
 

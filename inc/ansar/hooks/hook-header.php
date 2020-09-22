@@ -25,7 +25,10 @@ function newsup_header_section()
             $newsup_header_youtube_link = get_theme_mod('newsup_header_youtube_link');
             $newsup_header_youtube_target = esc_attr(get_theme_mod('newsup_header_youtube_target','true'));
             $newsup_header_pintrest_link = get_theme_mod('newsup_header_pintrest_link');
-            $newsup_header_pintrest_target = esc_attr(get_theme_mod('newsup_header_pintrest_target','true'));  ?>
+            $newsup_header_pintrest_target = esc_attr(get_theme_mod('newsup_header_pintrest_target','true'));
+            $newsup_header_telegram_link = get_theme_mod('newsup_header_tele_link');
+            $newsup_header_telegram_target = esc_attr(get_theme_mod('newsup_header_telegram_target','true'));
+              ?>
             <div class="col-md-6 col-xs-12">
                 <ul class="info-left">
                     <?php newsup_date_display_type(); ?>
@@ -52,6 +55,8 @@ function newsup_header_section()
                       <li><span class="icon-soci youtube"><a <?php if($newsup_header_youtube_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_header_youtube_link); ?>"><i class="fa fa-youtube"></i></a></span></li>
                       <?php }  if($newsup_header_pintrest_link !=''){ ?>
                       <li><span class="icon-soci pinterest"><a <?php if($newsup_header_pintrest_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_header_pintrest_link); ?>"><i class="fa fa-pinterest-p"></i></a></span></li>
+                      <?php } if($newsup_header_telegram_link !=''){ ?>
+                      <li><span class="icon-soci telegram"><a <?php if($newsup_header_telegram_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_header_telegram_link); ?>"><i class="fa fa-telegram"></i></a></span></li>
                       <?php } ?>
                 </ul>
             </div>
