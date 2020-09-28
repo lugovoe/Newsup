@@ -160,6 +160,7 @@
                                               if($newsup_enable_single_post_admin == true) {?>
                                             <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"> <i class="fa fa-user-circle-o"></i> <?php the_author(); ?></a>
                                             <?php } ?> </div>
+                                            <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="fa fa-edit"></i>', '</span>' ); ?>
                                         </div>
                                     </div>
                                   </div>

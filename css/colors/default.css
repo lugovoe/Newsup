@@ -77,6 +77,8 @@
 .mg-headwidget.light .mg-nav-widget-area-back .inner {
 	background: #fff;
 }
+
+.post-edit-link :hover{ color:#1151d3; }
 /*==================== Theme Menu ====================*/
 /**Category Color **/
 a.newsup-categories.category-color-1{background: #1151d3;}
