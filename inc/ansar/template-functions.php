@@ -373,6 +373,13 @@ function newsup_social_share_post($post) {
                     'http://pinterest.com/pin/create/link/?url='
                     );
 
+                     $telegram_url = add_query_arg(
+                     array('url'  => $post_link,
+                      'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
+                     ),
+                    'https://telegram.me/share/url?url=&text='
+                    );
+
 
                      ?>
                      <script>
@@ -401,6 +408,9 @@ function newsup_social_share_post($post) {
 
                               <a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
                                 <i class="fa fa-linkedin"></i></a>
+
+                             <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
+                                <i class="fa fa-telegram"></i></a>
 
                               <a href="javascript:pinIt();" class="link pinterest"><i class="fa fa-pinterest"></i></a>    
                           </div>
