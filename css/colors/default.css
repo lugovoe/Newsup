@@ -148,9 +148,9 @@ body {
 	color: #212121;
 }
 input:not([type]), input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], textarea {
-	color: #9b9ea8;
+	color: #212121;
 	border-color: #eef3fb;
-}
+}	
 .form-control:hover, textarea:hover, input:not([type]):hover, input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="tel"]:hover, input[type="url"]:hover, input[type="text"]:hover, input:not([type]):focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="text"]:focus {
 	border-color: #1151d3;
 }
@@ -362,16 +362,16 @@ blockquote::before {
     color: #bdbdbd;
 }
 .mg-blog-meta a {
-	color: #bdbdbd;
+	color: #333;
 }
 .mg-blog-meta a:hover {
 	color: #1151d3;
 }
 .mg-blog-meta i {
-	color: #999;
+	color: #333;
 }
 .mg-blog-date {
-	color: #bdbdbd;
+	color: #333;
 }
 .mg-blog-post.lg .mg-blog-meta i, .mg-blog-post.lg .mg-blog-meta a , .mg-blog-post.lg .mg-blog-meta span {
 	color: #fff;
@@ -567,6 +567,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .mg-heading-bor-bt h5 {
 	color: #212121;
 }
+
+#wp-calendar tbody td#today{color: #1151d3; }
 /*==================== footer background ====================*/
 footer .overlay {
 	background: #121026;
@@ -715,7 +717,7 @@ footer .mg-widget .mg-widget-tags a:hover, footer .mg-widget .tagcloud a:hover, 
 	color: #999;
 }
 /*-theme-color-*/ 
-.woocommerce a, .woocommerce #respond input#submit, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page .products .added_to_cart, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+.woocommerce #respond input#submit, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page .products .added_to_cart, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
 	color: #1151d3;
 }
 /*-theme-border-color-*/ 
@@ -790,7 +792,7 @@ footer .mg-widget .mg-widget-tags a:hover, footer .mg-widget .tagcloud a:hover, 
 /*woocommerce-form*/
 .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
 	border-color: #ccc;
-	color: #999;
+	color: #000;
 }
 .woocommerce form .form-row label { 
 	color: #222;
