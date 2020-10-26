@@ -113,22 +113,32 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                                 
                             <ul class="mg-social">
                                     <?php if($newsup_footer_fb_link !=''){?>
-                                    <li><span class="icon-soci facebook"><a <?php if($newsup_footer_fb_target) { ?> target="_blank" <?php } ?>href="<?php echo esc_url($newsup_footer_fb_link); ?>"><i class="fa fa-facebook"></i></a></span> </li>
-                                    <?php } if($newsup_footer_twt_link !=''){ ?>
-                                    <li><span class="icon-soci twitter"><a <?php if($newsup_footer_twt_target) { ?>target="_blank" <?php } ?>href="<?php echo esc_url($newsup_footer_twt_link);?>"><i class="fa fa-twitter"></i></a></span></li>
-                                    <?php } if($newsup_footer_lnkd_link !=''){ ?>
-                                    <li><span class="icon-soci linkedin"><a <?php if($newsup_footer_lnkd_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_lnkd_link); ?>"><i class="fa fa-linkedin"></i></a></span></li>
-                                    <?php } 
-                                    if($newsup_footer_insta_link !=''){ ?>
-                                    <li><span class="icon-soci instagram"><a <?php if($newsup_footer_insta_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_insta_link); ?>"><i class="fa fa-instagram"></i></a></span></li>
-                                    <?php }
-                                    if($newsup_footer_youtube_link !=''){ ?>
-                                    <li><span class="icon-soci youtube"><a <?php if($newsup_footer_youtube_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_youtube_link); ?>"><i class="fa fa-youtube"></i></a></span></li>
-                                    <?php } 
+                                    <a <?php if($newsup_footer_fb_target) { ?> target="_blank" <?php } ?>href="<?php echo esc_url($newsup_footer_fb_link); ?>"><li><span class="icon-soci facebook"><i class="fa fa-facebook"></i></span> </li>
+                                    </a>
+                                    <?php } ?>
+                                    <a <?php if($newsup_footer_twt_target) { ?>target="_blank" <?php } ?>href="<?php echo esc_url($newsup_footer_twt_link);?>">
+                                    <?php if($newsup_footer_twt_link !=''){ ?>
+                                    <li><span class="icon-soci twitter"><i class="fa fa-twitter"></i></span></li></a>
+                                    <?php } ?>
+                                    <a <?php if($newsup_footer_lnkd_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_lnkd_link); ?>">
+                                    <?php if($newsup_footer_lnkd_link !=''){ ?>
+                                    <li><span class="icon-soci linkedin"><i class="fa fa-linkedin"></i></span></li></a>
+                                    <?php } ?> <?php if($newsup_footer_insta_link !=''){ ?>
+                                    <a <?php if($newsup_footer_insta_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_insta_link); ?>"><li><span class="icon-soci instagram"><i class="fa fa-instagram"></i></span>
+                                    </li></a>
+                                    <?php } ?>
+                                    <?php if($newsup_footer_youtube_link !=''){ ?>
+                                    <a <?php if($newsup_footer_youtube_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_youtube_link); ?>">
+                                    <li><span class="icon-soci youtube"><i class="fa fa-youtube"></i></span></li></a>
+                                    <?php } ?><?php 
                                     if($newsup_footer_pinterest_link !=''){ ?>
-                                    <li><span class="icon-soci pinterest"><a <?php if($newsup_footer_pinterest_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_pinterest_link); ?>"><i class="fa fa-pinterest-p"></i></a></span></li>
-                                    <?php } if($newsup_footer_telegram_link !=''){ ?>
-                                    <li><span class="icon-soci telegram"><a <?php if($newsup_footer_telegram_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_telegram_link); ?>"><i class="fa fa-telegram"></i></a></span></li>
+                                    <a <?php if($newsup_footer_pinterest_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_pinterest_link); ?>">
+                                    <li><span class="icon-soci pinterest"><i class="fa fa-pinterest-p"></i></span></li></a>
+                                    <?php } ?>
+
+                                    <?php if($newsup_footer_telegram_link !=''){ ?>
+                                    <a <?php if($newsup_footer_telegram_target) { ?>target="_blank" <?php } ?> href="<?php echo esc_url($newsup_footer_telegram_link); ?>">
+                                    <li><span class="icon-soci telegram"><i class="fa fa-telegram"></i></span></li></a>
                                     <?php } ?>
                              </ul>
 

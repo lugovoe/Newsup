@@ -595,34 +595,43 @@ footer .mg-social li span.icon-soci a {
 }
 .facebook{
 	background: #3b5998;
+	color:#fff;
 } 
 .twitter{
 	background: #1da1f2;
+	color:#fff;
 }
 .linkedin{
 	background: #0e76a8;
+	color:#fff;
 }
 .instagram{
-	background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%),linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
+	color:#fff; background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%),linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
 }
 .youtube{
 	background: #cd201f;
+	color:#fff;
 }
 .pinterest {
 	background: #bd081c;
+	color:#fff;
 }
 .vimeo {
 	background: #44bbff;
+	color:#fff;
 }
 .dribbble {
 	background: #ea4c89;
+	color:#fff;
 }
 .skype {
 	background: #0078ca;
+	color:#fff;
 }
 
 .telegram {
 	background: #0088cc;
+	color:#fff;
 }
 
 .email{
