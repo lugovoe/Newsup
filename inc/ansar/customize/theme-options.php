@@ -817,6 +817,18 @@ $wp_customize->add_section('you_missed_section',
         'section' => 'footer_options')
     ) );
 
+     //Bqckground Overlay 
+   $wp_customize->add_setting(
+        'newsup_footer_text_color', array( 'sanitize_callback' => 'sanitize_hex_color',
+        
+    ) );
+    
+    $wp_customize->add_control( 'newsup_footer_text_color', array(
+       'label'      => __('Text Color', 'newsup' ),
+        'type' => 'color',
+        'section' => 'footer_options')
+    );
+
     
     $wp_customize->add_setting(
                 'newsup_footer_column_layout', array(

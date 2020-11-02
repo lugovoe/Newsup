@@ -66,3 +66,21 @@ function newsup_skip_link_focus_fix() {
 	<?php
 }
 add_action( 'wp_print_footer_scripts', 'newsup_skip_link_focus_fix' );
+
+//Footer widget text color
+function newsup_footer_text_color()
+{
+$newsup_footer_text_color = get_theme_mod('newsup_footer_text_color');
+if($newsup_footer_text_color)
+{ ?>
+	<style>
+		footer .mg-widget p, footer .site-title a, footer .site-title a:hover , footer .site-description, footer .site-description:hover{
+	
+			color: <?php echo esc_attr($newsup_footer_text_color); ?>;
+}
+
+	</style>
+
+<?php }
+}
+add_action('wp_footer','newsup_footer_text_color');
