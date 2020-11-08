@@ -145,7 +145,8 @@ function newsup_setup() {
 			'flex-height'		=> false,
 			'flex-width'		=> false,
 			'header-text'		=> true,
-			'default-text-color'	=> '#143745'
+			'default-text-color'	=> 'fff',
+			'wp-head-callback'       => 'newsup_header_color',
 		);
 		add_theme_support( 'custom-header', $args );
 	
@@ -260,3 +261,5 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 		do_action( 'wp_body_open' );
 	}
 }
+
+

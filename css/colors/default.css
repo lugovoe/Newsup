@@ -18,9 +18,6 @@
 .mg-headwidget .mg-head-detail .info-right li a i {
 	color: #fff;
 }
-.mg-headwidget .site-branding-text, .mg-headwidget .site-branding-text a, .site-title a, .site-description, .site-title a:hover {
-	color: #fff;
-}
 .mg-headwidget .trans {
 	background: rgba(0, 0, 0, 0.0);
 }
@@ -37,7 +34,6 @@
 .mg-headwidget.center .navbar-wp {
     background: #1151d3;
 }
-.site-title a{color: #fff;}
 /*=== navbar Header colors ===*/
 .mg-headwidget .navbar-wp {
 	background: #202f5b;

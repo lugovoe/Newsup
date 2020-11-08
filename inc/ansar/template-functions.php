@@ -433,4 +433,32 @@ $color = get_theme_mod( 'background_color', get_theme_support( 'custom-backgroun
 </style>
 <?php }
 add_action('wp_head','newsup_custom_header_background');
+
+if ( ! function_exists( 'newsup_header_color' ) ) :
+
+function newsup_header_color() {
+    $newsup_logo_text_color = get_header_textcolor();
+
+    ?>
+    <style type="text/css">
+    <?php
+        if ( ! display_header_text() ) :
+    ?>
+        .site-title,
+        .site-description {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+    <?php
+        else :
+    ?>
+        body .site-title a,
+        body .site-description {
+            color: #<?php echo esc_attr( $newsup_logo_text_color ); ?>;
+        }
+    <?php endif; ?>
+    </style>
+    <?php
+}
+endif;
 ?>
