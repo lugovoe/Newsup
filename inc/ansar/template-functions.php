@@ -72,7 +72,7 @@ add_filter('body_class', 'newsup_body_classes');
 function newsup_pingback_header()
 {
     if (is_singular() && pings_open()) {
-        echo '<link rel="pingback" href="', esc_url(get_bloginfo('pingback_url')), '">';
+        echo '<link rel="pingback" href="', echo esc_url(get_bloginfo('pingback_url')), '">';
     }
 }
 
