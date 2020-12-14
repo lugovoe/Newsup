@@ -802,3 +802,9 @@ footer .mg-widget .mg-widget-tags a:hover, footer .mg-widget .tagcloud a:hover, 
 .woocommerce form .form-row label { 
 	color: #222;
 }
+
+div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form button[type=submit]:focus, div.wpforms-container-full .wpforms-form button[type=submit]:hover
+{
+    background-color: #1151d3;
+    color: #fff;
+}
