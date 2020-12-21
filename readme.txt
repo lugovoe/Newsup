@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.4.2
 Requires PHP: 5.6
-Stable tag: 2.9.9.41
+Stable tag: 2.9.9.42
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -324,4 +324,7 @@ License: CC0 Public Domain
 * Remove unused code.
 
 = Version 2.9.9.41
-* Fixed wpforms styling issue.
+* Fixed wpforms styling issue.
+
+= Version 2.9.9.42
+* Fixed fronrpage sidebar title issue.
