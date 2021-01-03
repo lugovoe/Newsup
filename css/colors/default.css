@@ -382,6 +382,20 @@ blockquote::before {
 .mg-comments h4 {
 	color: #212121;
 }
+.comments-area .comment-meta .comment-author img {
+	border-color: #1151d3;
+}
+.comment-body .reply a {
+    color: #fff;
+    background: #1151d3;
+}
+.comment-body .reply a:hover, .comment-body .reply a:focus {
+    color: #fff;
+    background: #202f5b;
+}
+.comment-metadata .edit-link:before {
+    color: #1151d3;
+}
 .mg-blog-author {
 	background: #e8e8e8;
 }
