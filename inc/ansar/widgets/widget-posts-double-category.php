@@ -95,10 +95,12 @@ if (!class_exists('Newsup_Dbl_Col_Cat_Posts')) :
                                                 <ul>
                                                 <li class="small-post clearfix mg-post-<?php echo esc_attr($count_1); ?>">
                                                     <!-- small_post -->
+                                                    <?php if(has_post_thumbnail()) { ?>
                                                     <div class="img-small-post">
                                                         <!-- img-small-post -->
                                                         <img src="<?php echo esc_url($url); ?>">
                                                     </div>
+                                                    <?php } ?>
                                                     <!-- // img-small-post -->
                                                     <div class="small-post-content">
                                                         <div class="mg-blog-category">
@@ -169,12 +171,14 @@ if (!class_exists('Newsup_Dbl_Col_Cat_Posts')) :
                                     <div class="small-list-post mg-post-<?php echo esc_attr($count_2); ?>">
                                     <ul>
                                     <li class="small-post clearfix mg-post-<?php echo esc_attr($count_2); ?>">
+                                                    <?php if(has_post_thumbnail()) { ?>
                                                     <!-- small_post -->
                                                     <div class="img-small-post">
                                                         <!-- img-small-post -->
                                                         <img src="<?php echo esc_url($url); ?>">
                                                     </div>
                                                     <!-- // img-small-post -->
+                                                    <?php } ?>
                                                     <div class="small-post-content">
                                                         <div class="mg-blog-category">
                                                             <?php newsup_post_categories(); ?> 
