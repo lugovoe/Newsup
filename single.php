@@ -73,7 +73,7 @@
               $single_show_featured_image = esc_attr(get_theme_mod('single_show_featured_image','true'));
               if($single_show_featured_image == true) {
               if(has_post_thumbnail()){
-              the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
+              the_post_thumbnail( '', array( 'class'=>'img-fluid' ) );
                } }?>
               <article class="small single">
                 <?php the_content(); ?>

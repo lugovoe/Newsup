@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.45
+Version: 2.9.9.46
 Tested up to: 5.4.2
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -873,11 +873,28 @@ button.mfp-close:hover, button.mfp-close:focus {
 /*---------------------------------------
 	blog   
 -----------------------------------------*/
+#grid .mg-blog-post-box:nth-child(2n) {
+    clear: both;
+}
+#grid .mg-blog-post-box:nth-child(3n) {
+    clear: both;
+}
 .mg-blog-post-box {
 	margin-bottom: 50px;
 	padding: 0;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 	background: #fff;
+}
+.mg-blog-post-box > .img-fluid{
+	width: 100%;
+}
+.mg-blog-post-box .mg-blog-category {
+    margin-bottom: 10px;
+}
+.mg-blog-post-box > .col-md-6 {
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
 }
 .mg-blog-post-box .small {
 	font-size: 16px;
@@ -2785,9 +2802,6 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
     padding-right: 15px;
     padding-left: 15px;
 }
-#content.home {
-    padding: 30px 0px;
-}
 }
 @media (max-width: 991.98px) {
 #menu-primary li.active.home {
@@ -3092,3 +3106,6 @@ div.wpforms-container-full .wpforms-form button[type=submit]
     font-size: 1em;
     padding: 5px 20px;
 }
+
+
+.blog .post:nth-child(2n)

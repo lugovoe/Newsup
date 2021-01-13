@@ -47,7 +47,6 @@ get_header();
 			</aside>
 			<?php } ?>
 			<!--Sidebar Area-->
-			</div>
 		</div>
 	</div>
 </main>

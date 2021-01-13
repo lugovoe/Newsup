@@ -404,11 +404,8 @@ input[type="number"]:focus {
     margin-right: 2%;
 }
 
-.customize-control-radio-image {
-    display: none;
-}
 #customize-control-newsup_content_layout input[type=radio], #customize-control-newsup_single_page_layout input[type=radio] {display: none;}
-#customize-control-newsup_content_layout img, #customize-control-newsup_single_page_layout img{width:85px;}
+#customize-control-newsup_content_layout img, #customize-control-newsup_single_page_layout img{width:85px; margin-bottom: 10px;}
 
 li.customize-control-section-title {
     background-color: #ffffff;

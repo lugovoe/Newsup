@@ -21,24 +21,53 @@ get_header(); ?>
                     <aside class="col-md-4">
                         <?php get_sidebar();?>
                     </aside>
-                    <?php } ?>
-                    <?php if($newsup_content_layout == "align-content-right"){
-                    ?>
+                    <?php }
+                    elseif($newsup_content_layout == "grid-left-sidebar")
+                    { ?>
+                    <aside class="col-md-4">
+                        <?php get_sidebar();?>
+                    </aside>
+                    <?php }
+                    if($newsup_content_layout == "align-content-right"){ ?>
                     <div class="col-md-8">
+                        <?php get_template_part('content',''); ?>
+                    </div>
                     <?php } elseif($newsup_content_layout == "align-content-left") { ?>
                     <div class="col-md-8">
+                        <?php get_template_part('content',''); ?>
+                    </div>
                     <?php } elseif($newsup_content_layout == "full-width-content") { ?>
                      <div class="col-md-12">
-                     <?php } get_template_part('content',''); ?>
+                        <?php get_template_part('content',''); ?>
                     </div>
+                     <?php }  if($newsup_content_layout == "grid-left-sidebar"){ ?>
+                    <div class="col-md-8">
+                        <?php get_template_part('content','grid'); ?>
+                    </div>
+                    <?php } elseif($newsup_content_layout == "grid-right-sidebar") { ?>
+                    <div class="col-md-8">
+                        <?php get_template_part('content','grid'); ?>
+                    </div>
+                    <?php } elseif($newsup_content_layout == "grid-fullwidth") { ?>
+                     <div class="col-md-12">
+                       <?php get_template_part('content','grid'); ?>
+                    </div>
+                     <?php }  ?>
+                    
                     <!--/col-md-8-->
-                    <?php if($newsup_content_layout == "align-content-right") { ?>
+                    <?php if($newsup_content_layout == "align-content-right")  { ?>
                     <!--col-md-4-->
                     <aside class="col-md-4">
                         <?php get_sidebar();?>
                     </aside>
                     <!--/col-md-4-->
-                    <?php } ?>
+                    <?php } 
+                    elseif($newsup_content_layout == "grid-right-sidebar")
+                    { ?>
+                    <aside class="col-md-4">
+                        <?php get_sidebar();?>
+                    </aside>
+                    <?php }?>
                 </div>
                 <!--/row-->
     </div>

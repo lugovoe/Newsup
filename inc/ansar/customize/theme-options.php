@@ -398,9 +398,12 @@ $wp_customize->add_control(
                 'section'       => 'site_layout_settings',
                 'label'         => __( 'Layout', 'newsup' ),
                 'choices'       => array(
-                    'align-content-right'    => get_template_directory_uri() . '/images/right-sidebar.png',
-                    'align-content-left' => get_template_directory_uri() . '/images/fullwidth-left-sidebar.png',
+                    'align-content-left' => get_template_directory_uri() . '/images/fullwidth-left-sidebar.png',  
                     'full-width-content'    => get_template_directory_uri() . '/images/fullwidth.png',
+                    'align-content-right'    => get_template_directory_uri() . '/images/right-sidebar.png',
+                    'grid-left-sidebar' => get_template_directory_uri() . '/images/grid-left-sidebar.png',
+                    'grid-fullwidth' => get_template_directory_uri() . '/images/grid-fullwidth.png',
+                    'grid-right-sidebar' => get_template_directory_uri() . '/images/grid-right-sidebar.png',
                 )
             )
         )
@@ -444,9 +447,9 @@ $wp_customize->add_control(
                 'section'       => 'site_layout_settings',
                 'label'         => __( 'Layout', 'newsup' ),
                 'choices'       => array(
-                    'single-align-content-right'    => get_template_directory_uri() . '/images/right-sidebar.png',
                     'single-align-content-left' => get_template_directory_uri() . '/images/fullwidth-left-sidebar.png',
                    'single-full-width-content'    => get_template_directory_uri() . '/images/fullwidth.png',
+                   'single-align-content-right'    => get_template_directory_uri() . '/images/right-sidebar.png',
                 )
             )
         )
