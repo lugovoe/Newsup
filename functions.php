@@ -212,8 +212,8 @@ function newsup_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="newsup-front-page-content-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h6>',
-		'after_title'   => '</h6>',
+		'before_title'  => '<div class="mg-sec-title"><h4>',
+		'after_title'   => '</h4></div>',
 	) );
 
 	register_sidebar( array(
@@ -261,5 +261,3 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 		do_action( 'wp_body_open' );
 	}
 }
-
-
