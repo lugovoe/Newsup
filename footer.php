@@ -80,8 +80,8 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                                <?php the_custom_logo(); 
                                if (display_header_text()) : ?>
                               <div class="site-branding-text">
-                              <h1 class="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                              <p class="site-description"><?php bloginfo('description'); ?></p>
+                              <h1 class="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html(get_bloginfo( 'name' )); ?></a></h1>
+                              <p class="site-description"><?php echo esc_html(get_bloginfo( 'description' )); ?></p>
                               </div>
                               <?php endif; ?>
                             </div>
