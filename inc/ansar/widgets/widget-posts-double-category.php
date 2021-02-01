@@ -98,7 +98,12 @@ if (!class_exists('Newsup_Dbl_Col_Cat_Posts')) :
                                                     <?php if(has_post_thumbnail()) { ?>
                                                     <div class="img-small-post">
                                                         <!-- img-small-post -->
-                                                        <img src="<?php echo esc_url($url); ?>">
+                                                        <a href="<?php the_permalink(); ?>">
+                                                            <?php if (!empty($url)): ?>
+                                                                <img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
+                                                            <?php endif; ?>
+                                                        </a>
+                                                        
                                                     </div>
                                                     <?php } ?>
                                                     <!-- // img-small-post -->
@@ -175,7 +180,11 @@ if (!class_exists('Newsup_Dbl_Col_Cat_Posts')) :
                                                     <!-- small_post -->
                                                     <div class="img-small-post">
                                                         <!-- img-small-post -->
-                                                        <img src="<?php echo esc_url($url); ?>">
+                                                        <a href="<?php the_permalink(); ?>">
+                                                            <?php if (!empty($url)): ?>
+                                                            <img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
+                                                            <?php endif; ?>
+                                                        </a>
                                                     </div>
                                                     <!-- // img-small-post -->
                                                     <?php } ?>

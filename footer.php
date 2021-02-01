@@ -31,6 +31,7 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                <div class="mg-blog-post-3 minh back-img" 
                             <?php if(has_post_thumbnail()) { ?>
                             style="background-image: url('<?php echo esc_url($url); ?>');" <?php } ?>>
+                            <a class="link-div" href="<?php the_permalink(); ?>"></a>
                     <div class="mg-blog-inner">
                       <div class="mg-blog-category">
                       <?php newsup_post_categories(); ?>
@@ -74,7 +75,7 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                 <div class="mg-footer-bottom-area">
                     <div class="container-fluid">
                         <div class="divide-line"></div>
-                        <div class="row">
+                        <div class="row align-items-center">
                             <!--col-md-4-->
                             <div class="col-md-6">
                                <?php the_custom_logo(); 

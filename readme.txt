@@ -2,9 +2,9 @@
 Contributors: Themeansar
 Author: Themeansar
 Requires at least: WordPress 4.7
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.9.9.48
+Stable tag: 2.9.9.49
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -345,4 +345,7 @@ License: CC0 Public Domain
 * Fixed frontpage content sidebar styling issue.
 
 = Version 2.9.9.48
-* Fixed Escaping issues.
+* Fixed Escaping issues.
+
+= Version 2.9.9.49
+* Fixed responsive style issues.

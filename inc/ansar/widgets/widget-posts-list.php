@@ -76,8 +76,12 @@ if (!class_exists('Newsup_Posts_List')) :
                                     <li class="small-post clearfix">
                                         <!-- small_post -->
                                         <div class="img-small-post">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php if (!empty($url)): ?>
+                                                    <img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
+                                                <?php endif; ?>
+                                            </a>
                                             <!-- img-small-post -->
-                                            <img src="<?php echo esc_url($url); ?>" alt="Consectetur adipisicing elit">
                                         </div>
                                         <!-- // img-small-post -->
                                         <div class="small-post-content">

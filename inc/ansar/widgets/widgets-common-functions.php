@@ -157,7 +157,11 @@ if (!function_exists('newsup_render_posts')):
                         ?>
                         <?php if (!empty($url)): ?>
                            <div class="img-small-post">
-                                <img src="<?php echo esc_url($url); ?>"/>
+                                <a href="<?php the_permalink(); ?>">
+                                <?php if (!empty($url)): ?>
+                                    <img src="<?php echo esc_url($url); ?>" alt="<?php the_title(); ?>">
+                                <?php endif; ?>
+                                </a>
                             </div>
                         <?php endif; ?>
                         <div class="small-post-content">

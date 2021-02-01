@@ -285,6 +285,7 @@ if($url) { ?>
 <div class="col-12 col-md-6">
     <div class="mg-post-thumb back-img md" style="background-image: url('<?php echo esc_url($url); ?>');">
         <span class="post-form"><i class="fa fa-camera"></i></span>
+        <a class="link-div" href="<?php the_permalink(); ?>"></a>
     </div> 
 </div>
 <?php } 

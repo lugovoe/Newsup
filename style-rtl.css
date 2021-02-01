@@ -4,8 +4,8 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.44
-Tested up to: 5.4.2
+Version: 2.9.9.49
+Tested up to: 5.5
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
 License: GNU General Public License v3 or later
@@ -1378,6 +1378,10 @@ li.active.home {
 .mg-blog-post-3.minh  {
 	height: 197px;
 }
+.mg-blog-post-3.minh  h4 {
+	line-height: 25px;
+	margin-bottom: 0.5rem;
+}
 .mg-blog-post-3.smminh  {
 	height: 160px;
 }
@@ -2117,11 +2121,15 @@ footer .mg-footer-bottom-area .btn-default > .btn {
 	margin-right: -4px;
 }
 footer .mg-footer-copyright {
-	padding: 25px 0 5px;
+	padding: 25px 0;
 }
 footer .mg-footer-copyright p, footer .mg-footer-copyright a {
 	font-size: 13px;
 	line-height: 45px;
+	margin-bottom: 0;
+}
+footer h1.site-title {
+    margin-bottom: 0;
 }
 /* --------------------------------------
 =========================================
@@ -2736,7 +2744,7 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 	margin: 20px 0 0 0;
 }
 .text-xs {
-	text-align: center;
+	text-align: center !important;
 }
 .text-center-xs {
 	text-align: center;
@@ -2761,6 +2769,15 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 }
 .mr-xs{
 	margin-bottom: 30px;
+}
+footer .mg-footer-bottom-area {
+    text-align: center;
+}
+footer .mg-footer-copyright p, footer .mg-footer-copyright a {
+	line-height: 2;
+}
+footer .info-right {
+	float: unset;
 }
 }
 /* WordPress Gallery 
@@ -2938,19 +2955,23 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
     width: calc(100% + 40px);
     max-width: calc(100% + 40px);
 }
-
-.alignwide {
-    @media screen and (min-width: 570px) {
+@media screen and (min-width: 570px) {
+    .alignwide {	
         left: -60px;
         width: calc(100% + 120px);
         max-width: calc(100% + 120px);
     }
 }
-
-.alignfull {
-    @media screen and (min-width: 570px) {
+@media screen and (min-width: 570px) {
+    .alignfull {	
         left: calc(calc(-50vw + (570px / 2) - 20px));
         width: 100vw;
         max-width: 100vw;
     }
+}
+div.wpforms-container-full .wpforms-form button[type=submit]
+{
+	border: 1px solid #ddd;
+    font-size: 1em;
+    padding: 5px 20px;
 }
