@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.9.9.50
+Stable tag: 2.9.9.51
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -351,4 +351,7 @@ License: CC0 Public Domain
 * Fixed responsive style issues.
 
 = Version 2.9.9.50
-* Fixed alignwide issue.
+* Fixed alignwide issue.
+
+= Version 2.9.9.51
+* Fixed navigation styling issue.

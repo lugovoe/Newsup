@@ -527,31 +527,19 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	opacity: 0.8;
 }
 /*==================== pagination color ====================*/
-.navigation.pagination .nav-links .page-numbers, .navigation.pagination .nav-links a {
+.navigation.pagination .nav-links .page-numbers, .navigation.pagination .nav-links a, .single-nav-links a, .single-nav-links span  {
 	background: #fff;
 	color: #999;
 }
-.single-nav-links a, .single-nav-links span {
-	background: #fff;
-	color: #999;
-}
-.single-nav-links a.current, .single-nav-links span.current, .single-nav-links a:hover, .single-nav-links span:hover{
-	background: #1151d3;
-	color: #fff;
-}
+
 .nav-next a, .nav-previous a {
 	color: #000;
 }
 .nav-next a:hover, .nav-next a:focus, .nav-previous a:hover, .nav-previous a:focus {
 	color: #1151d3;
 }
-.navigation.pagination .nav-links .page-numbers:hover, .navigation.pagination .nav-links .page-numbers:focus, .navigation.pagination .nav-links .page-numbers.current, .navigation.pagination .nav-links .page-numbers.current:hover,  .navigation.pagination .nav-links .page-numbers.current:focus {
+.navigation.pagination .nav-links .page-numbers:hover, .navigation.pagination .nav-links .page-numbers:focus, .navigation.pagination .nav-links .page-numbers.current, .navigation.pagination .nav-links .page-numbers.current:hover,  .navigation.pagination .nav-links .page-numbers.current:focus, .single-nav-links a.current, .single-nav-links span.current, .single-nav-links a:hover, .single-nav-links span:hover, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
 	border-color: #1151d3;
-	background: #1151d3;
-	color: #fff;
-}
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-    border-color: #1151d3;
 	background: #1151d3;
 	color: #fff;
 }
