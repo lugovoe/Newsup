@@ -354,4 +354,7 @@ License: CC0 Public Domain
 * Fixed alignwide issue.
 
 = Version 2.9.9.51
-* Fixed navigation styling issue.
+* Fixed navigation styling issue.
+
+= Version 2.9.9.52
+* Fixed styling issue.
