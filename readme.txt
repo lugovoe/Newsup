@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.9.9.53
+Stable tag: 2.9.9.54
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -360,4 +360,7 @@ License: CC0 Public Domain
 * Fixed styling issue.
 
 = Version 2.9.9.53
-* Added WP Block CSS.
+* Added WP Block CSS.
+
+= Version 2.9.9.54
+* Fixed sidebar tabbed issue.
