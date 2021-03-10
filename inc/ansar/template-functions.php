@@ -153,7 +153,7 @@ function newsup_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top Ta
     $html = '';
 
     if (isset($popular_taxonomies) && !empty($popular_taxonomies)):
-        $html .= '<div class="mg-tpt-txnlst clearfix">';
+        $html .= '<section class="mg-tpt-tag-area"><div class="container-fluid"><div class="mg-tpt-txnlst clearfix">';
         if (!empty($title)):
             $html .= '<strong>';
             $html .= esc_html($title);
@@ -168,7 +168,7 @@ function newsup_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top Ta
             $html .= '</li>';
         endforeach;
         $html .= '</ul>';
-        $html .= '</div>';
+        $html .= '</div></div></section>';
     endif;
 
     echo $html;
