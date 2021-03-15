@@ -79,12 +79,13 @@
 		//echo $args['before_widget']; ?>
 		<!-- mg-posts-sec mg-posts-modul-1 -->
 		<div class="mg-posts-sec mg-posts-modul-1">
+        	<?php if($widget_title) { ?>
         	<!-- mg-sec-title -->
         	<div class="mg-sec-title">
         		<h4><?php echo $widget_title; ?></h4>
         	</div>
         	 <!-- // mg-sec-title -->
-
+        	<?php } ?>
         	<div class="mg-posts-sec-inner row">
             	<!-- mg-posts-sec-inner -->
             	<div class="<?php echo ($style == 0) ? 'col-lg-6 col-md-6 col-sm-6 col-xs-12' : 'col-12 ' ;?>">
