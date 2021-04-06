@@ -9,9 +9,9 @@
 	<?php 
 	$newsup_free_plugins = array(
 		'one-click-demo-import' => array(
-		    'name'     	=> 'One Click Demo Import',
-			'slug'     	=> 'one-click-demo-import',
-			'filename' 	=> 'one-click-demo-import.php',
+		    'name'     	=> 'Ansar Import',
+			'slug'     	=> 'ansar-import',
+			'filename' 	=> 'ansar-import.php',
 		),
 	);
 	if( !empty( $newsup_free_plugins ) ) { ?>
@@ -24,11 +24,11 @@
 					<span class="title" title="<?php echo esc_attr( $plugin['name'] ); ?>">
 					<?php echo esc_html( $newsup_plugin['name'] ); ?>
 					</span>
-					<?php if($newsup_plugin['slug'] == 'one-click-demo-import') : ?>
-					<p><?php echo esc_html( 'First of all download demo files from', 'newsup' ); ?></h3>
-					<a target="_blank" href="<?php echo esc_url( 'https://themeansar.com/free-themes/newsup/' ); ?>"><?php esc_html_e( 'Newsup Detail page', 'newsup' ); ?></a>
-					<?php echo esc_html(', then install and activate','newsup'); ?>
-					<a href="https://wordpress.org/plugins/one-click-demo-import/" target="_blank"><?php echo esc_html( 'One Click Demo Import', 'newsup' ); ?></a><?php echo esc_html(' plugin. After that, import sample demo content, visit Import Demo Data menu under Appearance.', 'newsup'); ?></p>
+					<?php if($newsup_plugin['slug'] == 'ansar-import') : ?>
+					<p><?php echo esc_html( 'First of all Install and activate','newsup'); ?> <a target="_blank" href="<?php echo esc_url( 'https://wordpress.org/plugins/ansar-import/' ); ?>"><?php esc_html_e( 'Ansar Demo Import', 'newsup' ); ?></a>
+					<?php echo esc_html('plugin. After that, activate the plugin then, visit Ansar Demo Importer in menu under Appearance.', 'newsup'); ?>
+					<a target="_blank" href="<?php echo esc_url( 'https://docs.themeansar.com/docs/wordpress/how-to-import-demo-content/' ); ?>"><?php echo esc_html('Following Documentation', 'newsup'); ?></a>
+				</p>
 					<?php endif; ?>
 					<?php echo '<div class="button-wrap">';
 					echo Newsup_Getting_Started_Page_Plugin_Helper::instance()->get_button_html( $newsup_plugin['slug'] );
