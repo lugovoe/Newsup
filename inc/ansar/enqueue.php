@@ -36,18 +36,22 @@
 }
 add_action('wp_enqueue_scripts', 'newsup_scripts');
 
-//Custom Color
+//Custom js for time
 function newsup_custom_js() {
-    
-	wp_enqueue_script('newsup-custom', get_template_directory_uri() . '/js/custom.js' , array('jquery'));
-	$newsup_date_time_show_type = get_theme_mod('newsup_date_time_show_type','newsup_default');
-	if($newsup_date_time_show_type == 'newsup_default'){
-	wp_enqueue_script('newsup-custom-time', get_template_directory_uri() . '/js/custom-time.js' , array('jquery'));
-	}
-    
-}
-add_action('wp_footer','newsup_custom_js');
 
+ wp_enqueue_script('newsup-custom', get_template_directory_uri() . '/js/custom.js' , array('jquery')); 
+
+ $header_time_enable = get_theme_mod('header_time_enable','true'); 
+ if($header_time_enable == 'true') { 
+ 
+ $newsup_date_time_show_type = get_theme_mod('newsup_date_time_show_type','newsup_default'); 
+
+ if($newsup_date_time_show_type == 'newsup_default'){
+
+wp_enqueue_script('newsup-custom-time', get_template_directory_uri() . '/js/custom-time.js' , array('jquery')); 
+
+} } } 
+add_action('wp_footer','newsup_custom_js');
 
 /**
  * Fix skip link focus in IE11.
