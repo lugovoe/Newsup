@@ -2,9 +2,9 @@
 Contributors: Themeansar
 Author: Themeansar
 Requires at least: WordPress 4.7
-Tested up to: 5.5
+Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 2.9.9.60
+Stable tag: 2.9.9.61
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -381,4 +381,8 @@ License: CC0 Public Domain
 * Added Ansar Demo Import plugin support.
 
 = Version 2.9.9.60
-* Fixed time js issue.
+* Fixed time js issue.
+
+= Version 2.9.9.61
+* Fixed mobile styling issue.
+* Fixed column widget spacing issue.
