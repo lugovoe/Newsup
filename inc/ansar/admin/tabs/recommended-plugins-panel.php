@@ -21,12 +21,14 @@
 			$info 		= newsup_call_plugin_api( $newsup_plugin['slug'] ); ?>
 			<div class="recom-plugin-wrap mb-0">
 				<div class="plugin-title-install clearfix">
-					<span class="title" title="<?php echo esc_attr( $plugin['name'] ); ?>">
+					<span class="title">
 					<?php echo esc_html( $newsup_plugin['name'] ); ?>
 					</span>
 					<?php if($newsup_plugin['slug'] == 'ansar-import') : ?>
 					<p><?php echo esc_html( 'First of all Install and activate','newsup'); ?> <a target="_blank" href="<?php echo esc_url( 'https://wordpress.org/plugins/ansar-import/' ); ?>"><?php esc_html_e( 'Ansar Demo Import', 'newsup' ); ?></a>
-					<?php echo esc_html('plugin. After that, activate the plugin then, visit Ansar Demo Importer in menu under Appearance.', 'newsup'); ?>
+					<?php echo esc_html('plugin. After that, activate the plugin then, visit','newsup');?>
+					<a target="_blank" href="<?php echo esc_url( 'themes.php?page=ansar-demo-import' ); ?>"><?php echo esc_html('Ansar Demo Importer', 'newsup'); ?></a>
+					<?php echo esc_html('in menu under Appearance.', 'newsup'); ?>
 					<a target="_blank" href="<?php echo esc_url( 'https://docs.themeansar.com/docs/wordpress/how-to-import-demo-content/' ); ?>"><?php echo esc_html('Following Documentation', 'newsup'); ?></a>
 				</p>
 					<?php endif; ?>
