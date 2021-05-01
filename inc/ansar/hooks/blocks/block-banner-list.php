@@ -14,8 +14,8 @@ if ($newsup_all_posts_main->have_posts()) :
          <div class="item">
                 <div class="mg-blog-post lg back-img" 
                 <?php if (!empty($newsup_url)): ?>
-                    style="background-image: url('<?php echo esc_url($newsup_url); ?>');">
-                <?php endif; ?>
+                style="background-image: url('<?php echo esc_url($newsup_url); ?>');"
+                <?php endif; ?>>
 
                 <a class="link-div" href="<?php the_permalink(); ?>"> </a>
 
