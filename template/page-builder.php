@@ -16,6 +16,7 @@ get_header(); ?>
 			the_content();
 
 		endwhile;
+		newsup_page_edit_link();
 		?>
 
 	</div><!-- #content -->

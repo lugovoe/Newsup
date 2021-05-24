@@ -23,7 +23,9 @@ get_template_part('index','banner'); ?>
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-			endwhile; // End of the loop. ?>
+			endwhile; // End of the loop.
+      newsup_page_edit_link();
+      ?>
           
       </div>
     </div>
