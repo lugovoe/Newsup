@@ -30,7 +30,7 @@ get_header();
 				while ( have_posts() ) : the_post();
 				// Include the page
 				the_content();
-				comments_template( '', true ); // show comments
+				
 				wp_link_pages(array(
         'before' => '<div class="link btn-theme">' . esc_html__('Pages:', 'newsup'),
         'after' => '</div>',
@@ -38,6 +38,10 @@ get_header();
 				
 				endwhile;
 				newsup_page_edit_link();
+
+				if (comments_open() || get_comments_number()) :
+                  comments_template();
+                  endif;
 			?>	
 		</div>
 			</div>
