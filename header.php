@@ -69,6 +69,9 @@
                           <i class="fa fa-bars"></i>
                         </button>
                         <!-- /navbar-toggle -->
+                        <?php $header_search_enable = get_theme_mod('header_search_enable','true');
+                        if($header_search_enable == true) {
+                        ?>
                         <div class="dropdown show mg-search-box pr-2">
                             <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                <i class="fa fa-search"></i>
@@ -78,6 +81,7 @@
                         <?php get_search_form(); ?>
                       </div>
                         </div>
+                      <?php } ?>
                         
                     </div>
                     <!-- /Right nav -->
