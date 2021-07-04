@@ -126,8 +126,10 @@ function newsup_customize_register($wp_customize) {
 				'render_callback' => 'newsup_customize_partial_newsup_related_post_title',
 		));
 
-
-
+		$wp_customize->selective_refresh->add_partial('header_search_enable', array(
+				'selector'        => '.mg-search-box',
+				'render_callback' => 'newsup_customize_partial_header_search_enable',
+		));
 
 
 	}
@@ -201,6 +203,11 @@ function newsup_customize_partial_newsup_footer_fb_link() {
 
 function newsup_customize_partial_newsup_related_post_title() {
     return get_theme_mod( 'newsup_related_post_title' );
+}
+
+function newsup_customize_partial_header_search_enable()
+{
+	return get_theme_mod( 'header_search_enable' );
 }
 
 
