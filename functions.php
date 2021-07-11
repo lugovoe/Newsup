@@ -94,8 +94,8 @@ function newsup_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary menu', 'newsup' ),
-        'footer' => __( 'Footer menu', 'newsup' ),
+		'primary' => esc_html__( 'Primary menu', 'newsup' ),
+        'footer' => esc_html__( 'Footer menu', 'newsup' ),
 	) );
 
 	/*

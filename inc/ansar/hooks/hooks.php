@@ -164,7 +164,7 @@ if (!function_exists('newsup_banner_advertisement')):
                     $newsup_open_on_new_tab = get_theme_mod('newsup_open_on_new_tab',true);
                     ?>
                     <div class="header-ads">
-                        <a class="pull-right" href="<?php echo esc_url($newsup_banner_advertisement_url); ?>" 
+                        <a class="pull-right" <?php echo esc_url($newsup_banner_advertisement_url); ?> href="<?php echo $newsup_banner_advertisement_url; ?>"
                             <?php if($newsup_open_on_new_tab) { ?>target="_blank" <?php } ?> >
                             <?php echo $newsup_banner_advertisement; ?>
                         </a>

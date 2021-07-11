@@ -245,5 +245,26 @@ function newsup_theme_option( $wp_customize )
     function newsup_sanitize_text( $input ) {
         return wp_kses_post( force_balance_tags( $input ) );
     }
+
+        /*--- Site title Font size **/
+    $wp_customize->add_setting('newsup_title_font_size',
+        array(
+            'default'           => 34,
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control('newsup_title_font_size',
+        array(
+            'label'    => esc_html__('Site Title Size', 'newsup'),
+            'section'  => 'title_tagline',
+            'type'     => 'number',
+            'priority' => 50,
+        )
+    );
+
+/*--- Get Site info control ---*/
+$wp_customize->get_control( 'header_textcolor')->section = 'title_tagline';
 }
 add_action('customize_register','newsup_theme_option');

@@ -416,6 +416,7 @@ if ( ! function_exists( 'newsup_header_color' ) ) :
 
 function newsup_header_color() {
     $newsup_logo_text_color = get_header_textcolor();
+    $newsup_title_font_size = newsup_get_option('newsup_title_font_size');
 
     ?>
     <style type="text/css">
@@ -434,6 +435,25 @@ function newsup_header_color() {
         body .site-description {
             color: #<?php echo esc_attr( $newsup_logo_text_color ); ?>;
         }
+
+        .site-branding-text .site-title a {
+                font-size: <?php echo esc_attr( $newsup_title_font_size ); ?>px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding-text .site-title a {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding-text .site-title a {
+                    font-size: 32px;
+
+                }
+            }
+
     <?php endif; ?>
     </style>
     <?php
