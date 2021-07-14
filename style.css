@@ -17,6 +17,13 @@ Text Domain: newsup
 	Header
 =========================================
 -----------------------------------------*/
+@media (min-width: 1610px) {
+	.mg-headwidget .mg-nav-widget-area-back {
+		background: url("/wp-content/themes/newsup/images/logo.png") center right 200px/520px 200px no-repeat, 
+			linear-gradient(115deg, #121026, #121026, #121026, #ffffff, #ffffff, #ffffff) !important;
+	}
+}
+
 .navbar-header .site-title {
 	margin-bottom: 0;
 }
@@ -24,7 +31,7 @@ Text Domain: newsup
     letter-spacing: 1.2px;
     margin-bottom: 0;
 }
-.mg-headwidget.light .mg-head-detail{
+.mg-headwidget.light .mg-head-detail {
 	border-width: 0 0 2px 0;
 	border-style: solid;
 }
@@ -129,7 +136,7 @@ Text Domain: newsup
     width: 100%;
     padding: 25px 0;
 }
-.mg-headwidget  .navbar-brand {
+.mg-headwidget .navbar-brand {
     padding:  0;
 }
 .navbar-wp {

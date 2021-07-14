@@ -337,12 +337,12 @@ function newsup_social_share_post($post) {
                     'mailto:'
                      ); 
 
-                     $linkedin_url = add_query_arg(
+                     /*$linkedin_url = add_query_arg(
                      array('url'  => $post_link,
                     'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
                      ),
                     'https://www.linkedin.com/sharing/share-offsite/?url'
-                    );
+                    );*/
 
                      $pinterest_url = add_query_arg(
                      array('url'  => $post_link,
@@ -384,8 +384,8 @@ function newsup_social_share_post($post) {
                                 <i class="fa fa-envelope-o"></i></a>
 
 
-                              <a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
-                                <i class="fa fa-linkedin"></i></a>
+                              <!--a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
+                                <i class="fa fa-linkedin"></i></a-->
 
                              <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
                                 <i class="fa fa-telegram"></i></a>
