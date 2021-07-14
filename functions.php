@@ -12,7 +12,7 @@
 	require( $newsup_theme_path . '/template-functions.php');
 	require( $newsup_theme_path. '/widgets/widgets-common-functions.php');
 	require ( $newsup_theme_path . '/custom-control/custom-control.php');
-	require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
+	//require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
 
 	$newsup_theme_start = wp_get_theme();
 	if (( 'Newsup' == $newsup_theme_start->name) || ( 'Newsberg' == $newsup_theme_start->name) || ( 'Newsbulk' == $newsup_theme_start->name) || 
@@ -49,7 +49,7 @@
 
 	require( $newsup_theme_path  . '/hooks/hooks-init.php');
 	
-	require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
+	//require_once( trailingslashit( get_template_directory() ) . 'inc/ansar/customize-pro/class-customize.php' );
 
 if ( ! function_exists( 'newsup_setup' ) ) :
 /**

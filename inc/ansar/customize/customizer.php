@@ -249,7 +249,7 @@ function newsup_theme_option( $wp_customize )
         /*--- Site title Font size **/
     $wp_customize->add_setting('newsup_title_font_size',
         array(
-            'default'           => 34,
+            'default'           => 28,
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'sanitize_text_field',
         )

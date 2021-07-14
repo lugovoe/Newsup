@@ -154,14 +154,14 @@ msgstr ""
 #. Description of the plugin/theme
 #: inc/ansar/admin/getting-started.php:90
 msgid ""
-"Newsup is a fast, clean, modern-looking Best Responsive News Magazine "
+"Paps Newsup is a fast, clean, modern-looking Best Responsive News Magazine "
 "WordPress theme. The theme is fully widgetized, so users can manage the "
-"content by using easy to use widgets. Newsup is suitable for dynamic news, "
+"content by using easy to use widgets. Paps Newsup is suitable for dynamic news, "
 "newspapers, magazine, publishers, blogs, editors, online and gaming "
 "magazines, newsportals,personal blogs, newspaper, publishing or review "
-"siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, "
-"translation and RTL ready. Live preview : https://demo.themeansar.com/newsup "
-"and documentation at https://docs.themeansar.com/docs/newsup/"
+"siteand any creative website. Paps Newsup is SEO friendly, WPML,Gutenberg, "
+"translation and RTL ready."
+"Documentation at https://docs.themeansar.com/docs/newsup/"
 msgstr ""
 
 #: inc/ansar/admin/getting-started.php:100
@@ -202,12 +202,12 @@ msgstr ""
 #: inc/ansar/admin/getting-started.php:166
 #, php-format
 msgid ""
-"Thank you for choosing Newsup theme. To take full advantage of the complete "
+"Thank you for choosing Paps Newsup theme. To take full advantage of the complete "
 "features of the theme, you have to go to our %1$s welcome page %2$s."
 msgstr ""
 
 #: inc/ansar/admin/getting-started.php:168
-msgid "Get started with Newsup"
+msgid "Get started with Paps Newsup"
 msgstr ""
 
 #: inc/ansar/admin/tabs/getting-started-panel.php:14
@@ -868,11 +868,11 @@ msgid "By"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Newsup"
+msgid "Paps Newsup"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://themeansar.com/free-themes/newsup/"
+msgid "https://github.com/lugovoe/Newsup/"
 msgstr ""
 
 #. Author of the plugin/theme
