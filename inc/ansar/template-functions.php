@@ -228,7 +228,7 @@ function newsup_date_display_type() {
     $newsup_date_time_show_type = get_theme_mod('newsup_date_time_show_type','newsup_default');
     if ( $newsup_date_time_show_type == 'newsup_default' ) { ?>
         <li><?php if($header_data_enable == true) {
-            echo date_i18n('D. M jS, Y ', strtotime(current_time("Y-m-d"))); }
+            echo date_i18n('F d Y', strtotime(current_time("Y-m-d"))); }
             if($header_time_enable == true) { ?>
             <span  id="time" class="time"></span>
             <?php } ?>
@@ -239,7 +239,7 @@ function newsup_date_display_type() {
             echo date_i18n( get_option( 'date_format' ) ); }
             if($header_time_enable == true) { ?>
             <span class="time"> <?php $format = get_option('') . ' ' . get_option('time_format');
-            print date_i18n($format, current_time('timestamp')); ?></span>
+            print date_i18n('H:i', current_time('timestamp')); ?></span>
             <?php } ?>
         </li>
 
@@ -319,13 +319,43 @@ function newsup_social_share_post($post) {
         'https://www.facebook.com/sharer.php'
         );
 
+                    $vkontakte_url = add_query_arg(
+                    array(
+                    'url'  => $post_link,
+                    'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
+                     ),
+                     'https://vk.com/share.php'
+                     );
+
+                    $odnoklassniki_url = add_query_arg(
+                    array(
+                    'url'  => $post_link,
+                    'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
+                     ),
+                     'https://connect.ok.ru/offer'
+                     );
+
+                     $telegram_url = add_query_arg(
+                     array('url'  => $post_link,
+                      'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
+                     ),
+                    'https://telegram.me/share/url?url=&text='
+                    );
+
                     $twitter_url = add_query_arg(
                     array(
                     'url'  => $post_link,
                     'text' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
                      ),
-                     'http://twitter.com/share'
+                     'https://twitter.com/share'
                      );
+
+        $whatsapp_url = add_query_arg(
+        array(
+        'text' => $post_link,
+        ),
+        'https://api.whatsapp.com/send'
+        );
 
                      $email_title = str_replace( '&', '%26', $post_title );
 
@@ -348,16 +378,8 @@ function newsup_social_share_post($post) {
                      array('url'  => $post_link,
                       'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
                      ),
-                    'http://pinterest.com/pin/create/link/?url='
+                    'https://pinterest.com/pin/create/link/?url='
                     );
-
-                     $telegram_url = add_query_arg(
-                     array('url'  => $post_link,
-                      'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
-                     ),
-                    'https://telegram.me/share/url?url=&text='
-                    );
-
 
                      ?>
                      <script>
@@ -372,23 +394,31 @@ function newsup_social_share_post($post) {
     </script>
                      <div class="post-share">
                           <div class="post-share-icons cf">
-                           
+
                               <a href="<?php echo esc_url("$facebook_url"); ?>" class="link facebook" target="_blank" >
                                 <i class="fa fa-facebook"></i></a>
-                            
-            
+
+                              <a href="<?php echo esc_url("$vkontakte_url"); ?>" class="link vk" target="_blank" >
+                                <i class="fa fa-vk"></i></a>
+
+                              <a href="<?php echo esc_url("$odnoklassniki_url"); ?>" class="link ok" target="_blank" >
+                                <i class="fa fa-odnoklassniki"></i></a>
+
+                              <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
+                                <i class="fa fa-telegram"></i></a>
+
                               <a href="<?php echo esc_url("$twitter_url"); ?>" class="link twitter" target="_blank">
                                 <i class="fa fa-twitter"></i></a>
-            
+
+                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank">
+                                <i class="fa fa-whatsapp"></i></a>
+
                               <a href="<?php echo esc_url("$email_url"); ?>" class="link email" target="_blank" >
                                 <i class="fa fa-envelope-o"></i></a>
 
 
                               <!--a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
                                 <i class="fa fa-linkedin"></i></a-->
-
-                             <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
-                                <i class="fa fa-telegram"></i></a>
 
                               <a href="javascript:pinIt();" class="link pinterest"><i class="fa fa-pinterest"></i></a>    
                           </div>

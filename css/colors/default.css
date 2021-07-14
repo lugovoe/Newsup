@@ -591,22 +591,30 @@ footer .mg-widget .calendar_wrap table thead th,footer .mg-widget .calendar_wrap
 footer .mg-social li span.icon-soci a {
     color: #fff;
 }
-.facebook{
+.facebook {
 	background: #3b5998;
 	color:#fff;
-} 
-.twitter{
+}
+.vk {
+	background: #597da3;
+	color:#fff;
+}
+.ok {
+	background: #ed812b;
+	color:#fff;
+}
+.twitter {
 	background: #1da1f2;
 	color:#fff;
 }
-.linkedin{
+.linkedin {
 	background: #0e76a8;
 	color:#fff;
 }
-.instagram{
+.instagram {
 	color:#fff; background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%),linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
 }
-.youtube{
+.youtube {
 	background: #cd201f;
 	color:#fff;
 }
@@ -631,8 +639,12 @@ footer .mg-social li span.icon-soci a {
 	background: #0088cc;
 	color:#fff;
 }
+.whatsapp {
+	background: #43d854;
+	color:#fff;
+}
 
-.email{
+.email {
 	background: #222;
 }
 footer .mg-footer-copyright {
