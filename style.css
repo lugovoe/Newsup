@@ -1,5 +1,5 @@
 /*
-Theme Name: Pap-club Newsup
+Theme Name: Paps Newsup
 Theme URI: https://github.com/lugovoe/Newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
@@ -19,7 +19,7 @@ Text Domain: newsup
 -----------------------------------------*/
 @media (min-width: 1610px) {
 	.mg-headwidget .mg-nav-widget-area-back {
-		background: url("/wp-content/themes/newsup/images/logo.png") center right 200px/520px 200px no-repeat, 
+		background: url("images/logo.png") center right 200px/520px 200px no-repeat, 
 			linear-gradient(115deg, #121026, #121026, #121026, #ffffff, #ffffff, #ffffff) !important;
 	}
 }

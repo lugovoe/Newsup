@@ -140,7 +140,7 @@ function newsup_setup() {
 	
 	// custom header Support
 			$args = array(
-			'default-image'		=>  get_template_directory_uri() .'/images/head-back.jpg',
+			'default-image'		=>  get_template_directory_uri() .'/images/head-back.png',
 			'width'			=> '1600',
 			'height'		=> '600',
 			'flex-height'		=> false,

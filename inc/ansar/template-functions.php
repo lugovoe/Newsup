@@ -335,6 +335,13 @@ function newsup_social_share_post($post) {
                      'https://connect.ok.ru/offer'
                      );
 
+        $whatsapp_url = add_query_arg(
+        array(
+        'text' => $post_link,
+        ),
+        'https://api.whatsapp.com/send'
+        );
+
                      $telegram_url = add_query_arg(
                      array('url'  => $post_link,
                       'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
@@ -349,13 +356,6 @@ function newsup_social_share_post($post) {
                      ),
                      'https://twitter.com/share'
                      );
-
-        $whatsapp_url = add_query_arg(
-        array(
-        'text' => $post_link,
-        ),
-        'https://api.whatsapp.com/send'
-        );
 
                      $email_title = str_replace( '&', '%26', $post_title );
 
@@ -404,14 +404,14 @@ function newsup_social_share_post($post) {
                               <a href="<?php echo esc_url("$odnoklassniki_url"); ?>" class="link ok" target="_blank" >
                                 <i class="fa fa-odnoklassniki"></i></a>
 
+                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank">
+                                <i class="fa fa-whatsapp"></i></a>
+
                               <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
                                 <i class="fa fa-telegram"></i></a>
 
                               <a href="<?php echo esc_url("$twitter_url"); ?>" class="link twitter" target="_blank">
                                 <i class="fa fa-twitter"></i></a>
-
-                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank">
-                                <i class="fa fa-whatsapp"></i></a>
 
                               <a href="<?php echo esc_url("$email_url"); ?>" class="link email" target="_blank" >
                                 <i class="fa fa-envelope-o"></i></a>
