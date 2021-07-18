@@ -120,6 +120,37 @@ $wp_customize->add_section( 'header_options' , array(
     ));
     
     
+	// Soical VKontakte link
+	$wp_customize->add_setting(
+		'newsup_header_vk_link',
+		array(
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'newsup_header_vk_link',
+		array(
+			'label' => __('VKontakte URL', 'newsup'),
+			'section' => 'header_options',
+			'type' => 'url',
+		)
+	);
+
+	$wp_customize->add_setting('newsup_header_vk_target',
+		array(
+			'default' => true,
+			'sanitize_callback' => 'newsup_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_header_vk_target', 
+		array(
+			'label' => esc_html__('Open link in a new tab', 'newsup'),
+			'type' => 'toggle',
+			'section' => 'header_options',
+		)
+	));
+
+
     //Social Twitter link
     $wp_customize->add_setting(
     'newsup_header_twt_link',
