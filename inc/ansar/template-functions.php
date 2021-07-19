@@ -78,6 +78,69 @@ function newsup_pingback_header()
 
 add_action('wp_head', 'newsup_pingback_header');
 
+/**
+ * Pattern Name: Kinozal for Gutenberg
+ */
+function kinozal_register_block_pattern() {
+	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
+		$wptxt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav">';
+		$wptxt .= '\n	<li class="nav-item">\n		<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n	</li>';
+		$wptxt .= '\n	<li class="nav-item">\n		<a class="nav-link" data-toggle="tab" href="#movie">Фильм</a>\n	</li>';
+		$wptxt .= '\n</ul>\n<div class="tab-content">\n	<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
+		$wptxt .= '\n\n<!-- wp:video -->\n<figure class="wp-block-video"></figure>\n<!-- /wp:video -->';
+		$wptxt .= '\n\n<!-- wp:columns -->\n<div class="wp-block-columns"><!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
+		$wptxt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
+		$wptxt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
+		$wptxt .= '\n\n<!-- wp:html -->\n</div>\n	<div class="tab-pane fade" id="movie">\n<!-- /wp:html -->';
+		$wptxt .= '\n\n<!-- wp:video -->\n<figure class="wp-block-video"></figure>\n<!-- /wp:video -->';
+		$wptxt .= '\n\n<!-- wp:html -->\n</div>\n</div>';
+		$wptxt .= '\n<script>\njQuery(document).ready(function($) {\n	$('#nav li:last a:first-child').addClass(nav.tab2);\n})\n</script>';
+		$wptxt .= '\n<!-- /wp:html -->';
+		register_block_pattern( 'pattern/kinozal', array(
+			'title'		=> 'Кинозал',
+			'description'	=> 'Установка блока с трейлером и фильмом (для зарегистрированных) на bootstrap',
+			'content'	=> '<!-- wp:group -->\n<div class="wp-block-group"><div class="wp-block-group__inner-container">'.$wptxt.'</div></div>\n<!-- /wp:group -->',
+			'categories'	=> array( 'columns' ),
+		) );
+	}
+}
+
+add_action( 'init', 'kinozal_register_block_pattern', 25 );
+
+function action_function_name_7714() {
+	if ( is_single() ) {
+		$nav_menu = ' disabled';
+
+		if ( is_user_logged_in() && !is_feed() ) {
+			$nav_menu = '';
+		}
+
+		wp_localize_script( 'jquery', 'nav', array(
+			'tab1' => __( '' ),
+			'tab2' => $nav_menu
+		) );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'action_function_name_7714', 99 );
+
+/**
+ * Removes videos from other channels at the end of YouTube video.
+ *
+ * @link https://misha.agency/gutenberg/otklyuchit-otobrazhenie-rekomenduemyh-video-v-bloke-youtube.html
+ */
+function true_youtube_rel_0( $block_content, $block ) {
+	if (
+		'core/embed' === $block[ 'blockName' ]
+		&& isset( $block[ 'attrs' ][ 'providerNameSlug' ] )
+		&& 'youtube' === $block[ 'attrs' ][ 'providerNameSlug' ]
+	) {
+		$block_content = str_replace( '?feature=oembed', '?rel=0', $block_content );
+	}
+	return $block_content;
+}
+
+add_filter( 'render_block', 'true_youtube_rel_0', 25, 2 );
 
 /**
  * Returns posts.
