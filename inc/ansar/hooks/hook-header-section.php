@@ -33,9 +33,9 @@ function newsup_header_section()
             { ?>
                 <ul class="info-left">
                     <li><?php
-                        echo date_i18n('D. M jS, Y ', strtotime(current_time("Y-m-d"))); 
+                        echo date_i18n('F d Y ', strtotime(current_time("Y-m-d"))); 
                         if($header_time_enable == true) { ?>
-                        <span  id="time" class="time"></span>
+                        <span id="time" class="time"></span>
                       <?php } ?>
                     </li>
                 </ul>

@@ -83,24 +83,25 @@ add_action('wp_head', 'newsup_pingback_header');
  */
 function kinozal_register_block_pattern() {
 	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
-		$wptxt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav">';
-		$wptxt .= '\n	<li class="nav-item">\n		<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n	</li>';
-		$wptxt .= '\n	<li class="nav-item">\n		<a class="nav-link" data-toggle="tab" href="#movie">Фильм</a>\n	</li>';
-		$wptxt .= '\n</ul>\n<div class="tab-content">\n	<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
-		$wptxt .= '\n\n<!-- wp:video -->\n<figure class="wp-block-video"></figure>\n<!-- /wp:video -->';
-		$wptxt .= '\n\n<!-- wp:columns -->\n<div class="wp-block-columns"><!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
-		$wptxt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
-		$wptxt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
-		$wptxt .= '\n\n<!-- wp:html -->\n</div>\n	<div class="tab-pane fade" id="movie">\n<!-- /wp:html -->';
-		$wptxt .= '\n\n<!-- wp:video -->\n<figure class="wp-block-video"></figure>\n<!-- /wp:video -->';
-		$wptxt .= '\n\n<!-- wp:html -->\n</div>\n</div>';
-		$wptxt .= '\n<script>\njQuery(document).ready(function($) {\n	$('#nav li:last a:first-child').addClass(nav.tab2);\n})\n</script>';
-		$wptxt .= '\n<!-- /wp:html -->';
+		$wp_txt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav">';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n</li>';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie">Фильм</a>\n</li>';
+		$wp_txt .= '\n</ul>\n<div class="tab-content">\n<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:video -->\n<figure class="wp-block-video"></figure>\n<!-- /wp:video -->';
+		$wp_txt .= '\n\n<!-- wp:columns -->\n<div class="wp-block-columns">';
+		$wp_txt .= '<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
+		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
+		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
+		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:video -->\n<figure class="wp-block-video"></figure>\n<!-- /wp:video -->';
+		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n</div>';
+		$wp_txt .= '\n<script>\njQuery(document).ready(function($) {\n$(\'#nav li:last a:first-child\').addClass(nav.tab2);\n})\n</script>';
+		$wp_txt .= '\n<!-- /wp:html -->';
 		register_block_pattern( 'pattern/kinozal', array(
 			'title'		=> 'Кинозал',
 			'description'	=> 'Установка блока с трейлером и фильмом (для зарегистрированных) на bootstrap',
-			'content'	=> '<!-- wp:group -->\n<div class="wp-block-group"><div class="wp-block-group__inner-container">'.$wptxt.'</div></div>\n<!-- /wp:group -->',
-			'categories'	=> array( 'columns' ),
+			'content'	=> str_replace( '\n', "\n", '<!-- wp:group -->\n<div class="wp-block-group"><div class="wp-block-group__inner-container">'.$wp_txt.'</div></div>\n<!-- /wp:group -->'),
+			'categories'	=> array( 'buttons' ),
 		) );
 	}
 }
@@ -291,7 +292,7 @@ function newsup_date_display_type() {
     $newsup_date_time_show_type = get_theme_mod('newsup_date_time_show_type','newsup_default');
     if ( $newsup_date_time_show_type == 'newsup_default' ) { ?>
         <li><?php if($header_data_enable == true) {
-            echo date_i18n('F d Y', strtotime(current_time("Y-m-d"))); }
+            echo date_i18n('F d Y ', strtotime(current_time("Y-m-d"))); }
             if($header_time_enable == true) { ?>
             <span  id="time" class="time"></span>
             <?php } ?>
@@ -467,7 +468,7 @@ function newsup_social_share_post($post) {
                               <a href="<?php echo esc_url("$odnoklassniki_url"); ?>" class="link ok" target="_blank" >
                                 <i class="fa fa-odnoklassniki"></i></a>
 
-                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank">
+                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank" >
                                 <i class="fa fa-whatsapp"></i></a>
 
                               <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
