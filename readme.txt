@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 2.9.9.72
+Stable tag: 2.9.9.73
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -420,4 +420,7 @@ License: CC0 Public Domain
 * Added live editor for search.
 
 = Version 2.9.9.72
-* Added site title size change settings.
+* Added site title size change settings.
+
+= Version 2.9.9.73
+* Fixed menu issue.
