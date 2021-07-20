@@ -83,22 +83,25 @@ add_action('wp_head', 'newsup_pingback_header');
  */
 function kinozal_register_block_pattern() {
 	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
-		$wp_txt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav">';
+		$wp_txt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav_0">';
 		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n</li>';
-		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie1">Фильм #1</a>\n</li>';
-		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie2">Фильм #2</a>\n</li>';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_1">Фильм #1</a>\n</li>';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_2">Фильм #2</a>\n</li>';
 
 		$wp_txt .= '\n</ul>\n<div class="tab-content">\n<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
 		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:columns -->\n<div class="wp-block-columns">';
 		$wp_txt .= '<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
 		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
 		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
-		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie1">\n<!-- /wp:html -->';
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie2">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_1">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_2">\n<!-- /wp:html -->';
 
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(';
-		$wp_txt .= 'function($) {\n$(\'#nav li\').not(\':first-child\').children(\'a\').addClass(nav.tab2);\n})\n</script>';
-		$wp_txt .= '\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(function($) {';
+		$wp_txt .= '\n	let $vitab = $(\'#nav_0 li\').not(\':first-child\').children(\'a\');\n	$vitab.addClass(nav.tab2)';
+		$wp_txt .= '.on('shown.bs.tab', function(e) { // bootstrap 4.4\n		let vicss = { attr:\'height\', ';
+		$wp_txt .= 'val:\'360px\' },\n		$vicont = $(\'div\'+$(this).attr(\'href\')+\' div[id^="mep_"]\');';
+		$wp_txt .= '\n		$vicont.css(vicss.attr, vicss.val).find(\'video\').css(vicss.attr, \'100%\');';
+		$wp_txt .= '\n	});\n});\n</script>\n<!-- /wp:html -->';
 		register_block_pattern( 'pattern/kinozal', array(
 			'title'		=> 'Кинозал',
 			'description'	=> 'Установка блока с трейлером и фильмом (для зарегистрированных) на bootstrap',
