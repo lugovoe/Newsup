@@ -98,7 +98,7 @@ function kinozal_register_block_pattern() {
 
 		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(function($) {';
 		$wp_txt .= '\n	let $vitab = $(\'#nav_0 li\').not(\':first-child\').children(\'a\');\n	$vitab.addClass(nav.tab2)';
-		$wp_txt .= '.on('shown.bs.tab', function(e) { // bootstrap 4.4\n		let vicss = { attr:\'height\', ';
+		$wp_txt .= '.on(\'shown.bs.tab\', function(e) { // bootstrap 4.4\n		let vicss = { attr:\'height\', ';
 		$wp_txt .= 'val:\'360px\' },\n		$vicont = $(\'div\'+$(this).attr(\'href\')+\' div[id^="mep_"]\');';
 		$wp_txt .= '\n		$vicont.css(vicss.attr, vicss.val).find(\'video\').css(vicss.attr, \'100%\');';
 		$wp_txt .= '\n	});\n});\n</script>\n<!-- /wp:html -->';
