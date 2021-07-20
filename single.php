@@ -78,7 +78,7 @@
               <article class="small single">
                 <?php the_content(); ?>
                 <?php newsup_edit_link(); ?>
-                <?php  newsup_social_share_post($post); ?>
+                <?php newsup_social_share_post($post); ?>
                 <div class="clearfix mb-3"></div>
                 <?php
             the_post_navigation(array(

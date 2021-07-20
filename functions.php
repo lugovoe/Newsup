@@ -240,6 +240,18 @@ function newsup_widgets_init() {
 }
 add_action( 'widgets_init', 'newsup_widgets_init' );
 
+/**
+ * Link for update theme in Console
+ */
+function true_change_admin_footer() {
+	$footer_text = array(
+		'<span id="footer-thankyou">Спасибо вам за творчество с <a href="https://ru.wordpress.org/">WordPress</a></span>',
+		'<span id="footer-thankyou">Последнее обновление темы доступно <a href="https://github.com/lugovoe/Newsup/archive/refs/heads/feature.zip" target="_blank">по ссылке</a></span>'
+	);
+	return implode(' &bull; ', $footer_text);
+}
+add_filter( 'admin_footer_text' , 'true_change_admin_footer' );
+
 //Editor Styling 
 add_editor_style( array( 'css/editor-style.css') );
 

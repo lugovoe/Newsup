@@ -228,7 +228,7 @@ function newsup_date_display_type() {
     $newsup_date_time_show_type = get_theme_mod('newsup_date_time_show_type','newsup_default');
     if ( $newsup_date_time_show_type == 'newsup_default' ) { ?>
         <li><?php if($header_data_enable == true) {
-            echo date_i18n('F d Y', strtotime(current_time("Y-m-d"))); }
+            echo date_i18n('F d Y ', strtotime(current_time("Y-m-d"))); }
             if($header_time_enable == true) { ?>
             <span  id="time" class="time"></span>
             <?php } ?>
@@ -404,7 +404,7 @@ function newsup_social_share_post($post) {
                               <a href="<?php echo esc_url("$odnoklassniki_url"); ?>" class="link ok" target="_blank" >
                                 <i class="fa fa-odnoklassniki"></i></a>
 
-                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank">
+                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank" >
                                 <i class="fa fa-whatsapp"></i></a>
 
                               <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
