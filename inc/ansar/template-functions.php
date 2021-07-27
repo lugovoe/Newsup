@@ -86,17 +86,28 @@ function kinozal_register_block_pattern() {
 		$wp_txt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav_0">';
 		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n</li>';
 		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_1">Фильм #1</a>\n</li>';
-		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_2">Фильм #2</a>\n</li>';
+
+	$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_2">Фильм #2</a>\n</li>';
 
 		$wp_txt .= '\n</ul>\n<div class="tab-content">\n<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:columns -->\n<div class="wp-block-columns">';
+		$wp_txt .= '\n\n<!-- wp:html -->\n<iframe src="https://www.youtube.com/embed/fYn9_GfsUso/https://ok.ru/videoembed/" ';
+		$wp_txt .= 'allowfullscreen="" width="800" height="450" frameborder="0"></iframe>\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->';
+		$wp_txt .= '\n\n<!-- wp:columns -->\n<div class="wp-block-columns">';
 		$wp_txt .= '<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
 		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
 		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
 		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_1">\n<!-- /wp:html -->';
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_2">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:html -->\n<iframe src="https://www.youtube.com/embed/fYn9_GfsUso/https://ok.ru/videoembed/" ';
+		$wp_txt .= 'allowfullscreen="" width="800" height="450" frameborder="0"></iframe>\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->';
 
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(function($) {';
+	$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_2">\n<!-- /wp:html -->';
+	$wp_txt .= '\n\n<!-- wp:html -->\n<iframe src="https://www.youtube.com/embed/fYn9_GfsUso/https://ok.ru/videoembed/" ';
+	$wp_txt .= 'allowfullscreen="" width="800" height="450" frameborder="0"></iframe>\n<!-- /wp:html -->';
+	$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->';
+
+		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(function($) {';
 		$wp_txt .= '\n	let $vitab = $(\'#nav_0 li\').not(\':first-child\').children(\'a\');\n	$vitab.addClass(nav.tab2)';
 		$wp_txt .= '.on(\'shown.bs.tab\', function(e) { // bootstrap 4.4\n		let vicss = { attr:\'height\', ';
 		$wp_txt .= 'val:\'360px\' },\n		$vicont = $(\'div\'+$(this).attr(\'href\')+\' div[id^="mep_"]\');';
@@ -105,7 +116,7 @@ function kinozal_register_block_pattern() {
 		register_block_pattern( 'pattern/kinozal', array(
 			'title'		=> 'Кинозал',
 			'description'	=> 'Установка блока с трейлером и фильмом (для зарегистрированных) на bootstrap',
-			'content'	=> str_replace( '\n', "\n", '<!-- wp:group -->\n<div class="wp-block-group"><div class="wp-block-group__inner-container">'.$wp_txt.'</div></div>\n<!-- /wp:group -->'),
+			'content'	=> str_replace( '\n', "\n", '<!-- wp:group -->\n<div class="wp-block-group">'.$wp_txt.'</div>\n<!-- /wp:group -->'),
 			'categories'	=> array( 'buttons' ),
 		) );
 	}
