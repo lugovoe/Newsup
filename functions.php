@@ -129,6 +129,8 @@ function newsup_setup() {
 
 	// Add support for responsive embedded content.
 	add_theme_support( 'responsive-embeds' );
+
+	remove_theme_support( 'widgets-block-editor' );
 	
 	//Custom logo
 	add_theme_support(
