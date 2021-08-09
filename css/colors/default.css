@@ -826,3 +826,10 @@ div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-contai
     background-color: #1151d3;
     color: #fff;
 }
+
+.wp-block-search .wp-block-search__button
+{
+    background: #1151d3;
+    border-color: #1151d3;
+    color: #fff;
+}
