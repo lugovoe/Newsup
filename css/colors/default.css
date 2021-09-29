@@ -457,6 +457,15 @@ blockquote::before {
 	background: #fff;
 	border-color: #eee;
 }
+.wp-block-search .wp-block-search__label,.mg-widget .wp-block-group h2  {
+	background: #1151d3;
+	color: #fff;
+	border-color: #1151d3;
+}
+.wp-block-search .wp-block-search__label::before, .mg-widget .wp-block-group h2:before {
+    border-left-color: #1151d3;
+    border-color: transparent transparent transparent #1151d3;
+}
 /*==================== Sidebar ====================*/
 .mg-sidebar .mg-widget {
 	background: #fff;
@@ -826,7 +835,9 @@ div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-contai
     background-color: #1151d3;
     color: #fff;
 }
-
+.wp-block-search .wp-block-search__input:hover {
+    border-color: #1151d3;
+}
 .wp-block-search .wp-block-search__button
 {
     background: #1151d3;
