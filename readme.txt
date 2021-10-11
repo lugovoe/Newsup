@@ -4,7 +4,7 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 2.9.9.81
+Stable tag: 2.9.9.82
 Version: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -448,4 +448,7 @@ License: CC0 Public Domain
 * Added Block style.
 
 = Version 2.9.9.81
-* Fix search page issue.
+* Fix search page issue.
+
+= Version 2.9.9.82
+* Fix default menu issue.
