@@ -73,7 +73,7 @@ if (!function_exists('newsup_post_meta')) :
          <?php echo esc_html(get_the_date('M j, Y')); ?></a></span>
          <a class="auth" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><i class="fas fa-user-circle"></i> 
         <?php the_author(); ?></a>
-        <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="far fa-edit"></i>', '</span>' ); ?> 
+        <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="fas fa-edit"></i>', '</span>' ); ?> 
     </div>
     <?php } 
             elseif($global_post_date =='show-date-only') {
@@ -82,7 +82,7 @@ if (!function_exists('newsup_post_meta')) :
         <span class="mg-blog-date"><i class="fas fa-clock"></i>
          <a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>">
          <?php echo esc_html(get_the_date('M j, Y')); ?></a></span>
-         <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="far fa-edit"></i>', '</span>' ); ?>
+         <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="fas fa-edit"></i>', '</span>' ); ?>
     </div>
     <?php } 
             elseif($global_post_date =='show-author-only') {
@@ -90,7 +90,7 @@ if (!function_exists('newsup_post_meta')) :
     <div class="mg-blog-meta">
         <a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><i class="fas fa-user-circle"></i> 
         <?php the_author(); ?></a>
-        <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="far fa-edit"></i>', '</span>' ); ?>
+        <?php edit_post_link( __( 'Edit', 'newsup' ), '<span class="post-edit-link"><i class="fas fa-edit"></i>', '</span>' ); ?>
     </div>
     <?php } elseif($global_post_date =='hide-date-author') { } ?>
 <?php }

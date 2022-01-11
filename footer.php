@@ -195,7 +195,7 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
     </div>
     <!--/wrapper-->
     <!--Scroll To Top-->
-    <a href="#" class="ta_upscr bounceInup animated"><i class="fa fa-angle-up"></i></a>
+    <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
     <!--/Scroll To Top-->
 <!-- /Scroll To Top -->
 <?php wp_footer(); ?>

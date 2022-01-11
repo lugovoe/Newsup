@@ -627,7 +627,7 @@ blockquote::before {
 	content: "\f10d";
 	display: table;
 	float: left;
-	font-family: "FontAwesome";
+	font-family: 'Font Awesome 5 Free';
 	font-size: 28px;
 	margin-top: 6px;
 	font-weight: normal;
@@ -747,7 +747,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .mg-tpt-txnlst strong:before {
     content: '\f292';
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-size: 12px;
     padding: 0 5px;
 }
@@ -1289,7 +1289,7 @@ li.active.home {
 }
 .mg-latest-news .mg-latest-news-slider a::before {
     content: "\f0a9";
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-size: 14px;
     margin-right: 4px;
 }
@@ -1729,7 +1729,7 @@ li.active.home {
 }
 .mg-page-breadcrumb > li + li:before {
 	content: "\f178";
-	font-family: fontawesome;
+	font-family: 'Font Awesome 5 Free';
 	padding: 0 5px;
 }
 /* --------------------------------------
