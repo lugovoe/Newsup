@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.89
+Version: 2.9.9.92
 Tested up to: 5.7
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -3011,4 +3011,37 @@ div.wpforms-container-full .wpforms-form button[type=submit]
 	border: 1px solid #ddd;
     font-size: 1em;
     padding: 5px 20px;
+}
+
+/*Header Navigation */
+.m-header button[aria-expanded="false"] .fa-bars:before{
+    content: "\f0c9";
+}
+.m-header button[aria-expanded="true"] .fa-bars:before{
+    content: "\f00d";
+}
+.m-header button[aria-expanded="false"]:after{
+pointer-events: none;
+}
+.m-header button[aria-expanded="true"]:after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 250vh;
+    position: absolute;
+    left: 0;
+}
+
+/* Footer Copyright */
+footer .mg-footer-copyright  .text-xs {
+    margin: auto 0;
+}
+footer .mg-footer-copyright p, footer .mg-footer-copyright a {
+font-size: 13px;
+line-height: 18px;
+margin-bottom: 0;
+
+}
+footer .mg-footer-copyright .nav-link {
+padding: 0.5rem;
 }
