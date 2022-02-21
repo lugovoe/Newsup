@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.93
+Version: 2.9.9.95
 Tested up to: 5.9
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -3033,4 +3033,59 @@ margin-bottom: 0;
 }
 footer .mg-footer-copyright .nav-link {
 padding: 0.5rem;
+}
+
+input:not([type]), input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], input[type="search"], textarea {
+    margin-bottom: 15px;
+}
+
+@media (min-width: 508px) and (max-width: 991px){
+	blockquote::before {
+		width: 10%;
+	}
+	blockquote p {
+		width: 90%;
+	}
+	.mg-nav-widget-area .site-title a{
+		font-size: 31px;
+	}
+}
+@media screen and (max-width: 767px) and (min-width: 240px) {
+ blockquote::before {
+		margin: 6px 0;
+	}
+	.mg-blog-post.lg {
+		height: 395spx;
+	}
+}
+@media screen and (max-width:991.98px ) and (min-width:767px){
+    .wp-block-search__inside-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .pulse.animated .mg-blog-meta .mg-blog-date {
+        font-size: 11px;
+        margin-right: 10px;
+    }
+    .pulse.animated .mg-blog-meta a {
+        font-size: 11px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width:767px){
+	.mg-blog-post-3.minh {
+		margin-bottom: 30px;
+	}
+}
+@media screen and (max-width: 576px){
+	.mg-blog-post-3.minh {
+		margin-bottom: 20px;
+	}
+}
+@media (max-width: 991.98px) {
+	.mg-fea-area .pd-r-10 {
+		padding-right: 0px;
+	}
 }
