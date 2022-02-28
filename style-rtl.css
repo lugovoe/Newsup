@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.95
+Version: 2.9.9.96
 Tested up to: 5.9
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -90,6 +90,14 @@ Text Domain: newsup
 	font-size: 14px;
 	padding-right: 10px;
 }
+
+.mg-nav-widget-area .site-branding-text .site-title {
+	margin-bottom: 15px;
+}
+.mg-nav-widget-area .header-ads {
+    display: flex;
+    justify-content: flex-end;
+} 
 /*---------------------------------------
 	1.2.Header Widget      
 -----------------------------------------*/
@@ -3087,5 +3095,46 @@ input:not([type]), input[type="email"], input[type="number"], input[type="passwo
 @media (max-width: 991.98px) {
 	.mg-fea-area .pd-r-10 {
 		padding-right: 0px;
+	}
+}
+
+@media (min-width: 508px) and (max-width: 991px){
+	.mg-nav-widget-area .site-branding-text .site-title a {
+		font-size: 30px;
+	}
+}
+@media only screen and (max-width: 640px){
+	.mg-nav-widget-area .site-branding-text .site-title a {
+		font-size: 30px;
+	}
+}
+@media screen and (max-width: 767px) and (min-width: 240px) {
+	.mg-fea-area .mg-blog-post.lg {
+		margin-bottom: 20px;
+	}
+	.mg-posts-sec {
+		margin-bottom: 5px;
+	}
+	.mg-sidebar .mg-widget {
+		margin-bottom: 20px;
+		
+	}
+}
+@media screen and (max-width:991.98px ) and (min-width:767px){
+	.mg-fea-area .mg-blog-post.lg {
+		margin-bottom: 30px;
+	}
+    .wp-block-search__button {
+        margin-left: 0 
+    } 
+}
+@media (max-width: 991.98px) {
+	.mg-fea-area .mr-bot60 {
+		margin-bottom: 30px;
+	}
+}
+@media screen and (max-width: 576px){
+	.mg-nav-widget-area .header-ads {
+		padding-top: 10px;
 	}
 }
