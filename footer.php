@@ -193,6 +193,8 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
         </footer>
         <!--/footer-->
     </div>
+  </div>
+</div>
     <!--/wrapper-->
     <!--Scroll To Top-->
     <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
