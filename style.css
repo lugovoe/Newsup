@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 2.9.9.97
+Version: 2.9.9.98
 Tested up to: 5.9
 Requires PHP: 5.6
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -1419,6 +1419,7 @@ li.active.home {
     background: #fff;
     padding: 8px;
     line-height: 1.42857143;
+	display: block;
 }
 .top-right-area .nav-tabs > li > a i {
     margin-right: 4px;
@@ -1589,8 +1590,9 @@ li.active.home {
   border-bottom: none;
   margin-bottom: 0px;
 }
+
 .mg-posts-sec-inner .small-list-post .mg-blog-category {
-	margin: 0 0 5px 0;
+	margin: 10px 0 5px 0;
 }
 .mg-posts-sec-inner .small-list-post img {
   height: 100%;
@@ -1643,12 +1645,12 @@ li.active.home {
   padding: 20px 0;
   overflow: hidden;
 }
+
 .mg-posts-modul-6 .mg-sec-top-post{
   display: inline-block;
   width: 100%;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 0 !important
 }
 .mg-posts-sec-post-content{
   padding: 0 0px 0px 20px;
@@ -1668,7 +1670,7 @@ li.active.home {
     word-wrap: break-word;
 }
 .mg-posts-modul-6 .mg-sec-top-post .mg-blog-category {
-  	margin: 6px 0 0 0;
+  	margin: 0;
 }
 .mg-posts-modul-6 .mg-sec-top-post .title{
   	margin-top: 10px;
@@ -2860,9 +2862,10 @@ footer .mg-widget .woocommerce ul.cart_list li img, footer .mg-widget .woocommer
 .mg-blog-inner h4, .mg-blog-inner h1.title, .mg-no-list-area .mg-blog-post h3{
 	max-height: 51px;
 }
-.colmnthree .mg-blog-inner h4 {
-	max-height: 60;
-	margin: 0;
+
+.mg-blog-inner h4 {
+    margin-bottom: 0.5rem;
+    line-height: 25px;
 }
 
 }
@@ -3338,10 +3341,14 @@ input:not([type]), input[type="email"], input[type="number"], input[type="passwo
 	}
 	.mg-posts-sec {
 		margin-bottom: 5px;
+		margin-top: 20px;
 	}
 	.mg-sidebar .mg-widget {
 		margin-bottom: 20px;
 		
+	}
+	.mg-posts-modul-6 .mg-sec-top-post {
+		margin-top: 1rem;
 	}
 }
 @media screen and (max-width:991.98px ) and (min-width:767px){
@@ -3360,5 +3367,36 @@ input:not([type]), input[type="email"], input[type="number"], input[type="passwo
 @media screen and (max-width: 576px){
 	.mg-nav-widget-area .header-ads {
 		padding-top: 10px;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1180px){
+	.col-md-3 .wp-block-search__inside-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+	.col-md-3 .wp-block-search__button {
+		margin-left:0;
+	}
+}
+
+@media (max-width:1200px ) {
+	.small-list-post h5.title, .title_small_post {
+		max-height: 50px;
+	}
+	.mg-blog-post .bottom h4 {
+		max-height: 75px;
+		overflow: hidden;
+	}
+	.mg-posts-modul-6 .mg-sec-top-post .title {
+		max-height: 65px;
+	}
+	.mg-blog-inner h4 {
+		margin-bottom: 0.5rem;
+		line-height: 25px;
+	}
+	.mg-blog-inner h4, .mg-blog-inner h1.title, .mg-no-list-area .mg-blog-post h3 {
+		max-height: 51px;
 	}
 }
