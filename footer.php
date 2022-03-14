@@ -156,7 +156,12 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                 <div class="mg-footer-copyright">
                     <div class="container-fluid">
                         <div class="row">
+                          <?php $newsup_enable_footer_menu = esc_attr(get_theme_mod('newsup_enable_footer_menu','true'));
+                    if($newsup_enable_footer_menu == true){ ?>
                             <div class="col-md-6 text-xs">
+                            <?php } else { ?> 
+                            <div class="col-md-12 text-xs text-center">
+                            <?php } ?>
                                 <p>
                                 <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'newsup' ) ); ?>">
 								<?php
@@ -173,7 +178,7 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
                             </div>
 
 
-
+                            <?php if($newsup_enable_footer_menu == true){ ?>
                             <div class="col-md-6 text-right text-xs">
                                 <?php wp_nav_menu( array(
         								'theme_location' => 'footer',
@@ -184,6 +189,7 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
         							) ); 
         						?>
                             </div>
+                          <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -193,7 +199,6 @@ $you_missed_enable = esc_attr(get_theme_mod('you_missed_enable','true'));
         <!--/footer-->
     </div>
   </div>
-</div>
     <!--/wrapper-->
     <!--Scroll To Top-->
     <a href="#" class="ta_upscr bounceInup animated"><i class="fas fa-angle-up"></i></a>
