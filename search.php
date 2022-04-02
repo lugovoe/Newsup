@@ -15,7 +15,9 @@ get_header(); ?>
     <!--row-->
         <div class="row">
             <div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar-1' ) ? '12' :'8' ); ?>">
+                <div class="mg-card-box padding-20">
                 <h2><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','newsup'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+                </div>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <!-- mg-posts-sec mg-posts-modul-6 -->
                             <div class="mg-posts-sec mg-posts-modul-6">

@@ -16,15 +16,16 @@ get_template_part('index','banner'); ?>
       <div class="row">
       <div class="col-md-12 mg-card-box padding-20">
             <?php while ( have_posts() ) : the_post(); 
-
-				the_content(); 
+            the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
+				    the_content();
+                     newsup_page_edit_link();
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
 			endwhile; // End of the loop.
-      newsup_page_edit_link();
+     
       ?>
           
       </div>

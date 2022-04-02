@@ -10,7 +10,7 @@
                                 <!-- mg-posts-sec-inner -->
                                 <div class="mg-posts-sec-inner">
                                     <?php while(have_posts()){ the_post(); ?>
-                                    <article class="d-md-flex mg-posts-sec-post">
+                                    <article class="d-md-flex mg-posts-sec-post align-items-center">
                                     <?php newsup_post_image_display_type($post); ?>
                                             <div class="mg-sec-top-post py-3 col">
                                                     <div class="mg-blog-category"> 
@@ -22,7 +22,7 @@
 
                                                 
                                                     <div class="mg-content">
-                                                        <p><?php echo wp_trim_words( get_the_excerpt(), 20 ); ?></p>
+                                                        <p><?php echo wp_trim_words( get_the_excerpt(), 30 ); ?></p>
                                                 </div>
                                             </div>
                                     </article>
@@ -30,8 +30,8 @@
                                     <div class="col-md-12 text-center d-md-flex justify-content-center">
                                         <?php //Previous / next page navigation
                                         the_posts_pagination( array(
-                                        'prev_text'          => '<i class="fa fa-angle-left"></i>',
-                                        'next_text'          => '<i class="fa fa-angle-right"></i>',
+                                        'prev_text'          => '<i class="fas fa-angle-left"></i>',
+                                        'next_text'          => '<i class="fas fa-angle-right"></i>',
                                         ) ); ?>
                                     </div>
                                 </div>

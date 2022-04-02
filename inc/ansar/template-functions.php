@@ -78,75 +78,6 @@ function newsup_pingback_header()
 
 add_action('wp_head', 'newsup_pingback_header');
 
-/**
- * Pattern Name: Kinozal for Gutenberg
- */
-function kinozal_register_block_pattern() {
-	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
-		$wp_txt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav_0">';
-		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n</li>';
-		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_1">Фильм #1</a>\n</li>';
-		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_2">Фильм #2</a>\n</li>';
-
-		$wp_txt .= '\n</ul>\n<div class="tab-content">\n<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:columns -->\n<div class="wp-block-columns">';
-		$wp_txt .= '<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
-		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
-		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
-		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_1">\n<!-- /wp:html -->';
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_2">\n<!-- /wp:html -->';
-
-		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(function($) {';
-		$wp_txt .= '\n	let $vitab = $(\'#nav_0 li\').not(\':first-child\').children(\'a\');\n	$vitab.addClass(nav.tab2)';
-		$wp_txt .= '.on(\'shown.bs.tab\', function(e) { // bootstrap 4.4\n		let vicss = { attr:\'height\', ';
-		$wp_txt .= 'val:\'360px\' },\n		$vicont = $(\'div\'+$(this).attr(\'href\')+\' div[id^="mep_"]\');';
-		$wp_txt .= '\n		$vicont.css(vicss.attr, vicss.val).find(\'video\').css(vicss.attr, \'100%\');';
-		$wp_txt .= '\n	});\n});\n</script>\n<!-- /wp:html -->';
-		register_block_pattern( 'pattern/kinozal', array(
-			'title'		=> 'Кинозал',
-			'description'	=> 'Установка блока с трейлером и фильмом (для зарегистрированных) на bootstrap',
-			'content'	=> str_replace( '\n', "\n", '<!-- wp:group -->\n<div class="wp-block-group"><div class="wp-block-group__inner-container">'.$wp_txt.'</div></div>\n<!-- /wp:group -->'),
-			'categories'	=> array( 'buttons' ),
-		) );
-	}
-}
-
-add_action( 'init', 'kinozal_register_block_pattern', 25 );
-
-function action_function_name_7714() {
-	if ( is_single() ) {
-		$nav_menu = ' disabled';
-
-		if ( is_user_logged_in() && !is_feed() ) {
-			$nav_menu = '';
-		}
-
-		wp_localize_script( 'jquery', 'nav', array(
-			'tab1' => __( '' ),
-			'tab2' => $nav_menu
-		) );
-	}
-}
-
-add_action( 'wp_enqueue_scripts', 'action_function_name_7714', 99 );
-
-/**
- * Removes videos from other channels at the end of YouTube video.
- *
- * @link https://misha.agency/gutenberg/otklyuchit-otobrazhenie-rekomenduemyh-video-v-bloke-youtube.html
- */
-function true_youtube_rel_0( $block_content, $block ) {
-	if (
-		'core/embed' === $block[ 'blockName' ]
-		&& isset( $block[ 'attrs' ][ 'providerNameSlug' ] )
-		&& 'youtube' === $block[ 'attrs' ][ 'providerNameSlug' ]
-	) {
-		$block_content = str_replace( '?feature=oembed', '?rel=0', $block_content );
-	}
-	return $block_content;
-}
-
-add_filter( 'render_block', 'true_youtube_rel_0', 25, 2 );
 
 /**
  * Returns posts.
@@ -255,10 +186,12 @@ function newsup_get_freatured_image_url($post_id, $size = 'newsup-featured')
 {
     if (has_post_thumbnail($post_id)) {
         $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), $size);
-        $url = $thumb['0'];
+        $url = $thumb !== false ? '' . $thumb[0] . '' : '""';
+
     } else {
         $url = '';
     }
+
 
     return $url;
 }
@@ -297,7 +230,7 @@ function newsup_date_display_type() {
     $newsup_date_time_show_type = get_theme_mod('newsup_date_time_show_type','newsup_default');
     if ( $newsup_date_time_show_type == 'newsup_default' ) { ?>
         <li><?php if($header_data_enable == true) {
-            echo date_i18n('F d Y ', strtotime(current_time("Y-m-d"))); }
+            echo date_i18n('D. M jS, Y ', strtotime(current_time("Y-m-d"))); }
             if($header_time_enable == true) { ?>
             <span  id="time" class="time"></span>
             <?php } ?>
@@ -308,7 +241,7 @@ function newsup_date_display_type() {
             echo date_i18n( get_option( 'date_format' ) ); }
             if($header_time_enable == true) { ?>
             <span class="time"> <?php $format = get_option('') . ' ' . get_option('time_format');
-            print date_i18n('H:i', current_time('timestamp')); ?></span>
+            print date_i18n($format, current_time('timestamp')); ?></span>
             <?php } ?>
         </li>
 
@@ -353,7 +286,7 @@ if ( $post_image_type == 'newsup_post_img_hei' ) {
 if($url) { ?>
 <div class="col-12 col-md-6">
     <div class="mg-post-thumb back-img md" style="background-image: url('<?php echo esc_url($url); ?>');">
-        <span class="post-form"><i class="fa fa-camera"></i></span>
+        <span class="post-form"><i class="fas fa-camera"></i></span>
         <a class="link-div" href="<?php the_permalink(); ?>"></a>
     </div> 
 </div>
@@ -367,7 +300,7 @@ if(has_post_thumbnail()) { ?>
 <?php echo '<a href="'.esc_url(get_the_permalink()).'">';
      the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
     echo '</a>'; ?>
-        <span class="post-form"><i class="fa fa-camera"></i></span>
+        <span class="post-form"><i class="fas fa-camera"></i></span>
         </div>
 </div> <?php } 
 } 
@@ -388,42 +321,12 @@ function newsup_social_share_post($post) {
         'https://www.facebook.com/sharer.php'
         );
 
-                    $vkontakte_url = add_query_arg(
-                    array(
-                    'url'  => $post_link,
-                    'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
-                     ),
-                     'https://vk.com/share.php'
-                     );
-
-                    $odnoklassniki_url = add_query_arg(
-                    array(
-                    'url'  => $post_link,
-                    'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
-                     ),
-                     'https://connect.ok.ru/offer'
-                     );
-
-        $whatsapp_url = add_query_arg(
-        array(
-        'text' => $post_link,
-        ),
-        'https://api.whatsapp.com/send'
-        );
-
-                     $telegram_url = add_query_arg(
-                     array('url'  => $post_link,
-                      'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
-                     ),
-                    'https://telegram.me/share/url?url=&text='
-                    );
-
                     $twitter_url = add_query_arg(
                     array(
                     'url'  => $post_link,
                     'text' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) ),
                      ),
-                     'https://twitter.com/share'
+                     'http://twitter.com/share'
                      );
 
                      $email_title = str_replace( '&', '%26', $post_title );
@@ -436,19 +339,27 @@ function newsup_social_share_post($post) {
                     'mailto:'
                      ); 
 
-                     /*$linkedin_url = add_query_arg(
+                     $linkedin_url = add_query_arg(
                      array('url'  => $post_link,
                     'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
                      ),
                     'https://www.linkedin.com/sharing/share-offsite/?url'
-                    );*/
+                    );
 
                      $pinterest_url = add_query_arg(
                      array('url'  => $post_link,
                       'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
                      ),
-                    'https://pinterest.com/pin/create/link/?url='
+                    'http://pinterest.com/pin/create/link/?url='
                     );
+
+                     $telegram_url = add_query_arg(
+                     array('url'  => $post_link,
+                      'title' => rawurlencode( html_entity_decode( wp_strip_all_tags( $post_title ), ENT_COMPAT, 'UTF-8' ) )
+                     ),
+                    'https://telegram.me/share/url?url=&text='
+                    );
+
 
                      ?>
                      <script>
@@ -463,33 +374,25 @@ function newsup_social_share_post($post) {
     </script>
                      <div class="post-share">
                           <div class="post-share-icons cf">
-
+                           
                               <a href="<?php echo esc_url("$facebook_url"); ?>" class="link facebook" target="_blank" >
-                                <i class="fa fa-facebook"></i></a>
-
-                              <a href="<?php echo esc_url("$vkontakte_url"); ?>" class="link vk" target="_blank" >
-                                <i class="fa fa-vk"></i></a>
-
-                              <a href="<?php echo esc_url("$odnoklassniki_url"); ?>" class="link ok" target="_blank" >
-                                <i class="fa fa-odnoklassniki"></i></a>
-
-                              <a href="<?php echo esc_url("$whatsapp_url"); ?>" class="link whatsapp" target="_blank" >
-                                <i class="fa fa-whatsapp"></i></a>
-
-                              <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
-                                <i class="fa fa-telegram"></i></a>
-
+                                <i class="fab fa-facebook"></i></a>
+                            
+            
                               <a href="<?php echo esc_url("$twitter_url"); ?>" class="link twitter" target="_blank">
-                                <i class="fa fa-twitter"></i></a>
-
+                                <i class="fab fa-twitter"></i></a>
+            
                               <a href="<?php echo esc_url("$email_url"); ?>" class="link email" target="_blank" >
-                                <i class="fa fa-envelope-o"></i></a>
+                                <i class="fas fa-envelope"></i></a>
 
 
-                              <!--a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
-                                <i class="fa fa-linkedin"></i></a-->
+                              <a href="<?php echo esc_url("$linkedin_url"); ?>" class="link linkedin" target="_blank" >
+                                <i class="fab fa-linkedin"></i></a>
 
-                              <a href="javascript:pinIt();" class="link pinterest"><i class="fa fa-pinterest"></i></a>    
+                             <a href="<?php echo esc_url("$telegram_url"); ?>" class="link telegram" target="_blank" >
+                                <i class="fab fa-telegram"></i></a>
+
+                              <a href="javascript:pinIt();" class="link pinterest"><i class="fab fa-pinterest"></i></a>    
                           </div>
                     </div>
 
