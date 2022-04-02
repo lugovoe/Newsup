@@ -80,6 +80,77 @@ add_action('wp_head', 'newsup_pingback_header');
 
 
 /**
+ * Pattern Name: Kinozal for Gutenberg
+ */
+function kinozal_register_block_pattern() {
+	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
+		$wp_txt = '<!-- wp:html -->\n<ul class="nav nav-tabs" id="nav_0">';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link active" data-toggle="tab" href="#trailer">Трейлер</a>\n</li>';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_1">Фильм #1</a>\n</li>';
+		$wp_txt .= '\n<li class="nav-item">\n<a class="nav-link" data-toggle="tab" href="#movie_2">Фильм #2</a>\n</li>';
+
+		$wp_txt .= '\n</ul>\n<div class="tab-content">\n<div class="tab-pane fade show active" id="trailer">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:columns -->\n<div class="wp-block-columns">';
+		$wp_txt .= '<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
+		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column -->';
+		$wp_txt .= '\n\n<!-- wp:column -->\n<div class="wp-block-column"></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns -->';
+		$wp_txt .= '\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_1">\n<!-- /wp:html -->';
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n<div class="tab-pane fade" id="movie_2">\n<!-- /wp:html -->';
+
+		$wp_txt .= '\n\n<!-- wp:embed /-->\n\n<!-- wp:html -->\n</div>\n</div>\n<script>\njQuery(document).ready(function($) {';
+		$wp_txt .= '\n	let $vitab = $(\'#nav_0 li\').not(\':first-child\').children(\'a\');\n	$vitab.addClass(nav.tab2)';
+		$wp_txt .= '.on(\'shown.bs.tab\', function(e) { // bootstrap 4.4\n		let vicss = { attr:\'height\', ';
+		$wp_txt .= 'val:\'360px\' },\n		$vicont = $(\'div\'+$(this).attr(\'href\')+\' div[id^="mep_"]\');';
+		$wp_txt .= '\n		$vicont.css(vicss.attr, vicss.val).find(\'video\').css(vicss.attr, \'100%\');';
+		$wp_txt .= '\n	});\n});\n</script>\n<!-- /wp:html -->';
+		register_block_pattern( 'pattern/kinozal', array(
+			'title'		=> 'Кинозал',
+			'description'	=> 'Установка блока с трейлером и фильмом (для зарегистрированных) на bootstrap',
+			'content'	=> str_replace( '\n', "\n", '<!-- wp:group -->\n<div class="wp-block-group"><div class="wp-block-group__inner-container">'.$wp_txt.'</div></div>\n<!-- /wp:group -->'),
+			'categories'	=> array( 'buttons' ),
+		) );
+	}
+}
+
+add_action( 'init', 'kinozal_register_block_pattern', 25 );
+
+function action_function_name_7714() {
+	if ( is_single() ) {
+		$nav_menu = ' disabled';
+
+		if ( is_user_logged_in() && !is_feed() ) {
+			$nav_menu = '';
+		}
+
+		wp_localize_script( 'jquery', 'nav', array(
+			'tab1' => __( '' ),
+			'tab2' => __( '' )
+		) );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'action_function_name_7714', 99 );
+
+/**
+ * Removes videos from other channels at the end of YouTube video.
+ *
+ * @link https://misha.agency/gutenberg/otklyuchit-otobrazhenie-rekomenduemyh-video-v-bloke-youtube.html
+ */
+function true_youtube_rel_0( $block_content, $block ) {
+	if (
+		'core/embed' === $block[ 'blockName' ]
+		&& isset( $block[ 'attrs' ][ 'providerNameSlug' ] )
+		&& 'youtube' === $block[ 'attrs' ][ 'providerNameSlug' ]
+	) {
+		$block_content = str_replace( '?feature=oembed', '?rel=0', $block_content );
+	}
+	return $block_content;
+}
+
+add_filter( 'render_block', 'true_youtube_rel_0', 25, 2 );
+
+
+/**
  * Returns posts.
  *
  * @since Newsup 1.0.0
